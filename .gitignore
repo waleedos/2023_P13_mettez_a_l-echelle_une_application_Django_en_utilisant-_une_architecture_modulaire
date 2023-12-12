@@ -1,0 +1,14 @@
+**/__pycache__
+*.pyc
+venv
+bin
+include
+lib
+.Python
+.envrc
+.env
+.idea
+.idea/
+.pytest_cache
+.pytest_cache/
+.coverage

@@ -1,0 +1,55 @@
+.
+├── manage.py
+├── oc_lettings_site
+│   ├── admin.py
+│   ├── apps.py
+│   ├── asgi.py
+│   ├── models.py
+│   ├── settings.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── oc-lettings-site.sqlite3
+├── README.md
+├── requirements.txt
+├── setup.cfg
+├── static
+│   ├── assets
+│   │   ├── fonts
+│   │   │   └── metropolis
+│   │   │       ├── Metropolis-BlackItalic.otf
+│   │   │       ├── Metropolis-Black.otf
+│   │   │       ├── Metropolis-BoldItalic.otf
+│   │   │       ├── Metropolis-Bold.otf
+│   │   │       ├── Metropolis-ExtraBoldItalic.otf
+│   │   │       ├── Metropolis-ExtraBold.otf
+│   │   │       ├── Metropolis-ExtraLightItalic.otf
+│   │   │       ├── Metropolis-ExtraLight.otf
+│   │   │       ├── Metropolis-LightItalic.otf
+│   │   │       ├── Metropolis-Light.otf
+│   │   │       ├── Metropolis-MediumItalic.otf
+│   │   │       ├── Metropolis-Medium.otf
+│   │   │       ├── Metropolis-RegularItalic.otf
+│   │   │       ├── Metropolis-Regular.otf
+│   │   │       ├── Metropolis-SemiBoldItalic.otf
+│   │   │       ├── Metropolis-SemiBold.otf
+│   │   │       ├── Metropolis-ThinItalic.otf
+│   │   │       ├── Metropolis-Thin.otf
+│   │   │       └── SIL Open Font License.txt
+│   │   └── img
+│   │       └── logo.png
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── structure_de_ce_projet.txt
+└── templates
+    ├── base.html
+    ├── index.html
+    ├── letting.html
+    ├── lettings_index.html
+    ├── profile.html
+    └── profiles_index.html
+
+9 directories, 43 files
