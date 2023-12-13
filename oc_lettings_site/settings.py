@@ -28,8 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "lettings",
-    "profiles",
+    "lettings.apps.LettingsConfig",
+    "profiles.apps.ProfilesConfig",
 ]
 
 MIDDLEWARE = [
@@ -116,6 +116,5 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
