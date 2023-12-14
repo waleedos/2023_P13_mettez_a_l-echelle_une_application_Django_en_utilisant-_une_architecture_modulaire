@@ -1,0 +1,53 @@
+.
+├── lettings
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── lettings
+│   │       ├── letting.html
+│   │       └── lettings_index.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── oc_lettings_site
+│   ├── admin.py
+│   ├── apps.py
+│   ├── asgi.py
+│   ├── models.py
+│   ├── settings.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── oc-lettings-site.sqlite3
+├── profiles
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── profiles
+│   │       ├── profile.html
+│   │       └── profiles_index.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── README.md
+├── requirements.txt
+├── setup.cfg
+├── static
+│   ├── assets
+│   │   ├── fonts
+│   │   └── img
+│   │       └── logo.png
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── structure_de_ce_projet.txt
+└── templates
+    ├── base.html
+    └── index.html
+
+14 directories, 36 files
