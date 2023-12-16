@@ -6,7 +6,7 @@
 │   ├── templates
 │   │   └── lettings
 │   │       ├── letting.html
-│   │       └── lettings_index.html
+│   │       └── lettings.html
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
@@ -28,8 +28,8 @@
 │   ├── models.py
 │   ├── templates
 │   │   └── profiles
-│   │       ├── profile.html
-│   │       └── profiles_index.html
+│   │       ├── index.html
+│   │       └── profile.html
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
