@@ -4,19 +4,19 @@ Ce module contient les vues pour l'application lettings, définissant comment le
 sont présentées à l'utilisateur dans les templates HTML.
 """
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Letting
 
 
 def index(request):
     """
-    View function for displaying a list of lettings.
+    Fonction de vue pour afficher une liste de lettings.
 
-    Parameters:
-        request (HttpRequest): The HTTP request object.
+    Paramètres :
+        request (HttpRequest) : L'objet de requête HTTP.
 
-    Returns:
-        HttpResponse: The rendered HTML page displaying a list of lettings.
+    Retourne :
+        HttpResponse : La page HTML rendue affichant une liste de lettings.
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -25,18 +25,15 @@ def index(request):
 
 def letting(request, letting_id):
     """
-    View function for displaying the details of a specific letting.
+    Fonction de vue pour afficher les détails d'un letting spécifique.
 
-    Parameters:
-        request (HttpRequest): The HTTP request object.
-        letting_id (int): The ID of the specific letting to display.
+    Paramètres :
+        request (HttpRequest) : L'objet de requête HTTP.
+        letting_id (int) : L'ID du letting spécifique à afficher.
 
-    Returns:
-        HttpResponse: The rendered HTML page displaying the details of the letting.
+    Retourne :
+        HttpResponse : La page HTML rendue affichant les détails du letting.
     """
-    specific_letting = Letting.objects.get(id=letting_id)
-    context = {
-        "title": specific_letting.title,
-        "address": specific_letting.address,
-    }
+    specific_letting = get_object_or_404(Letting, id=letting_id)
+    context = {"letting": specific_letting}  # Passer l'objet Letting complet
     return render(request, "lettings/letting.html", context)

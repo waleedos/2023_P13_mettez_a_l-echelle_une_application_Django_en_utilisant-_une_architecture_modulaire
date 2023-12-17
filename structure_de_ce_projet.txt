@@ -1,4 +1,5 @@
 .
+├── bandit_report.txt
 ├── lettings
 │   ├── admin.py
 │   ├── apps.py
@@ -48,7 +49,9 @@
 │       └── scripts.js
 ├── structure_de_ce_projet.txt
 └── templates
+    ├── 404.html
+    ├── 500.html
     ├── base.html
     └── index.html
 
-14 directories, 37 files
+14 directories, 40 files

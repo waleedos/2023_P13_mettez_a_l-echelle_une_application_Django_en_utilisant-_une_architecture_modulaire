@@ -46,6 +46,7 @@ class Address(models.Model):
         return f"{self.number} {self.street}"
 
     class Meta:
+        app_label = 'lettings'
         verbose_name_plural = "Addresses"
 
 
@@ -75,3 +76,6 @@ class Letting(models.Model):
             str: Le titre de l'annonce.
         """
         return self.title
+
+    class Meta:
+        app_label = 'lettings'
