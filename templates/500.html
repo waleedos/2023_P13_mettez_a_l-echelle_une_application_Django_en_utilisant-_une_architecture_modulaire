@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Server Error{% endblock title %}
+
+{% block content %}
+<div class="container px-5 py-5 text-center">
+    <h1 class="display-4">500 - Internal Server Error</h1>
+    <p>Sorry, something went wrong on our end.</p>
+    <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'index' %}">Return Home</a>
+</div>
+{% endblock %}

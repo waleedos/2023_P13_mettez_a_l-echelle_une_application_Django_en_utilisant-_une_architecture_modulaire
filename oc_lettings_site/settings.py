@@ -5,89 +5,122 @@ incluant les réglages de base de données, les configurations de sécurité,
 et d'autres paramètres importants.
 """
 import os
+
 from pathlib import Path
 
-# Chemin de base du projet Django.
-# Utilisé pour construire des chemins de fichiers relatifs au projet.
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Paramètres de développement rapide - inadaptés à la production
-# Voir https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# AVERTISSEMENT DE SÉCURITÉ : garder la clé secrète utilisée en production secrète!
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
-# AVERTISSEMENT DE SÉCURITÉ : ne pas exécuter avec debug activé en production!
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
-# Définition de l'application
 
-# Liste des applications installées dans ce projet Django.
-# Chaque application ajoute une fonctionnalité ou des fonctionnalités au projet.
+# Application definition
+
 INSTALLED_APPS = [
-    # ... (liste des applications)
+    "oc_lettings_site.apps.OCLettingsSiteConfig",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "lettings.apps.LettingsConfig",
+    "profiles.apps.ProfilesConfig",
 ]
 
-# Middleware
-
-# Liste des middleware utilisés par ce projet Django.
-# Chaque middleware est un traitement effectué sur la requête/réponse.
 MIDDLEWARE = [
-    # ... (liste des middleware)
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = "oc_lettings_site.urls"
 
-# Configuration des templates
-
-# Configuration des moteurs de templates utilisés dans ce projet Django.
 TEMPLATES = [
-    # ... (configuration des templates)
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        },
+    },
 ]
 
-# Configuration de l'application WSGI
-
-# Chemin vers l'application WSGI utilisée pour servir le projet.
 WSGI_APPLICATION = "oc_lettings_site.wsgi.application"
 
-# Base de données
 
-# Configuration de la base de données pour ce projet Django.
-# Voir https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 DATABASES = {
     "default": {
-        # ... (configuration de la base de données)
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "oc-lettings-site.sqlite3"),
     }
 }
 
-# Validation des mots de passe
 
-# Configuration des validateurs de mot de passe pour ce projet Django.
+# Password validation
+# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+
 AUTH_PASSWORD_VALIDATORS = [
-    # ... (liste des validateurs de mot de passe)
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
-# Internationalisation
 
-# Configuration de la langue, du fuseau horaire, et de la localisation.
+# Internationalization
+# https://docs.djangoproject.com/en/3.0/topics/i18n/
+
 LANGUAGE_CODE = "en-us"
+
 TIME_ZONE = "UTC"
+
 USE_I18N = True
+
 USE_L10N = True
+
 USE_TZ = True
 
-# Fichiers statiques (CSS, JavaScript, Images)
 
-# Configuration des fichiers statiques pour ce projet Django.
-STATIC_URL = "/static/"
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# Champ auto-id par défaut
-
-# Configuration du champ auto-id par défaut pour les modèles.
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

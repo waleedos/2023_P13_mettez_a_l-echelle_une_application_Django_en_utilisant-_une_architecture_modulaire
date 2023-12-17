@@ -7,6 +7,7 @@ organisant les routes et les redirections au sein du projet.
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from .views import test_404, test_500
 
 # Liste des motifs d'URL pour le projet oc_lettings_site.
 # Chaque motif d'URL est associé à une vue spécifique.
@@ -21,4 +22,8 @@ urlpatterns = [
     # Toutes les URL commençant par 'profiles/' seront redirigées vers 'profiles.urls'.
     path("admin/", admin.site.urls),
     # Le chemin 'admin/' est configuré pour les URL de l'interface d'administration Django.
+    path("test-404/", test_404),
+    # Chemin pour la page 404 qui gère ce type d'erreur
+    path("test-500/", test_500),
+    # Chemin pour la page 500 qui gère ce type d'erreur
 ]
