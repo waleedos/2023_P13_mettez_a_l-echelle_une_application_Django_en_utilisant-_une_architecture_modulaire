@@ -1,9 +1,11 @@
+<!-- Hérite de base.html et définit le bloc title et content pour la page actuelle -->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
 
+<!-- Section d'en-tête avec le titre de la page -->
 <div class="container px-5 py-5 text-center">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -12,10 +14,12 @@
     </div>
 </div>
 
+<!-- Section affichant les détails de l'adresse -->
 <div class="container px-5 py-5 text-center">
 	<div class="card">
 	    <div class="card-body">
 	        <div class="icon-stack icon-stack-lg bg-primary text-white mb-3"><i data-feather="home"></i></div>
+	       	<!-- Affichage des informations de l'adresse -->
 	       	<p>{{ address.number }} {{ address.street }}</p>
 			<p>{{ address.city }}, {{ address.state }} {{ address.zip_code }}</p>
 			<p>{{ address.country_iso_code }}</p>
@@ -23,15 +27,19 @@
 	</div>
 </div>
 
+<!-- Liens de navigation -->
 <div class="container px-5 py-5 text-center">
     <div class="justify-content-center">
+        <!-- Bouton de retour à l'index des lettings -->
         <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'lettings:lettings_index' %}">
         	<i class="ms-2" data-feather="arrow-right"></i>
             Back
         </a>
+        <!-- Bouton de retour à l'accueil -->
         <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'index' %}">
             Home
         </a>
+        <!-- Bouton pour accéder à l'index des profils -->
         <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'profiles:profiles_index' %}">
             Profiles
         </a>

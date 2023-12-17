@@ -5,8 +5,8 @@
 │   ├── models.py
 │   ├── templates
 │   │   └── lettings
-│   │       ├── letting.html
-│   │       └── lettings.html
+│   │       ├── index.html
+│   │       └── letting.html
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
@@ -33,6 +33,7 @@
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
+├── pylint_django_setup.py
 ├── README.md
 ├── requirements.txt
 ├── setup.cfg
@@ -50,4 +51,4 @@
     ├── base.html
     └── index.html
 
-14 directories, 36 files
+14 directories, 37 files
