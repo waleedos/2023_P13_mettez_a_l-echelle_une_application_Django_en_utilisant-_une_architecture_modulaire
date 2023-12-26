@@ -1,9 +1,12 @@
 """Tests for the lettings app."""
 
+# Imports de bibliothèques tierces
 from django.core.exceptions import ValidationError
 from django.test import TestCase, SimpleTestCase
-from lettings.models import Address, Letting
 from django.urls import reverse, resolve
+
+# Imports de votre application
+from lettings.models import Address, Letting
 from lettings.views import index
 
 

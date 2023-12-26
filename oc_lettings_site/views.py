@@ -4,7 +4,7 @@ Ce module définit les vues principales de l'application oc_lettings_site,
 en déterminant comment les données sont présentées à l'utilisateur.
 """
 from django.shortcuts import render
-from django.http import HttpResponseNotFound, HttpResponseServerError
+from django.http import HttpResponseNotFound
 
 
 def index(request):
@@ -41,16 +41,11 @@ def test_404(request):
 
 def test_500(request):
     """
-    Renvoie une réponse HTTP 500 (Erreur de serveur interne) avec la page de rendu "500.html".
-
-    Cette fonction est utilisée pour tester la gestion des erreurs 500 (Erreurs de serveur interne)
-    dans l'application. Elle renvoie une réponse HTTP 500 avec le contenu de la page "500.html"
-    rendue à l'aide de la bibliothèque de rendu Django.
+    Provoque une erreur de serveur interne pour tester la gestion des erreurs 500.
 
     Args:
         request (HttpRequest): L'objet de requête HTTP reçu.
-
-    Returns:
-        HttpResponseServerError: Une réponse HTTP 500 contenant le contenu de la page "500.html".
     """
-    return HttpResponseServerError(render(request, "500.html"))
+    raise ValueError(
+        "Test d'erreur 500"
+    )  # Provoque une erreur pour tester la page d'erreur 500

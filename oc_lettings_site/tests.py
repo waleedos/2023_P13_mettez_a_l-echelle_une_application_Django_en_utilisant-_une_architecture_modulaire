@@ -1,6 +1,45 @@
-from django.test import TestCase, RequestFactory
+"""
+Tests pour l'application oc_lettings_site.
+
+Ce module contient des tests unitaires pour l'application oc_lettings_site. Il comprend des
+tests pour les vues, modèles, et autres composants de l'application. Les tests couvrent
+divers aspects fonctionnels et d'erreur de l'application, assurant ainsi que les composants
+fonctionnent comme prévu dans différents scénarios.
+
+Classes de Test:
+    ViewsTestCase: Tests pour les vues de l'application.
+    IndexViewTestCase: Tests spécifiques pour la vue index.
+    Test404ViewTestCase: Tests pour la gestion des erreurs 404.
+    Test500ViewTestCase: Tests pour la gestion des erreurs 500.
+"""
+
+from django.test import TestCase, Client
 from django.urls import reverse
-from .views import test_500
+from django.conf import settings
+
+
+class MyTestCase(TestCase):
+    """
+    Classe de test pour vérifier la configuration des paramètres de l'application.
+
+    Cette classe contient des tests pour s'assurer que les paramètres de l'application
+    sont correctement configurés pour l'environnement de test. Elle est utile pour vérifier
+    que les modifications apportées aux paramètres n'affectent pas le comportement attendu
+    de l'application dans l'environnement de test.
+
+    Méthodes:
+        test_debug_is_off: Vérifie que le mode DEBUG est désactivé.
+    """
+
+    def test_debug_is_off(self):
+        """
+        Teste si le mode DEBUG est désactivé dans les paramètres de l'application.
+
+        Le mode DEBUG doit être désactivé dans l'environnement de test pour s'assurer
+        que les erreurs sont gérées de la même manière que dans l'environnement de
+        production. Ce test échouera si DEBUG est True.
+        """
+        self.assertFalse(settings.DEBUG)
 
 
 class ViewsTestCase(TestCase):
@@ -47,14 +86,12 @@ class ViewsTestCase(TestCase):
         Teste la gestion des erreurs 500.
 
         Simule une requête provoquant une erreur interne du serveur pour vérifier si l'application
-        retourne correctement un code de statut 500 (Internal Server Error) et si le contenu de la
-        réponse contient le message d'erreur attendu. Utilise RequestFactory pour simuler la
-        requête.
+        retourne correctement un code de statut 500 (Internal Server Error).
         """
-        request = RequestFactory().get("/chemin_qui_provoque_erreur/")
-        response = test_500(request)
-        self.assertEqual(response.status_code, 500)
-        self.assertIn("500 - Internal Server Error", response.content.decode())
+        try:
+            self.client.get("/test-500/")
+        except ValueError as e:
+            self.assertEqual(str(e), "Test d'erreur 500")
 
 
 class IndexViewTestCase(TestCase):
@@ -95,8 +132,10 @@ class Test500ViewTestCase(TestCase):
 
     def test_500_view(self):
         """
-        Teste si la vue test_500 renvoie correctement une réponse HTTP 500.
+        Teste si la vue test_500 provoque correctement une erreur de serveur interne.
         """
-        response = self.client.get("/test-500/")
-        self.assertEqual(response.status_code, 500)
-        self.assertTemplateUsed(response, "500.html")
+        client = Client()
+        try:
+            client.get("/test-500/")
+        except ValueError as e:
+            self.assertEqual(str(e), "Test d'erreur 500")

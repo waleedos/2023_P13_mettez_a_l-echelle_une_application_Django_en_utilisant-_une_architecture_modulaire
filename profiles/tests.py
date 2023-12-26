@@ -1,3 +1,11 @@
+"""
+Module de tests pour l'application profiles.
+
+Ce module contient des tests unitaires pour l'application profiles,
+couvrant les modèles, les vues, et les URLs. Les tests assurent le bon
+fonctionnement et la robustesse des fonctionnalités de l'application.
+"""
+
 from django.urls import reverse, resolve
 from django.contrib.auth import get_user_model
 from django.test import SimpleTestCase, TestCase
@@ -30,7 +38,7 @@ class ProfileAccessTestCase(TestCase):
     def setUpTestData(cls):
         # Création d'un utilisateur et d'un profil pour le test
         cls.user = User.objects.create_user(username="testuser", password="12345")
-        cls.profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
+        cls.user_profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
 
     def test_profile_access_redirection(self):
         """
@@ -51,7 +59,7 @@ class ProfileContentTestCase(TestCase):
     def setUpTestData(cls):
         # Création d'un utilisateur et d'un profil pour le test
         cls.user = User.objects.create_user(username="testuser", password="12345")
-        cls.profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
+        cls.user_profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
 
     def test_profile_content(self):
         """
@@ -65,23 +73,26 @@ class ProfileContentTestCase(TestCase):
 
 class ProfileModelMethodsTestCase(TestCase):
     """
-    Tests pour les méthodes personnalisées du modèle Profile.
-    Vérifie le fonctionnement correct des méthodes personnalisées du modèle.
+    Classe de test pour les méthodes personnalisées du modèle Profile.
+
+    Cette classe teste les méthodes personnalisées définies dans le modèle Profile.
+    Elle s'assure que ces méthodes fonctionnent comme prévu, en fournissant
+    des cas de test spécifiques pour chaque méthode personnalisée.
     """
 
     @classmethod
     def setUpTestData(cls):
-        # Création d'un utilisateur et d'un profil pour le test
+        # Initialisation des données de test
         cls.user = User.objects.create_user(username="testuser", password="12345")
-        cls.profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
+        cls.user_profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
 
     def test_custom_method(self):
         """
         Teste une méthode personnalisée du modèle Profile.
         Remplacez ceci par un test réel pour une méthode personnalisée.
         """
-        # Exemple de test (à remplacer par votre méthode personnalisée)
-        result = self.profile.favorite_city
+        # Utilisation du profil correct
+        result = self.user_profile.favorite_city
         expected_result = "Paris"  # Remplacez par le résultat attendu
         self.assertEqual(result, expected_result)
 
@@ -104,17 +115,17 @@ class ProfileModelTest(TestCase):
         """
         Teste la création d'un objet Profile et vérifie ses attributs.
         """
-        profile = Profile.objects.get(id=1)
-        self.assertTrue(isinstance(profile, Profile))
-        self.assertEqual(profile.user.username, "testuser")
-        self.assertEqual(profile.favorite_city, "Paris")
+        test_profile = Profile.objects.get(id=1)
+        self.assertTrue(isinstance(test_profile, Profile))
+        self.assertEqual(test_profile.user.username, "testuser")
+        self.assertEqual(test_profile.favorite_city, "Paris")
 
     def test_profile_str(self):
         """
         Teste la méthode __str__ du modèle Profile.
         """
-        profile = Profile.objects.get(id=1)
-        self.assertEqual(str(profile), profile.user.username)
+        test_profile = Profile.objects.get(id=1)
+        self.assertEqual(str(test_profile), test_profile.user.username)
 
     def test_favorite_city_field(self):
         """
@@ -124,15 +135,15 @@ class ProfileModelTest(TestCase):
         et qu'il peut être laissé vide.
         """
         # Vérifier le profil avec une ville favorite
-        profile_with_city = Profile.objects.get(user__username="testuser")
-        self.assertEqual(profile_with_city.favorite_city, "Paris")
+        test_profile_with_city = Profile.objects.get(user__username="testuser")
+        self.assertEqual(test_profile_with_city.favorite_city, "Paris")
 
         # Créer un autre profil sans ville favorite
         user_without_city = User.objects.create_user(
             username="testuser2", password="12345"
         )
-        profile_without_city = Profile.objects.create(user=user_without_city)
-        self.assertEqual(profile_without_city.favorite_city, "")
+        test_profile_without_city = Profile.objects.create(user=user_without_city)
+        self.assertEqual(test_profile_without_city.favorite_city, "")
 
 
 class IndexViewTestCase(TestCase):
