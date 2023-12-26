@@ -1,5 +1,4 @@
 .
-├── bandit_report.txt
 ├── lettings
 │   ├── admin.py
 │   ├── apps.py
@@ -22,6 +21,7 @@
 │   ├── urls.py
 │   ├── views.py
 │   └── wsgi.py
+├── oc-lettings-site_backup.sqlite3
 ├── oc-lettings-site.sqlite3
 ├── profiles
 │   ├── admin.py

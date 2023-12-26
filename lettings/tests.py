@@ -63,6 +63,46 @@ class AddressModelTestCase(TestCase):
         with self.assertRaises(ValidationError):
             address.full_clean()
 
+    def test_address_number_validation(self):
+        """
+        Teste la validation du numéro dans le modèle Address.
+
+        Vérifie si une exception ValidationError est levée lors de la saisie d'un numéro invalide.
+        """
+        with self.assertRaises(ValidationError):
+            address = Address(
+                number=10000,  # Numéro invalide (supérieur à 9999)
+                street="Main Street",
+                city="Cityville",
+                state="ST",
+                zip_code=12345,
+                country_iso_code="ABC",
+            )
+            address.full_clean()
+
+    def test_address_state_country_iso_code_validation(self):
+        """
+        Teste la validation des champs 'state' et 'country_iso_code' dans le modèle Address.
+
+        Vérifie si une exception ValidationError est levée pour des valeurs invalides.
+        """
+        # Test pour 'state'
+        with self.assertRaises(ValidationError):
+            address = Address(
+                number=123,
+                street="Main Street",
+                city="Cityville",
+                state="A",  # Longueur invalide
+                zip_code=12345,
+                country_iso_code="ABC",
+            )
+            address.full_clean()
+
+        # Test pour 'country_iso_code'
+        with self.assertRaises(ValidationError):
+            address.country_iso_code = "AB"  # Longueur invalide
+            address.full_clean()
+
 
 class LettingsViewTestCase(TestCase):
     """
@@ -127,3 +167,36 @@ class LettingViewTestCase(TestCase):
         response = self.client.get(reverse("lettings:letting", args=[self.letting.id]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["letting"], self.letting)
+
+    def setUp(self):
+        """
+        Fonction de configuration pour créer un objet Address avant chaque test.
+        """
+        Address.objects.create(
+            number=123,
+            street="Main Street",
+            city="Anytown",
+            state="AT",
+            zip_code=12345,
+            country_iso_code="USA",
+        )
+
+    def test_address_str(self):
+        """
+        Teste la méthode __str__ du modèle Address.
+
+        Vérifie que la méthode __str__ renvoie une chaîne formatée correctement
+        représentant l'adresse.
+        """
+        address = Address.objects.get(id=1)
+        self.assertEqual(str(address), "123 Main Street")
+
+    def test_letting_str(self):
+        """
+        Teste la méthode __str__ du modèle Letting.
+
+        Vérifie que la méthode __str__ renvoie correctement le titre de l'annonce
+        de location.
+        """
+        letting = Letting.objects.get(id=1)
+        self.assertEqual(str(letting), "Test Letting")

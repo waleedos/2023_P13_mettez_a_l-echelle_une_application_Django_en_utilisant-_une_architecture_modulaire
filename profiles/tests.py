@@ -1,8 +1,10 @@
 from django.urls import reverse, resolve
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import SimpleTestCase, TestCase
 from profiles.views import profile
 from profiles.models import Profile
+
+User = get_user_model()
 
 
 class ProfilesURLsTestCase(SimpleTestCase):
@@ -82,3 +84,132 @@ class ProfileModelMethodsTestCase(TestCase):
         result = self.profile.favorite_city
         expected_result = "Paris"  # Remplacez par le résultat attendu
         self.assertEqual(result, expected_result)
+
+
+class ProfileModelTest(TestCase):
+    """
+    Classe de test pour le modèle Profile.
+    Teste la création et les fonctionnalités du modèle Profile.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        # Création d'un utilisateur et d'un profil pour les tests
+        cls.user = get_user_model().objects.create_user(
+            username="testuser", password="12345"
+        )
+        Profile.objects.create(user=cls.user, favorite_city="Paris")
+
+    def test_profile_creation(self):
+        """
+        Teste la création d'un objet Profile et vérifie ses attributs.
+        """
+        profile = Profile.objects.get(id=1)
+        self.assertTrue(isinstance(profile, Profile))
+        self.assertEqual(profile.user.username, "testuser")
+        self.assertEqual(profile.favorite_city, "Paris")
+
+    def test_profile_str(self):
+        """
+        Teste la méthode __str__ du modèle Profile.
+        """
+        profile = Profile.objects.get(id=1)
+        self.assertEqual(str(profile), profile.user.username)
+
+    def test_favorite_city_field(self):
+        """
+        Teste le comportement du champ favorite_city du modèle Profile.
+
+        Vérifie que le champ peut stocker correctement une ville favorite,
+        et qu'il peut être laissé vide.
+        """
+        # Vérifier le profil avec une ville favorite
+        profile_with_city = Profile.objects.get(user__username="testuser")
+        self.assertEqual(profile_with_city.favorite_city, "Paris")
+
+        # Créer un autre profil sans ville favorite
+        user_without_city = User.objects.create_user(
+            username="testuser2", password="12345"
+        )
+        profile_without_city = Profile.objects.create(user=user_without_city)
+        self.assertEqual(profile_without_city.favorite_city, "")
+
+
+class IndexViewTestCase(TestCase):
+    """
+    Classe de test pour la vue index de l'application profiles.
+
+    Cette classe teste la fonctionnalité de la vue index,
+    vérifiant qu'elle renvoie la liste correcte des profils.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        # Création d'utilisateurs et de profils pour le test
+        number_of_profiles = 5
+        for profile_num in range(number_of_profiles):
+            user = User.objects.create_user(
+                username=f"testuser{profile_num}", password="12345"
+            )
+            Profile.objects.create(user=user, favorite_city=f"City{profile_num}")
+
+    def test_view_url_exists_at_desired_location(self):
+        """
+        Teste si l'URL de la vue index existe et est accessible.
+        """
+        response = self.client.get("/profiles/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        """
+        Teste si la vue index utilise le template correct.
+        """
+        response = self.client.get(reverse("profiles:profiles_index"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "profiles/index.html")
+
+    def test_lists_all_profiles(self):
+        """
+        Teste si la vue index affiche tous les profils créés.
+        """
+        response = self.client.get(reverse("profiles:profiles_index"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(len(response.context["profiles_list"]) == 5)
+
+
+class ProfileViewTestCase(TestCase):
+    """
+    Classe de test pour la vue profile de l'application profiles.
+
+    Cette classe teste la fonctionnalité de la vue profile,
+    en particulier la récupération et l'affichage des détails d'un profil utilisateur.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        # Création d'un utilisateur et d'un profil pour le test
+        cls.user = User.objects.create_user(username="testuser", password="12345")
+        cls.profile = Profile.objects.create(user=cls.user, favorite_city="Paris")
+
+    def test_view_url_exists_at_desired_location(self):
+        """
+        Teste si l'URL de la vue profile existe et est accessible.
+        """
+        response = self.client.get("/profiles/testuser/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        """
+        Teste si la vue profile utilise le template correct.
+        """
+        response = self.client.get(reverse("profiles:profile", args=["testuser"]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "profiles/profile.html")
+
+    def test_view_returns_correct_profile(self):
+        """
+        Teste si la vue profile renvoie les informations correctes du profil demandé.
+        """
+        response = self.client.get(reverse("profiles:profile", args=["testuser"]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["profile"], self.profile)

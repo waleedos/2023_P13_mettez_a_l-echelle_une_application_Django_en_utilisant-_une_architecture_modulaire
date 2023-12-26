@@ -1,0 +1,10 @@
+[run]
+omit = 
+    */tests.py
+    */*/tests.py
+    */*/*/tests.py
+
+[report]
+exclude_lines =
+    # Ne pas inclure les lignes qui ne seront pas exécutées
+    if __name__ == .__main__.:
