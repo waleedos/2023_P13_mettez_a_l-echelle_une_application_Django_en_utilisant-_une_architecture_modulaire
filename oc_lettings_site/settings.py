@@ -5,8 +5,10 @@ incluant les réglages de base de données, les configurations de sécurité,
 et d'autres paramètres importants.
 """
 import os
-
 from pathlib import Path
+import sentry_sdk
+import falcon
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,3 +126,81 @@ STATICFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+def initialize_sentry():
+    """
+    Initialise Sentry pour la surveillance des erreurs dans une application Django.
+
+    Cette fonction configure Sentry, un service de suivi des erreurs, pour qu'il soit utilisé avec
+    une application Django. Elle doit être appelée lors de l'initialisation de l'application pour
+    assurer que les erreurs et les problèmes sont correctement enregistrés et envoyés à Sentry.
+
+    Sentry aide à surveiller, à détecter et à réparer les erreurs en temps réel, en fournissant
+    des détails contextuels et des insights sur les défaillances de l'application.
+
+    Paramètres :
+    dsn (str): La clé DSN (Data Source Name) fournie par Sentry. Cette clé est unique à chaque
+               projet Sentry et est utilisée pour authentifier et diriger les données d'erreur
+               vers le bon projet dans Sentry. La clé DSN doit être obtenue à partir du tableau de
+               bord Sentry et doit être traitée comme une information sensible.
+
+    Retourne :
+    None
+
+    Exemple :
+    Pour initialiser Sentry dans une application Django, appelez cette fonction dans votre fichier
+    settings.py :
+
+        initialize_sentry()
+
+    Remarque :
+    - Il est important de garder la clé DSN confidentielle, car elle permet l'envoi de données à
+      votre projet Sentry.
+    - Vous pouvez ajuster la configuration supplémentaire pour contrôler ce qui est envoyé à
+      Sentry, comme la capture des erreurs de niveau DEBUG ou INFO, selon les besoins de votre
+      projet.
+
+    Pour plus d'informations, visitez la documentation officielle de Sentry :
+    https://docs.sentry.io/platforms/python/guides/django/
+    """
+
+    sentry_sdk.init(
+        dsn=(
+            "https://bff0ef1ae167a0c142715c65fd373865@"
+            "o4506465781219328.ingest.sentry.io/4506465814249472"
+        ),
+        # Set traces_sample_rate to 1.0 to capture 100%
+        # of transactions for performance monitoring.
+        traces_sample_rate=1.0,
+        # Set profiles_sample_rate to 1.0 to profile 100%
+        # of sampled transactions.
+        # We recommend adjusting this value in production.
+        profiles_sample_rate=1.0,
+    )
+
+
+# Appel de la fonction dans settings.py
+initialize_sentry()
+
+# Configuration de Falcon (si utilisé dans votre projet)
+api = falcon.API()
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "sentry": {
+            "level": "ERROR",  # le niveau est ajusté selon les besoins
+            "class": "sentry_sdk.integrations.logging.EventHandler",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["sentry"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}

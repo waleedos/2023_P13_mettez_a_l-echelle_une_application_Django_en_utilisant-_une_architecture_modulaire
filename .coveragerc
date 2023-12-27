@@ -1,8 +1,11 @@
 [run]
-omit = 
+omit =
     */tests.py
-    */*/tests.py
-    */*/*/tests.py
+    */migrations/*
+    manage.py
+    */wsgi.py
+    */asgi.py
+
 
 [report]
 exclude_lines =

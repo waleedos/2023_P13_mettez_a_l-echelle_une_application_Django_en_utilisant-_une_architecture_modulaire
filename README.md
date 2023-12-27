@@ -82,3 +82,17 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 pylint --load-plugins pylint_django lettings/
 
 pylint --load-plugins pylint_django .
+
+
+### Couverture des tests
+
+coverage run manage.py test
+
+###  Générer le Rapport de Couverture
+
+coverage report
+
+
+Ou pour un rapport en HTML :
+
+coverage html
