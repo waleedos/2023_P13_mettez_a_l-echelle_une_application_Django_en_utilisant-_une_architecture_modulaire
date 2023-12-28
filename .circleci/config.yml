@@ -10,10 +10,13 @@ jobs:
     steps:
       - checkout
       - run: pip install -r requirements.txt
+      - run:
+          name: Initialize Django
+          command: python -c "import django; django.setup()"
       - run: pylint --load-plugins pylint_django .
       - run:
           name: Run Tests
-          command: coverage report
+          command: coverage run --source='.' manage.py test
       - run:
           name: Check Test Coverage
           command: coverage report --fail-under=80
