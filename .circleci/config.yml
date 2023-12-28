@@ -3,8 +3,10 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.11.7
+    working_directory: ~/project
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
+      PYTHONPATH: ~/project
     steps:
       - checkout
       - run: pip install -r requirements.txt

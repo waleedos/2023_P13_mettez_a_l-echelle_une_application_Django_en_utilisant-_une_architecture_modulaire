@@ -11,4 +11,4 @@ lib
 .idea/
 .pytest_cache
 .pytest_cache/
-.coverage
+
