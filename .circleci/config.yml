@@ -6,7 +6,8 @@ jobs:
     working_directory: ~/oc_p13
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
-      PYTHONPATH: ~/oc_p13
+      # Mettre à jour le PYTHONPATH pour inclure le répertoire du projet
+      PYTHONPATH: /home/circleci/oc_p13:/home/oualid/Bureau/oc_p13
     steps:
       - checkout
       - run: pip install -r requirements.txt
@@ -20,3 +21,4 @@ jobs:
       - run:
           name: Check Test Coverage
           command: coverage report --fail-under=80
+
