@@ -12,7 +12,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run:
           name: Initialize Django for Pylint
-          command: python pylint_django_setup.py
+          command: python -c "import os; os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site.settings'; import django; django.setup()"
       - run: pylint --load-plugins pylint_django .
       - run:
           name: Run Tests
