@@ -5,8 +5,12 @@ qui prennent une requête web et retournent une réponse. Les vues interagissent
 avec le modèle Profile pour récupérer et envoyer des données à l'utilisateur.
 """
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Profile
+import logging
+
+# Configuration du logger pour ce module.
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -22,6 +26,7 @@ def index(request):
         HttpResponse: La réponse HTTP contenant le rendu du template index.html
         avec la liste des profils.
     """
+    logger.info("Affichage de la liste des profils.")
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
     return render(request, "profiles/index.html", context)
@@ -41,6 +46,7 @@ def profile(request, username):
         HttpResponse: La réponse HTTP contenant le rendu du template profile.html
         avec les détails du profil demandé.
     """
-    profile_instance = Profile.objects.get(user__username=username)
+    logger.info(f"Affichage du profil pour l'utilisateur : {username}")
+    profile_instance = get_object_or_404(Profile, user__username=username)
     context = {"profile": profile_instance}
     return render(request, "profiles/profile.html", context)

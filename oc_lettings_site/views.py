@@ -5,10 +5,15 @@ en déterminant comment les données sont présentées à l'utilisateur.
 """
 from django.shortcuts import render
 from django.http import HttpResponseNotFound
+import logging
+
+# Configuration du logger pour ce module.
+logger = logging.getLogger(__name__)
 
 
 def index(request):
-    """Vue pour la page d'accueil du site.
+    """
+    Vue pour la page d'accueil du site.
 
     Cette fonction gère la requête pour la page d'accueil ('/') du site.
     Elle rend le template 'index.html', qui est la page d'entrée de l'application.
@@ -19,6 +24,7 @@ def index(request):
     Returns:
         HttpResponse: La réponse HTTP avec le template 'index.html' rendu.
     """
+    logger.info("Affichage de la page d'accueil.")
     return render(request, "index.html")
 
 
@@ -36,6 +42,7 @@ def test_404(request):
     Returns:
         HttpResponseNotFound: Une réponse HTTP 404 contenant le contenu de la page "404.html".
     """
+    logger.warning("Page 404 demandée.")
     return HttpResponseNotFound(render(request, "404.html"))
 
 
@@ -46,6 +53,5 @@ def test_500(request):
     Args:
         request (HttpRequest): L'objet de requête HTTP reçu.
     """
-    raise ValueError(
-        "Test d'erreur 500"
-    )  # Provoque une erreur pour tester la page d'erreur 500
+    logger.error("Erreur interne du serveur déclenchée.")
+    raise ValueError("Test d'erreur 500")

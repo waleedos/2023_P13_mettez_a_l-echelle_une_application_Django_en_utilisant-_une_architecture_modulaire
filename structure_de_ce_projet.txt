@@ -17,6 +17,7 @@
 │   ├── asgi.py
 │   ├── models.py
 │   ├── settings.py
+│   ├── settings_test.py
 │   ├── tests.py
 │   ├── urls.py
 │   ├── views.py
@@ -54,4 +55,4 @@
     ├── base.html
     └── index.html
 
-14 directories, 40 files
+14 directories, 41 files

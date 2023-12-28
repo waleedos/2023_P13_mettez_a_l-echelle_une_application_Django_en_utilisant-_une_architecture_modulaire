@@ -76,7 +76,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
 
-
+-------------------------------------------------------------------------------------------------------------------------------
 ### pylint
 
 pylint --load-plugins pylint_django lettings/
@@ -84,15 +84,52 @@ pylint --load-plugins pylint_django lettings/
 pylint --load-plugins pylint_django .
 
 
+-------------------------------------------------------------------------------------------------------------------------------
 ### Couverture des tests
 
 coverage run manage.py test
 
 ###  Générer le Rapport de Couverture
-
+```
 coverage report
-
+```
 
 Ou pour un rapport en HTML :
-
+```
 coverage html
+```
+-------------------------------------------------------------------------------------------------------------------------------
+### Integration de Sentry:
+Apres avoir integrer Sentry dans le fichier settins.py, et apres avoir mis et changer sa clé SDN
+dans une variable d'environnement (.env), il faut provoquer une erreur pour tester si mon code renvoi bien 
+ce que nous attendons vers Sentry : 
+
+#### Étape 1 : Créer une Vue de Test
+Créez une vue dans l'un de vos fichiers de vues, par exemple dans views.py de votre application oc_lettings_site :
+
+```
+from django.http import HttpResponse
+
+def error_test(request):
+    raise Exception("Ceci est une erreur de test pour Sentry.")
+    return HttpResponse("Cette réponse ne sera jamais atteinte.")
+```
+
+#### Étape 2 : Ajouter l'URL de la Vue de Test
+Ajoutez une URL pour cette vue dans votre fichier urls.py. Si vous l'ajoutez dans oc_lettings_site/urls.py, cela ressemblerait à ceci :
+```
+from django.urls import path
+from .views import error_test  # Assurez-vous d'importer la vue
+
+urlpatterns = [
+    # Vos autres URL ici...
+    path('sentry-test/', error_test, name='sentry-test'),  # Ajoutez cette ligne
+]
+```
+
+#### Étape 3 : Testez la Vue
+Lancez votre serveur de développement Django avec python manage.py runserver.
+Ouvrez un navigateur web et accédez à l'URL de la vue de test (par exemple, http://localhost:8000/sentry-test/).
+Cette action déclenchera l'exception définie dans votre vue error_test, que Sentry devrait capturer.
+
+-------------------------------------------------------------------------------------------------------------------------------

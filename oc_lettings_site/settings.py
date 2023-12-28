@@ -5,9 +5,14 @@ incluant les réglages de base de données, les configurations de sécurité,
 et d'autres paramètres importants.
 """
 import os
+from dotenv import load_dotenv
 from pathlib import Path
 import sentry_sdk
 import falcon
+
+
+# Charger les variables d'environnement du fichier .env
+load_dotenv()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -166,10 +171,10 @@ def initialize_sentry():
     """
 
     sentry_sdk.init(
-        dsn=(
-            "https://bff0ef1ae167a0c142715c65fd373865@"
-            "o4506465781219328.ingest.sentry.io/4506465814249472"
-        ),
+        dsn=os.getenv(
+            "SENTRY_DSN", ""
+        ),  # Utilisez une valeur par défaut vide si la variable
+        # n'est pas définie
         # Set traces_sample_rate to 1.0 to capture 100%
         # of transactions for performance monitoring.
         traces_sample_rate=1.0,
@@ -184,7 +189,7 @@ def initialize_sentry():
 initialize_sentry()
 
 # Configuration de Falcon (si utilisé dans votre projet)
-api = falcon.API()
+api = falcon.App()
 
 
 LOGGING = {
@@ -192,15 +197,37 @@ LOGGING = {
     "disable_existing_loggers": False,
     "handlers": {
         "sentry": {
-            "level": "ERROR",  # le niveau est ajusté selon les besoins
+            "level": "WARNING",  # Capture à partir du niveau WARNING pour Sentry
             "class": "sentry_sdk.integrations.logging.EventHandler",
+        },
+        "console": {
+            "class": "logging.StreamHandler",
         },
     },
     "loggers": {
+        # Logger pour l'application Django principale
         "django": {
-            "handlers": ["sentry"],
-            "level": "ERROR",
+            "handlers": ["sentry", "console"],
+            "level": "WARNING",
             "propagate": True,
+        },
+        # Logger pour l'application 'lettings'
+        "lettings": {
+            "handlers": ["sentry", "console"],
+            "level": "INFO",  # Capture un niveau de log détaillé pour 'lettings'
+            "propagate": False,
+        },
+        # Logger pour l'application 'profiles'
+        "profiles": {
+            "handlers": ["sentry", "console"],
+            "level": "INFO",  # Capture un niveau de log détaillé pour 'profiles'
+            "propagate": False,
+        },
+        # Logger pour votre application principale 'oc_lettings_site'
+        "oc_lettings_site": {
+            "handlers": ["sentry", "console"],
+            "level": "INFO",  # Capture un niveau de log détaillé pour 'oc_lettings_site'
+            "propagate": False,
         },
     },
 }

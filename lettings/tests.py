@@ -169,7 +169,8 @@ class LettingViewTestCase(TestCase):
         """
         response = self.client.get(reverse("lettings:letting", args=[self.letting.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context["letting"], self.letting)
+        self.assertEqual(response.context["title"], self.letting.title)
+        self.assertEqual(response.context["address"], self.letting.address)
 
     def setUp(self):
         """

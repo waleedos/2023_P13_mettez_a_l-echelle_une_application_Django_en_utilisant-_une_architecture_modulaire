@@ -9,6 +9,8 @@ from django.urls import path, include
 from . import views
 from .views import test_404, test_500
 
+# from .views import error_test  # Pour l'erreur de test de Sentry
+
 # Liste des motifs d'URL pour le projet oc_lettings_site.
 # Chaque motif d'URL est associé à une vue spécifique.
 urlpatterns = [
@@ -26,4 +28,6 @@ urlpatterns = [
     # Chemin pour la page 404 qui gère ce type d'erreur
     path("test-500/", test_500),
     # Chemin pour la page 500 qui gère ce type d'erreur
+    # path("sentry-test/", error_test, name="sentry-test"),
+    # Juste pour tester Sentry
 ]
