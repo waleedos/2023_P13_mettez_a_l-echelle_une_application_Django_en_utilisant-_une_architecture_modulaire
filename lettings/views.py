@@ -4,9 +4,9 @@ Ce module contient les vues pour l'application lettings, définissant comment le
 sont présentées à l'utilisateur dans les templates HTML.
 """
 
+import logging
 from django.shortcuts import render, get_object_or_404
 from .models import Letting
-import logging
 
 # Configuration du logger pour ce module.
 logger = logging.getLogger(__name__)

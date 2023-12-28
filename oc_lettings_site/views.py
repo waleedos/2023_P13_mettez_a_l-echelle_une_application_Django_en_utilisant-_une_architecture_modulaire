@@ -3,9 +3,9 @@
 Ce module définit les vues principales de l'application oc_lettings_site,
 en déterminant comment les données sont présentées à l'utilisateur.
 """
+import logging
 from django.shortcuts import render
 from django.http import HttpResponseNotFound
-import logging
 
 # Configuration du logger pour ce module.
 logger = logging.getLogger(__name__)

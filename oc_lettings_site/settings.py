@@ -5,8 +5,8 @@ incluant les réglages de base de données, les configurations de sécurité,
 et d'autres paramètres importants.
 """
 import os
-from dotenv import load_dotenv
 from pathlib import Path
+from dotenv import load_dotenv
 import sentry_sdk
 import falcon
 
