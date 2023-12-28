@@ -1,0 +1,19 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.11.7  # Remplacez par votre version de Python
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: Run Linting
+          command: pylint --load-plugins pylint_django .
+      - run:
+          name: Run Tests
+          command: coverage run manage.py test
+      - run:
+          name: Check Test Coverage
+          command: coverage report --fail-under=80
