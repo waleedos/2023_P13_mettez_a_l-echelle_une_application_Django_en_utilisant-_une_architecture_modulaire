@@ -2,15 +2,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.11.7  # Remplacez par votre version de Python
+      - image: cimg/python:3.11.7
+    environment:
+      DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
     steps:
       - checkout
-      - run:
-          name: Install Dependencies
-          command: pip install -r requirements.txt
-      - run:
-          name: Run Linting
-          command: pylint --load-plugins pylint_django .
+      - run: pip install -r requirements.txt
+      - run: pylint --load-plugins pylint_django .
       - run:
           name: Run Tests
           command: coverage run manage.py test
