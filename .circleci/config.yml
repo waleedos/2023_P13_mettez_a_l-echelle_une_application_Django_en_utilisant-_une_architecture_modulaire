@@ -3,16 +3,16 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.11.7
-    working_directory: ~/project
+    working_directory: ~/oc_p13
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
-      PYTHONPATH: ~/project
+      PYTHONPATH: ~/oc_p13
     steps:
       - checkout
       - run: pip install -r requirements.txt
       - run:
-          name: Initialize Django
-          command: python -c "import django; django.setup()"
+          name: Initialize Django for Pylint
+          command: python pylint_django_setup.py
       - run: pylint --load-plugins pylint_django .
       - run:
           name: Run Tests
