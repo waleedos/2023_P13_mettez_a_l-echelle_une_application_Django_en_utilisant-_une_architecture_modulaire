@@ -133,3 +133,29 @@ Ouvrez un navigateur web et accédez à l'URL de la vue de test (par exemple, ht
 Cette action déclenchera l'exception définie dans votre vue error_test, que Sentry devrait capturer.
 
 -------------------------------------------------------------------------------------------------------------------------------
+
+### CERCLECI
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.11.7
+    working_directory: ~/oc_p13
+    environment:
+      DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
+      # Mettre à jour le PYTHONPATH pour inclure le répertoire du projet
+      PYTHONPATH: /home/circleci/oc_p13:/home/oualid/Bureau/oc_p13
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run:
+          name: Initialize Django for Pylint
+          command: python -c "import os; os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site.settings'; import django; django.setup()"
+      - run: pylint --load-plugins pylint_django .
+      - run:
+          name: Run Tests
+          command: coverage run --source='.' manage.py test
+      - run:
+          name: Check Test Coverage
+          command: coverage report --fail-under=80
+
