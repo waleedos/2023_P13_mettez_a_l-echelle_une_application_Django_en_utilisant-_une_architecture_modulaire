@@ -159,3 +159,6 @@ jobs:
           name: Check Test Coverage
           command: coverage report --fail-under=80
 
+### Docker : 
+
+docker build -t orange_county_lettings .
