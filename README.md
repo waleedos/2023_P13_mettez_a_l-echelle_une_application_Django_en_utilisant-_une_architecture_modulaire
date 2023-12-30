@@ -159,6 +159,55 @@ jobs:
           name: Check Test Coverage
           command: coverage report --fail-under=80
 
+------------------------------------------------------------------------------------------------------------
+
 ### Docker : 
 
+#### Installez Docker avant tout:
+Cela depend de votre systeme d'exploitation, mais cela est facile que ce soit sur windows, mac ou linux.
+
+#### Créer votre image du projet docker :
 docker build -t orange_county_lettings .
+
+#### (pour la reconstruction de l'image sans utiliser le cache peut résoudre des problèmes inattendus.)
+docker build --no-cache -t orange_county_lettings .
+
+#### Créez un compte sur Docker Hub 
+oui, sur https://hub.docker.com/
+
+#### Connectez-vous à Docker Hub
+depuis votre terminal en utilisant la commande (docker login).
+
+#### Possez votre image ver le repository Docker : 
+
+Taguez votre image Docker avec votre nom d'utilisateur Docker Hub et un tag approprié, par exemple en utilisant le hash de commit ou une version. Utilisez la commande suivante :
+```
+docker tag orange_county_lettings [votre_nom_utilisateur_docker]/orange_county_lettings:tag
+```
+
+Remplacez [votre_nom_utilisateur_docker] par votre nom d'utilisateur Docker Hub et tag par le tag que vous souhaitez utiliser.
+Poussez l'image sur Docker Hub en utilisant la commande :
+```
+docker push [votre_nom_utilisateur_docker]/orange_county_lettings:1.0
+```
+
+Dans mons cas, voici la commande complete : 
+```
+docker push waleedos/orange_county_lettings:1.0
+```
+
+#### Téléchargez l'image depuis Docker Hub :
+```
+sudo docker pull waleedos/orange_county_lettings:1.0
+
+```
+#### Pour démarrer le projet sur votre machine : 
+```
+sudo docker run -p 8000:8000 waleedos/orange_county_lettings:1.0
+
+et
+
+ouvrez votre navigateur, et allez sur la page : 127.0.0.1:8000
+
+```
+
