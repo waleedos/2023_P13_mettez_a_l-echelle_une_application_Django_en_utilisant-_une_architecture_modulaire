@@ -211,3 +211,9 @@ ouvrez votre navigateur, et allez sur la page : 127.0.0.1:8000
 
 ```
 
+###############################################################################################
+pytest
+
+pylint --load-plugins pylint_django .
+
+coverage report
