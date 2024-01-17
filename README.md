@@ -217,3 +217,5 @@ pytest
 pylint --load-plugins pylint_django .
 
 coverage report
+
+Nous allons maintenant 
