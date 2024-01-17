@@ -178,7 +178,7 @@ oui, sur https://hub.docker.com/
 #### Connectez-vous à Docker Hub
 depuis votre terminal en utilisant la commande (docker login).
 
-#### Possez votre image ver le repository Docker : 
+#### Poussez votre image ver le repository Docker : 
 
 Taguez votre image Docker avec votre nom d'utilisateur Docker Hub et un tag approprié, par exemple en utilisant le hash de commit ou une version. Utilisez la commande suivante :
 ```
