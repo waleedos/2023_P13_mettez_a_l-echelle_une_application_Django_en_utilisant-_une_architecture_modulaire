@@ -224,3 +224,28 @@ Nous allons maintenant
 clé pour deployer automatiquement le projet :
 
 https://api.render.com/deploy/srv-cmjpp36n7f5s73cdqm1g?key=Ql4DtbgsdBs
+
+
+
+# Les commande necessaire pour docker et Render :
+
+Pour collecter tous les (statics) et les mettre dans un seul endroit : 
+```
+python manage.py collectstatic
+```
+
+
+Pour construire une nouvelle image Docker
+```
+docker build -t orange_county_lettings:latest-2 .
+```
+
+Pour tager la nouvelle image sur Docker : 
+```
+docker tag orange_county_lettings:latest-2 waleedos/orange_county_lettings:latest-2
+```
+
+Pour envoyer la nouvelle image tagée sur Docker : 
+```
+docker push waleedos/orange_county_lettings:latest-2
+```

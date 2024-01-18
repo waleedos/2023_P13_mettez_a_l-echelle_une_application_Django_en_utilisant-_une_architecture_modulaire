@@ -132,7 +132,9 @@ STATICFILES_DIRS = [
 ]
 
 # Configuration pour WhiteNoise
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGES = [
+    ("staticfiles", "whitenoise.storage.CompressedManifestStaticFilesStorage"),
+]
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
