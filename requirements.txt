@@ -58,3 +58,4 @@ sqlparse==0.4.4
 stevedore==5.1.0
 tomlkit==0.12.3
 urllib3==2.1.0
+whitenoise==6.6.0

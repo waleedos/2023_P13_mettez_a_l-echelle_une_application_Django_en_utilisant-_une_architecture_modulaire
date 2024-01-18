@@ -219,3 +219,8 @@ pylint --load-plugins pylint_django .
 coverage report
 
 Nous allons maintenant 
+
+
+clé pour deployer automatiquement le projet :
+
+https://api.render.com/deploy/srv-cmjpp36n7f5s73cdqm1g?key=Ql4DtbgsdBs
