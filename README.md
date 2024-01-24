@@ -144,7 +144,7 @@ jobs:
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
       # Mettre à jour le PYTHONPATH pour inclure le répertoire du projet
-      PYTHONPATH: /home/circleci/oc_p13:/home/oualid/Bureau/oc_p13
+      PYTHONPATH: /home/circleci/oc_p13:/home/walid/Bureau/oc_p13
     steps:
       - checkout
       - run: pip install -r requirements.txt
@@ -218,7 +218,7 @@ pylint --load-plugins pylint_django .
 
 coverage report
 
-Nous allons maintenant 
+# Nous allons maintenant 
 
 
 clé pour deployer automatiquement le projet :
@@ -249,3 +249,8 @@ Pour envoyer la nouvelle image tagée sur Docker :
 ```
 docker push waleedos/orange_county_lettings:latest-2
 ```
+
+
+# liens du site déployé :
+
+https://oc-p13-a8c2.onrender.com/
