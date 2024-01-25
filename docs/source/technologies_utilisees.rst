@@ -66,6 +66,13 @@ L'intégration de Sentry pour le suivi des erreurs et l'utilisation de logs stra
 Un pipeline CI/CD complet est mis en place, incluant la compilation, les tests, la conteneurisation avec Docker, et le déploiement sur une plateforme choisie (comme Render). Cette approche garantit un processus de déploiement fluide et fiable.
 
 
-**Conclusion**
-------------
+**Conclusion et Prérequis**
+-------------------------
+
+- Compte GitHub avec accès en lecture à ce repository
+- Git CLI
+- SQLite3 CLI
+- Interpréteur Python, version 3.6 ou supérieure
+
+Dans le reste de la documentation sur le développement local, il est supposé que la commande **python** de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
 Cet ensemble de technologies et de pratiques illustre un engagement envers la qualité, l'efficacité et la scalabilité dans le développement de logiciels modernes. La documentation technique, créée avec Sphinx et hébergée sur Read The Docs, en est un témoignage supplémentaire, facilitant la compréhension et la collaboration future sur le projet.
