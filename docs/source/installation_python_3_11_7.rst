@@ -1,4 +1,6 @@
 **Introduction à l'Installation de Python 3.11.7 sur Linux**
+------------------------------------------------------------
+
 Cette documentation détaille le processus d'installation de notre projet sur un système d'exploitation Linux. 
 
 Il est essentiel de noter que le choix de Linux comme environnement de développement et de déploiement est motivé par sa stabilité, sa sécurité, et sa flexibilité, des qualités appréciées dans le développement de logiciels modernes. 
@@ -13,60 +15,75 @@ Suivre ces instructions garantit une installation fluide et un environnement de 
 
 Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.
 
-#. Étape 1: Télécharger la dernière version de Python
-   .. code:: shell
-    sudo apt-get update
+#. **Étape 1: Télécharger la dernière version de Python**
 
    .. code:: shell
-    sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+
+       sudo apt-get update
+       sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+
+   Allez sur le site officiel de `Python <https://www.python.org/>`_ et trouvez l'URL de la dernière version de Python 3 en format .tar.xz.
+
+   Utilisez wget pour télécharger le fichier :
+   
+   .. code:: shell
+
+       wget [URL_du_fichier_python.tar.xz]
+
+   Dézipper le fichier téléchargé pour accéder à son contenu :
+   
+   .. code:: shell
+
+       tar -xf [Nom_du_fichier_python.tar.xz]
+
+   Accédez au répertoire extrait :
+   
+   .. code:: shell
+
+       cd [Nom_du_répertoire_extrait]
+
+#. **Étape 2: Configurez les options de compilation**
 
    .. code:: shell
-    sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 
-Allez sur le site officiel de `Python <https://www.python.org/>`_ et trouvez l'URL de la dernière version de Python 3 en format .tar.xz.
+       ./configure --enable-optimizations --prefix=/opt/python3.11
 
-
-#. Utilisez wget pour télécharger le fichier :
+   Compilez Python :
+   
    .. code:: shell
-    wget [URL_du_fichier_python.tar.xz]
 
-#. Dézipper le fichier téléchargé pour accéder à son contenu :
+       make -j 4
+
+   Installez Python dans le répertoire /opt :
+   
    .. code:: shell
-    tar -xf [Nom_du_fichier_python.tar.xz]
 
-#. Accédez au répertoire extrait :
+       sudo make altinstall
+
+#. **Étape 3: Créer un environnement virtuel**
+
+   Installez le package virtualenv si ce n'est pas déjà fait : 
+   
    .. code:: shell
-    cd [Nom_du_répertoire_extrait]
 
-#. Étape 2: Configurez les options de compilation :
+       sudo apt-get install python3-virtualenv
+
+   Créez un répertoire pour votre environnement virtuel :
+   
    .. code:: shell
-    ./configure --enable-optimizations --prefix=/opt/python3.11
 
-#. Compilez Python :
-    .. code:: shell
-    make -j 4
+       mkdir venv
 
-#. Installez Python dans le répertoire /opt :
-    .. code:: shell
-    sudo make altinstall
+   Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :
+   
+   .. code:: shell
 
-#. Étape 3: Créer un environnement virtuel :
-#. Installez le package virtualenv si ce n'est pas déjà fait : 
-    .. code:: shell
-    sudo apt-get install python3-virtualenv
+       virtualenv --python=/opt/python3.11/bin/python3.11 venv/
 
-#. Créez un répertoire pour votre environnement virtuel :
-    .. code:: shell
-    mkdir venv
+#. **Étape 4: Activer l'environnement virtuel**
 
-#. Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :
-        .. code:: shell
-        virtualenv --python=/opt/python3.11/bin/python3.11 venv/
+   .. code:: shell
 
-
-#. Étape 4: Activer l'environnement virtuel
-        .. code:: shell
-        source venv/bin/activate
-
+       source venv/bin/activate
 
 Vous devriez maintenant avoir un environnement virtuel fonctionnel qui utilise la version 3.11.7 de Python 3 que vous avez installée, sans affecter la version globale de Python sur votre machine Linux.
