@@ -24,19 +24,19 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 
    Allez sur le site officiel de `Python <https://www.python.org/>`_ et trouvez l'URL de la dernière version de Python 3 en format .tar.xz.
 
-   Utilisez wget pour télécharger le fichier :
+   **Utilisez wget pour télécharger le fichier :**
    
    .. code:: shell
 
        wget [URL_du_fichier_python.tar.xz]
 
-   Dézipper le fichier téléchargé pour accéder à son contenu :
+   **Dézipper le fichier téléchargé pour accéder à son contenu :**
    
    .. code:: shell
 
        tar -xf [Nom_du_fichier_python.tar.xz]
 
-   Accédez au répertoire extrait :
+   **Accédez au répertoire extrait :**
    
    .. code:: shell
 
@@ -48,13 +48,13 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 
        ./configure --enable-optimizations --prefix=/opt/python3.11
 
-   Compilez Python :
+   **Compilez Python :**
    
    .. code:: shell
 
        make -j 4
 
-   Installez Python dans le répertoire /opt :
+   **Installez Python dans le répertoire /opt :**
    
    .. code:: shell
 
@@ -62,19 +62,19 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 
 #. **Étape 3: Créer un environnement virtuel**
 
-   Installez le package virtualenv si ce n'est pas déjà fait : 
+   **Installez le package virtualenv si ce n'est pas déjà fait :**
    
    .. code:: shell
 
        sudo apt-get install python3-virtualenv
 
-   Créez un répertoire pour votre environnement virtuel :
+   **Créez un répertoire pour votre environnement virtuel :**
    
    .. code:: shell
 
        mkdir venv
 
-   Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :
+   **Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :**
    
    .. code:: shell
 
