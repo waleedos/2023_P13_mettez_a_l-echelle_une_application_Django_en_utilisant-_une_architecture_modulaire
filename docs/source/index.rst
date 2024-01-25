@@ -23,6 +23,7 @@ Le projet **Orange County Lettings** représente un Scénario d'apprentissage so
    :caption: Contents:
 
 
+   À propos
    Technologies utilisées
    Installation du projet
    Demarrage rapide
