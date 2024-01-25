@@ -39,7 +39,7 @@ Activez votre environnement virtuel (vide jusqu'à maintenant)
        source venv/bin/activate
 
 
-Installez toutes les packets et dépendances de ce projet :
+Installez tous les packets et dépendances de ce projet :
    .. code:: shell
 
        pip install --requirement requirements.txt
