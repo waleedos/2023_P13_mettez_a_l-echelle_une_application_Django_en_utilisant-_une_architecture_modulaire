@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: docs/images/oc_parcours_dev_python.png
+.. image:: images/oc_parcours_dev_python.png
    :align: center
 
 
