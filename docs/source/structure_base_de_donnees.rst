@@ -40,6 +40,6 @@ Lancer une requête sur la table des profils pour filtrer uniquement les enregis
 
 **Voici le diagramme de notre base de données**
 
-.. image:: docs/source/images/diagramme.png
+.. image:: /images/diagramme.png
    :align: center
 
