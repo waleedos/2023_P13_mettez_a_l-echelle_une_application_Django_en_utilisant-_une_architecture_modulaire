@@ -21,16 +21,17 @@ Avec SSH
        git clone git@github.com:waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git            
 
 
-#. Dézippé le fichier téléchargé par clone :
+Dézippé le fichier téléchargé par clone :
    .. code:: shell
 
        unzip nom_du_fichier.zip
 
 
-#. Executez le projet localement :
+Allez dans le dossier dézippé :
    .. code:: shell
 
        cd /path/to/nom_du_dossier_dézippé
+
 
 Activez votre environnement virtuel (vide jusqu'à maintenant)
    .. code:: shell
