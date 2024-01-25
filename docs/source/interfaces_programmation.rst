@@ -4,7 +4,7 @@ Documentation des Interfaces de Programmation
 
 #. **Interfaces de Programmation pour l'application (oc_lettings_site)**
 
-    A- Page d'Accueil :
+A- Page d'Accueil :
 
         +-------------------+------------------------------------------------+
         | **Description**   | Affiche la page d'accueil du site.             |
@@ -19,18 +19,19 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------+
 
         Exemple de Réponse:
-        .. code:: shell
+.. code:: shell
 
-            <html>
-            <head>
-                <title>Page d'Accueil</title>
-            </head>
-            <body>
-                <h1>Bienvenue sur le site OC Lettings</h1>
-            </body>
-            </html>       
+    <html>
+        <head>
+            <title>Page d'Accueil</title>
+        </head>
+        <body>
+            <h1>Bienvenue sur le site OC Lettings</h1>
+        </body>
+    </html>       
 
-    B- Test d'Erreur 404 :
+
+B- Test d'Erreur 404 :
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Provoque intentionnellement une erreur 404 pour tester la        |
@@ -47,18 +48,19 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------------------------+
 
         Exemple de Réponse:
-        .. code:: shell
+.. code:: shell
 
-           <html>
-           <head>
-               <title>Erreur 404</title>
-           </head>
-           <body>
-               <h1>Page non trouvée</h1>
-           </body>
-           </html>
+    <html>
+        <head>
+            <title>Erreur 404</title>
+        </head>
+        <body>
+            <h1>Page non trouvée</h1>
+        </body>
+    </html>
 
-    C- Test d'Erreur 500 :
+
+C- Test d'Erreur 500 :
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Provoque intentionnellement une erreur 500 pour tester la        |
@@ -75,21 +77,21 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------------------------+
 
         Exemple de Réponse:
-        .. code:: shell
+.. code:: shell
 
-           <html>
-           <head>
-               <title>Erreur 500</title>
-           </head>
-           <body>
-               <h1>Erreur interne du serveur</h1>
-           </body>
-           </html>
+    <html>
+        <head>
+            <title>Erreur 500</title>
+        </head>
+        <body>
+            <h1>Erreur interne du serveur</h1>
+        </body>
+    </html>
                   
 
 #. **Interfaces de Programmation pour l'application (lettings)**
 
-    A- Endpoint /lettings/ (URL lettings_index):
+A- Endpoint /lettings/ (URL lettings_index):
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Cette vue affiche une liste de toutes les locations disponibles. |
@@ -107,14 +109,15 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------------------------+
 
         Exemple de Réponse:
-        .. code:: shell
+.. code:: shell
 
-           lettings_list = Letting.objects.all()
-           context = {"lettings_list": lettings_list}
-           return render(request, "lettings/index.html", context)
-        
+    lettings_list = Letting.objects.all()
+    context = {"lettings_list": lettings_list}
+    return render(request, "lettings/index.html", context)
 
-    B- Endpoint /lettings/<letting_id>/ (URL letting):
+
+
+B- Endpoint /lettings/<letting_id>/ (URL letting):
 
         +-------------------+----------------------------------------------------------------------------------------+
         | **Description**   | Cette vue affiche les détails d'une location spécifique. Elle récupère une instance    |
@@ -130,13 +133,13 @@ Documentation des Interfaces de Programmation
         +-------------------+----------------------------------------------------------------------------------------+
 
         Exemple de Réponse:
-        .. code:: shell
+.. code:: shell
 
-           specific_letting = get_object_or_404(Letting, id=letting_id)
-           context = {"title": specific_letting.title, "address": specific_letting.address}
-           return render(request, "lettings/letting.html", context)
+    specific_letting = get_object_or_404(Letting, id=letting_id)
+    context = {"title": specific_letting.title, "address": specific_letting.address}
+    return render(request, "lettings/letting.html", context)
 
 
-        Ces informations détaillées permettront une meilleure compréhension de l'interaction avec l'application lettings via ses interfaces. La gestion des erreurs, comme la gestion des cas où un letting spécifique n'est pas trouvé (get_object_or_404), est également intégrée dans les vues.
+Ces informations détaillées permettront une meilleure compréhension de l'interaction avec l'application lettings via ses interfaces. La gestion des erreurs, comme la gestion des cas où un letting spécifique n'est pas trouvé (get_object_or_404), est également intégrée dans les vues.
 
 
