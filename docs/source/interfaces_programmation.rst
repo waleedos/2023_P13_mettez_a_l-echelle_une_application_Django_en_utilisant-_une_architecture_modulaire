@@ -4,6 +4,8 @@ Documentation des Interfaces de Programmation
 
 #. **Interfaces de Programmation pour oc_lettings_site**
 
+**- a- Page d'Accueil :**
+
 +-------------------+------------------------------------------------+
 | **Description**   | Affiche la page d'accueil du site.             |
 +-------------------+------------------------------------------------+
