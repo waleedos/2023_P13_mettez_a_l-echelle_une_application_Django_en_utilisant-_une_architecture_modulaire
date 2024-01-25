@@ -136,7 +136,7 @@ Documentation des Interfaces de Programmation
            context = {"title": specific_letting.title, "address": specific_letting.address}
            return render(request, "lettings/letting.html", context)
 
+
         Ces informations détaillées permettront une meilleure compréhension de l'interaction avec l'application lettings via ses interfaces. La gestion des erreurs, comme la gestion des cas où un letting spécifique n'est pas trouvé (get_object_or_404), est également intégrée dans les vues.
 
 
-        
