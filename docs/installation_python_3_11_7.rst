@@ -22,8 +22,10 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 **Étape 1: Télécharger la dernière version de Python**
 
     .. code:: shell
+
         sudo apt-get update
         sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+
 
     Allez sur le site officiel de `Python <https://www.python.org/>`_ et trouvez l'URL de la dernière version de Python 3 en format .tar.xz.
 
@@ -32,6 +34,7 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
     Utilisez wget pour télécharger le fichier :
 
     .. code:: shell
+
         wget [URL_du_fichier_python.tar.xz]
 
 
@@ -39,6 +42,7 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
     Dézipper le fichier téléchargé pour accéder à son contenu :
 
     .. code:: shell
+
         tar -xf [Nom_du_fichier_python.tar.xz]
 
 
@@ -46,6 +50,7 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
     Accédez au répertoire extrait :
 
     .. code:: shell
+
         cd [Nom_du_répertoire_extrait]
 
 
@@ -53,16 +58,19 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 **Étape 2: Configurez les options de compilation**
 
     .. code:: shell
+
         ./configure --enable-optimizations --prefix=/opt/python3.11
 
 
     Compilez Python :
     .. code:: shell
+
         make -j 4
 
 
     Installez Python dans le répertoire /opt :
     .. code:: shell
+
         sudo make altinstall
 
 
@@ -72,21 +80,25 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
     Installez le package virtualenv si ce n'est pas déjà fait :
 
     .. code:: shell
+
         sudo apt-get install python3-virtualenv
 
 
     Créez un répertoire pour votre environnement virtuel :
     .. code:: shell
+
         mkdir venv
 
 
     Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :
     .. code:: shell
+
         virtualenv --python=/opt/python3.11/bin/python3.11 venv/
 
 
 **Étape 4: Activer l'environnement virtuel**
     .. code:: shell
+        
         source venv/bin/activate
 
 

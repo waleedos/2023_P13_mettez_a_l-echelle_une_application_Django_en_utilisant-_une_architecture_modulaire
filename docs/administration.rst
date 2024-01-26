@@ -13,6 +13,7 @@ Aller sur l’url suivante (dans le cas d’un test en local):
 Connectez-vous en tant qu'administrateur avec les identifiants suivants : 
 
 .. code:: shell
+   
    user     :  admin
    password :  Abc1234!
 

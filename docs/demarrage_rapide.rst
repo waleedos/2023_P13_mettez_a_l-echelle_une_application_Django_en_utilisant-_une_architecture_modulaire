@@ -1,26 +1,30 @@
 Demarrage rapide
 ----------------
 
-S'assurer que vous etes dans le repertoire du projet :
-   .. code:: shell
+**S'assurer que vous etes dans le repertoire du projet :**
 
-      cd [Nom_du_répertoire_du projet]
+.. code:: shell
 
-
-S'assurer que votre environnement virtuel est activé :
-   .. code:: shell
-
-      source venv/bin/activate
+   cd [Nom_du_répertoire_du projet]
 
 
-Démarrez le serveur Django :
-   .. code:: shell
+**S'assurer que votre environnement virtuel est activé :**
 
-      python manage.py runserver
+.. code:: shell
+
+   source venv/bin/activate
 
 
-Aller sur la page du projet dans un navigateur.
-   .. code:: shell
+**Démarrez le serveur Django :**
 
-      http://localhost:8000
+.. code:: shell
+
+   python manage.py runserver
+
+
+**Aller sur la page du projet dans un navigateur:**
+
+.. code:: shell
+
+   http://localhost:8000
 
