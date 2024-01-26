@@ -79,10 +79,9 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 -------------------------------------------------------------------------------------------------------------------------------
 ### pylint
 
-pylint --load-plugins pylint_django lettings/
+export PYTHONPATH=$PYTHONPATH:/home/walid/Bureau/oc_p13
 
 pylint --load-plugins pylint_django .
-
 
 -------------------------------------------------------------------------------------------------------------------------------
 ### Couverture des tests

@@ -1,11 +1,11 @@
-Documentation des Interfaces de Programmation
----------------------------------------------
+Les Interfaces de Programmation
+-------------------------------
 
 
 **Interfaces de Programmation pour l'application (oc_lettings_site)**
--------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1- Page d'Accueil :
+**1- Page d'Accueil :**
 
         +-------------------+------------------------------------------------+
         | **Description**   | Affiche la page d'accueil du site.             |
@@ -20,6 +20,7 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------+
 
         Exemple de Réponse:
+
 .. code:: shell
 
     <html>
@@ -32,7 +33,7 @@ Documentation des Interfaces de Programmation
     </html>       
 
 
-2- Test d'Erreur 404 :
+**2- Test d'Erreur 404 :**
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Provoque intentionnellement une erreur 404 pour tester la        |
@@ -47,10 +48,8 @@ Documentation des Interfaces de Programmation
         | **Réponse Att.**  | Statut: 404 Non Trouvé                                           |
         |                   | Contenu: Page d'erreur personnalisée.                            |
         +-------------------+------------------------------------------------------------------+
-
-        Exemple de Réponse:
+        
 .. code:: shell
-
     <html>
         <head>
             <title>Erreur 404</title>
@@ -61,7 +60,7 @@ Documentation des Interfaces de Programmation
     </html>
 
 
-3- Test d'Erreur 500 :
+**3- Test d'Erreur 500 :**
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Provoque intentionnellement une erreur 500 pour tester la        |
@@ -78,6 +77,7 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------------------------+
 
         Exemple de Réponse:
+
 .. code:: shell
 
     <html>
@@ -90,10 +90,11 @@ Documentation des Interfaces de Programmation
     </html>
                   
 
-**Interfaces de Programmation pour l'application (lettings)**
------------------------------------------------------------
 
-1- Endpoint /lettings/ (URL lettings_index):
+**Interfaces de Programmation pour l'application (lettings)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**1- Endpoint /lettings/ (URL lettings_index):**
 
         +-------------------+------------------------------------------------------------------+
         | **Description**   | Cette vue affiche une liste de toutes les locations disponibles. |
@@ -111,6 +112,7 @@ Documentation des Interfaces de Programmation
         +-------------------+------------------------------------------------------------------+
 
         Exemple de Réponse:
+
 .. code:: shell
 
     lettings_list = Letting.objects.all()
@@ -119,7 +121,7 @@ Documentation des Interfaces de Programmation
 
 
 
-2- Endpoint /lettings/<letting_id>/ (URL letting):
+**2- Endpoint /lettings/<letting_id>/ (URL letting):**
 
         +-------------------+----------------------------------------------------------------------------------------+
         | **Description**   | Cette vue affiche les détails d'une location spécifique. Elle récupère une instance    |
@@ -135,6 +137,7 @@ Documentation des Interfaces de Programmation
         +-------------------+----------------------------------------------------------------------------------------+
 
         Exemple de Réponse:
+
 .. code:: shell
 
     specific_letting = get_object_or_404(Letting, id=letting_id)
@@ -146,9 +149,9 @@ Ces informations détaillées permettront une meilleure compréhension de l'inte
 
 
 **Interfaces de Programmation pour l'application (profiles)**
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1- Liste des Profils
+**1- Liste des Profils**
 
         +------------------+----------------------------------------------------------------------------------------------+
         | **URL et Méth.** | URL : /profiles/                                                                             |
@@ -162,6 +165,7 @@ Ces informations détaillées permettront une meilleure compréhension de l'inte
         +------------------+----------------------------------------------------------------------------------------------+
 
         Exemple de Code pour la Vue index dans views.py :
+
 .. code:: shell
 
     def index(request):
@@ -171,7 +175,7 @@ Ces informations détaillées permettront une meilleure compréhension de l'inte
         return render(request, "profiles/index.html", context)
 
 
-2- Détails d'un Profil Spécifique
+**2- Détails d'un Profil Spécifique**
 
         +------------------+----------------------------------------------------------------------------------------+
         | **URL et Méth.** | URL : /profiles/<username>/                                                            |
@@ -196,7 +200,7 @@ Ces informations détaillées permettront une meilleure compréhension de l'inte
 
 
 **Conclusion sur les Interfaces de Programmation du Projet OC Lettings**
-----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le projet OC Lettings, structuré autour des applications Django oc_lettings_site, lettings, et profiles, présente une architecture claire et modulaire, facilitant la compréhension et l'interaction avec ses différentes composantes. Chaque application encapsule des fonctionnalités spécifiques, exposées via des interfaces de programmation bien définies.
 
