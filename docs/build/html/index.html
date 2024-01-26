@@ -48,11 +48,12 @@
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages de programmation utilisés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation_python_3_11_7.html">Installation de Python 3.11.7 sur Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_python_3_11_7.html">Installation de Python 3.11.7 sur Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
@@ -93,11 +94,12 @@
 <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages de programmation utilisés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation_python_3_11_7.html">Installation de Python 3.11.7 sur Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_python_3_11_7.html">Installation de Python 3.11.7 sur Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="interfaces_programmation.html#interfaces-de-programmation-pour-l-application-oc-lettings-site"><strong>Interfaces de Programmation pour l’application (oc_lettings_site)</strong></a></li>
@@ -134,56 +136,6 @@ visualiser:</p>
 </ul>
 <p>La page d’accueil de cette application contient deux liens: un vers la liste
 des profils et l’autre vers la liste des locations.</p>
-<section id="administration-pour-notre-projet-orange-county-lettings">
-<h2>Administration pour notre projet Orange County Lettings<a class="headerlink" href="#administration-pour-notre-projet-orange-county-lettings" title="Link to this heading"></a></h2>
-<p><strong>Panel d’administration</strong></p>
-<p>Aller sur l’url suivante (dans le cas d’un test en local):</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000/admin
-</pre></div>
-</div>
-<p>Connectez-vous en tant qu’administrateur avec les identifiants suivants :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>user<span class="w">     </span>:<span class="w">  </span>admin
-password<span class="w"> </span>:<span class="w">  </span>Abc1234!
-</pre></div>
-</div>
-<p>L’administration Django est une interface puissante qui permet une gestion aisée des modèles et des données du site.</p>
-<p><strong>Accès à l’Administration :</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>URL     : /admin/</p></li>
-<li><p>Méthode : GET pour l’accès, POST pour les interactions (ajout, modification, suppression des données).</p></li>
-</ul>
-</div></blockquote>
-<p><strong>Modèle Letting :</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Fichier         : lettings/admin.py</p></li>
-<li><p>Classe          : LettingAdmin</p></li>
-<li><p>Configuration   : Les champs address et title du modèle Letting sont affichés dans l’interface d’administration.</p></li>
-</ul>
-</div></blockquote>
-<p><strong>Modèle Profile :</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Fichier         : profiles/admin.py</p></li>
-<li><p>Classe          : ProfileAdmin</p></li>
-<li><p>Configuration   : Les champs user et favorite_city du modèle Profile sont affichés dans l’interface d’administration.</p></li>
-</ul>
-</div></blockquote>
-<p><strong>Gestion des Données :</strong></p>
-<p>Les administrateurs peuvent effectuer les actions suivantes dans l’interface d’administration :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Ajouter de nouvelles instances pour les modèles Letting et Profile.</p></li>
-<li><p>Modifier les données existantes des instances de ces modèles.</p></li>
-<li><p>Supprimer des instances si nécessaire.</p></li>
-</ul>
-</div></blockquote>
-<p><strong>Sécurité et Accès :</strong></p>
-<p>L’accès à l’interface d’administration est restreint aux utilisateurs ayant des droits d’administrateur. Il est recommandé de gérer attentivement les comptes administrateurs pour maintenir la sécurité du site.</p>
-<p>Personnalisation et Extensions :
-L’interface d’administration Django est hautement personnalisable. Si des fonctionnalités supplémentaires sont nécessaires (par exemple, des filtres avancés, des champs personnalisés, etc.), elles peuvent être ajoutées en étendant les classes ModelAdmin.</p>
-</section>
 <section id="technologies-et-langages-de-programmation-utilises">
 <h2>Technologies et Langages de programmation utilisés<a class="headerlink" href="#technologies-et-langages-de-programmation-utilises" title="Link to this heading"></a></h2>
 <img alt="_images/orange_country_lettings.png" class="align-center" src="_images/orange_country_lettings.png" />
@@ -229,6 +181,114 @@ L’interface d’administration Django est hautement personnalisable. Si des fo
 </ul>
 </div></blockquote>
 <p>Dans le reste de la documentation sur le développement local, il est supposé que la commande <strong>python</strong> de votre OS shell exécute l’interpréteur Python ci-dessus (à moins qu’un environnement virtuel ne soit activé). Cet ensemble de technologies et de pratiques illustre un engagement envers la qualité, l’efficacité et la scalabilité dans le développement de logiciels modernes. La documentation technique, créée avec Sphinx et hébergée sur Read The Docs, en est un témoignage supplémentaire, facilitant la compréhension et la collaboration future sur le projet.</p>
+</section>
+<section id="structure-de-ce-projet">
+<h2>Structure de ce projet<a class="headerlink" href="#structure-de-ce-projet" title="Link to this heading"></a></h2>
+<p>Voici la structure de répertoire du projet :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.
+├── Dockerfile
+├── lettings
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── lettings
+│   │       ├── index.html
+│   │       └── letting.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── oc_lettings_site
+│   ├── admin.py
+│   ├── apps.py
+│   ├── asgi.py
+│   ├── models.py
+│   ├── settings.py
+│   ├── settings_test.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── oc-lettings-site_backup.sqlite3
+├── oc-lettings-site.sqlite3
+├── Procfile
+├── profiles
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── profiles
+│   │       ├── index.html
+│   │       └── profile.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── pylint_django_setup.py
+├── README.md
+├── requirements.txt
+├── setup.cfg
+├── start.sh
+├── static
+│   ├── assets
+│   │   ├── fonts
+│   │   └── img
+│   │       └── logo.png
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── structure_de_ce_projet.txt
+└── templates
+    ├── 404.html
+    ├── 500.html
+    ├── base.html
+    └── index.html
+
+14 directories, 44 files
+</pre></div>
+</div>
+</section>
+<section id="installation-du-projet-sur-votre-machine">
+<h2>Installation du projet sur votre machine<a class="headerlink" href="#installation-du-projet-sur-votre-machine" title="Link to this heading"></a></h2>
+<p>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.
+Voir la rubrique (Installation de Python 3.11.7 sur votre machine)</p>
+<p><strong>Cloner le Référentiel :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/put/project/in
+</pre></div>
+</div>
+<p><strong>Avec HTTPS</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
+</pre></div>
+</div>
+<p><strong>Avec SSH</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
+</pre></div>
+</div>
+<p><strong>Dézippé le fichier téléchargé par clone :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>nom_du_fichier.zip
+</pre></div>
+</div>
+<p><strong>Allez dans le dossier dézippé :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/nom_du_dossier_dézippé
+</pre></div>
+</div>
+<p><strong>Activez votre environnement virtuel (vide jusqu’à maintenant) :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+<p><strong>Installez tous les packets et dépendances de ce projet :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--requirement<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p><strong>Démarrez le serveur Django :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p><strong>Aller sur la page du projet dans un navigateur :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+</pre></div>
+</div>
 </section>
 <section id="installation-de-python-3-11-7-sur-linux">
 <h2>Installation de Python 3.11.7 sur Linux<a class="headerlink" href="#installation-de-python-3-11-7-sur-linux" title="Link to this heading"></a></h2>
@@ -296,47 +356,6 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 </div></blockquote>
 <p>Vous devriez maintenant avoir un environnement virtuel fonctionnel qui utilise la version 3.11.7 de Python 3 que vous avez installée, sans affecter la version globale de Python sur votre machine Linux.</p>
 </section>
-<section id="installation-du-projet-sur-votre-machine">
-<h2>Installation du projet sur votre machine<a class="headerlink" href="#installation-du-projet-sur-votre-machine" title="Link to this heading"></a></h2>
-<p>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.
-Voir la rubrique (Installation de Python 3.11.7 sur votre machine)</p>
-<p><strong>Cloner le Référentiel :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/put/project/in
-</pre></div>
-</div>
-<p><strong>Avec HTTPS</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
-</pre></div>
-</div>
-<p><strong>Avec SSH</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
-</pre></div>
-</div>
-<p><strong>Dézippé le fichier téléchargé par clone :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>nom_du_fichier.zip
-</pre></div>
-</div>
-<p><strong>Allez dans le dossier dézippé :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/nom_du_dossier_dézippé
-</pre></div>
-</div>
-<p><strong>Activez votre environnement virtuel (vide jusqu’à maintenant) :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
-</pre></div>
-</div>
-<p><strong>Installez tous les packets et dépendances de ce projet :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--requirement<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-<p><strong>Démarrez le serveur Django :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
-</pre></div>
-</div>
-<p><strong>Aller sur la page du projet dans un navigateur :</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
-</pre></div>
-</div>
-</section>
 <section id="demarrage-rapide">
 <h2>Demarrage rapide<a class="headerlink" href="#demarrage-rapide" title="Link to this heading"></a></h2>
 <p><strong>S’assurer que vous etes dans le repertoire du projet :</strong></p>
@@ -355,6 +374,56 @@ Voir la rubrique (Installation de Python 3.11.7 sur votre machine)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
 </pre></div>
 </div>
+</section>
+<section id="administration-pour-notre-projet-orange-county-lettings">
+<h2>Administration pour notre projet Orange County Lettings<a class="headerlink" href="#administration-pour-notre-projet-orange-county-lettings" title="Link to this heading"></a></h2>
+<p><strong>Panel d’administration</strong></p>
+<p>Aller sur l’url suivante (dans le cas d’un test en local):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000/admin
+</pre></div>
+</div>
+<p>Connectez-vous en tant qu’administrateur avec les identifiants suivants :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>user<span class="w">     </span>:<span class="w">  </span>admin
+password<span class="w"> </span>:<span class="w">  </span>Abc1234!
+</pre></div>
+</div>
+<p>L’administration Django est une interface puissante qui permet une gestion aisée des modèles et des données du site.</p>
+<p><strong>Accès à l’Administration :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>URL     : /admin/</p></li>
+<li><p>Méthode : GET pour l’accès, POST pour les interactions (ajout, modification, suppression des données).</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Modèle Letting :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fichier         : lettings/admin.py</p></li>
+<li><p>Classe          : LettingAdmin</p></li>
+<li><p>Configuration   : Les champs address et title du modèle Letting sont affichés dans l’interface d’administration.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Modèle Profile :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fichier         : profiles/admin.py</p></li>
+<li><p>Classe          : ProfileAdmin</p></li>
+<li><p>Configuration   : Les champs user et favorite_city du modèle Profile sont affichés dans l’interface d’administration.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Gestion des Données :</strong></p>
+<p>Les administrateurs peuvent effectuer les actions suivantes dans l’interface d’administration :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ajouter de nouvelles instances pour les modèles Letting et Profile.</p></li>
+<li><p>Modifier les données existantes des instances de ces modèles.</p></li>
+<li><p>Supprimer des instances si nécessaire.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Sécurité et Accès :</strong></p>
+<p>L’accès à l’interface d’administration est restreint aux utilisateurs ayant des droits d’administrateur. Il est recommandé de gérer attentivement les comptes administrateurs pour maintenir la sécurité du site.</p>
+<p>Personnalisation et Extensions :
+L’interface d’administration Django est hautement personnalisable. Si des fonctionnalités supplémentaires sont nécessaires (par exemple, des filtres avancés, des champs personnalisés, etc.), elles peuvent être ajoutées en étendant les classes ModelAdmin.</p>
 </section>
 <section id="structure-de-la-base-de-donnees">
 <h2>Structure de la base de données<a class="headerlink" href="#structure-de-la-base-de-donnees" title="Link to this heading"></a></h2>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Les Tests Unitaires &mdash; Documentation Orange County Lettings 1.1.0</title>
+  <title>Structure de ce projet &mdash; Documentation Orange County Lettings 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les Tests de coverage" href="tests_coverage.html" />
-    <link rel="prev" title="Les Interfaces de Programmation" href="interfaces_programmation.html" /> 
+    <link rel="next" title="Installation du projet sur votre machine" href="installation.html" />
+    <link rel="prev" title="Technologies et Langages de programmation utilisés" href="technologies_utilisees.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,14 +50,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages de programmation utilisés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Structure de ce projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation_python_3_11_7.html">Installation de Python 3.11.7 sur Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flake8.html">Assurance de la qualité du code Flake8</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linting.html">Le Linting</a></li>
@@ -79,9 +79,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Les Tests Unitaires</li>
+      <li class="breadcrumb-item active">Structure de ce projet</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/tests_unitaires.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/structure_de_ce_projet.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -89,16 +89,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="les-tests-unitaires">
-<h1>Les Tests Unitaires<a class="headerlink" href="#les-tests-unitaires" title="Link to this heading"></a></h1>
+  <section id="structure-de-ce-projet">
+<h1>Structure de ce projet<a class="headerlink" href="#structure-de-ce-projet" title="Link to this heading"></a></h1>
+<p>Voici la structure de répertoire du projet :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.
+├── Dockerfile
+├── lettings
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── lettings
+│   │       ├── index.html
+│   │       └── letting.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── oc_lettings_site
+│   ├── admin.py
+│   ├── apps.py
+│   ├── asgi.py
+│   ├── models.py
+│   ├── settings.py
+│   ├── settings_test.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── oc-lettings-site_backup.sqlite3
+├── oc-lettings-site.sqlite3
+├── Procfile
+├── profiles
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── profiles
+│   │       ├── index.html
+│   │       └── profile.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── pylint_django_setup.py
+├── README.md
+├── requirements.txt
+├── setup.cfg
+├── start.sh
+├── static
+│   ├── assets
+│   │   ├── fonts
+│   │   └── img
+│   │       └── logo.png
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── structure_de_ce_projet.txt
+└── templates
+    ├── 404.html
+    ├── 500.html
+    ├── base.html
+    └── index.html
+
+14 directories, 44 files
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="interfaces_programmation.html" class="btn btn-neutral float-left" title="Les Interfaces de Programmation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="tests_coverage.html" class="btn btn-neutral float-right" title="Les Tests de coverage" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="technologies_utilisees.html" class="btn btn-neutral float-left" title="Technologies et Langages de programmation utilisés" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation du projet sur votre machine" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

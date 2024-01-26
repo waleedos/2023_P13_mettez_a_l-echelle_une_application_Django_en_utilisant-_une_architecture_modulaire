@@ -6,11 +6,12 @@ Orange County Lettings's documentation!
    :caption: Sommaire :
 
    a_propos
-   administration
-   technologies_utilisees
-   installation_python_3_11_7
+   technologies_utilisees   
+   structure_de_ce_projet
    installation
+   installation_python_3_11_7
    demarrage_rapide
+   administration
    structure_base_de_donnees
    interfaces_programmation
    tests_unitaires
@@ -23,15 +24,17 @@ Orange County Lettings's documentation!
 
 .. include:: a_propos.rst
 
-.. include:: administration.rst
+.. include:: technologies_utilisees.rst   
 
-.. include:: technologies_utilisees.rst
-
-.. include:: installation_python_3_11_7.rst   
+.. include:: structure_de_ce_projet.rst
 
 .. include:: installation.rst
 
-.. include:: demarrage_rapide.rst
+.. include:: installation_python_3_11_7.rst
+
+.. include:: demarrage_rapide.rst    
+
+.. include:: administration.rst
 
 .. include:: structure_base_de_donnees.rst
 
