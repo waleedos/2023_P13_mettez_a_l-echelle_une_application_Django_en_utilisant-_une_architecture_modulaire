@@ -63,12 +63,14 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 
 
     Compilez Python :
+
     .. code:: shell
 
         make -j 4
 
 
     Installez Python dans le répertoire /opt :
+
     .. code:: shell
 
         sudo make altinstall
@@ -85,18 +87,21 @@ Pour créer un environnement virtuel tout en installant la version de Python 3.1
 
 
     Créez un répertoire pour votre environnement virtuel :
+
     .. code:: shell
 
         mkdir venv
 
 
     Créez un environnement virtuel en utilisant la version de Python que vous venez d'installer :
+
     .. code:: shell
 
         virtualenv --python=/opt/python3.11/bin/python3.11 venv/
 
 
 **Étape 4: Activer l'environnement virtuel**
+
     .. code:: shell
         
         source venv/bin/activate
