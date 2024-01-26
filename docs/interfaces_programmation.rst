@@ -49,7 +49,10 @@ Les Interfaces de Programmation
         |                   | Contenu: Page d'erreur personnalisée.                            |
         +-------------------+------------------------------------------------------------------+
         
+        Exemple de Réponse:
+        
 .. code:: shell
+
     <html>
         <head>
             <title>Erreur 404</title>
