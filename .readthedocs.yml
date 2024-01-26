@@ -1,9 +1,21 @@
+# .readthedocs.yaml
+# Fichier de configuration Read the Docs
+# Voir https://docs.readthedocs.io/en/stable/config-file/v2.html pour plus de détails
+
+# Requis
 version: 2
 
-sphinx:
-  configuration: docs/conf.py
-
+# Définissez le système d'exploitation, la version de Python et d'autres outils dont vous pourriez avoir besoin
 build:
-  os: "ubuntu-20.04"
+  os: ubuntu-22.04
   tools:
     python: "3.11"
+
+# Construisez la documentation dans le répertoire "docs/" avec Sphinx
+sphinx:
+   configuration: docs/conf.py
+
+
+python:
+   install:
+   - requirements: requirements.txt
