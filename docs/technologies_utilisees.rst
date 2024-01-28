@@ -1,5 +1,5 @@
-Technologies et Langages de programmation utilisés
---------------------------------------------------
+Technologies et Langages utilisés
+=================================
 
 .. image:: source/_static/orange_country_lettings.png
    :align: center

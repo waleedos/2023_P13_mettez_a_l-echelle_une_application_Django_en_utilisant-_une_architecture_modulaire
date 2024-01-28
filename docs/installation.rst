@@ -43,6 +43,20 @@ Voir la rubrique (Installation de Python 3.11.7 sur votre machine)
     cd /path/to/nom_du_dossier_dézippé
 
 
+**ATTENTION**
+
+*Nous recommandons fortement l'utilisation de Python 3.11.7 pour ce projet. Cette version spécifique de Python offre non seulement les dernières fonctionnalités et optimisations du langage, mais elle est également en adéquation avec les dépendances et les exigences du projet.*
+
+*En alignant l'environnement de développement sur cette version précise, nous assurons la cohérence, la compatibilité des packages et la prévention des problèmes liés aux différences de version.*
+
+*En outre, l'utilisation de Python 3.11.7 nous permet de tirer pleinement parti des améliorations en termes de performance et de fonctionnalités syntaxiques, optimisant ainsi le développement et l'exécution de l'application.*
+
+*Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes existantes dans la rubrique suivante dans la documentation : "Installation de Python 3.11.7".*
+
+Pour plus d'informations, veuillez consulter la section :ref:`guide_installation_python_3_11_7`.
+
+
+
 **Activez votre environnement virtuel (vide jusqu'à maintenant) :**
 
 .. code:: shell

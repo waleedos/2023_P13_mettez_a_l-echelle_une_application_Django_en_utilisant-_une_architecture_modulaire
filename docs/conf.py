@@ -33,7 +33,7 @@ html_theme_options = {
 }
 
 # Définissez le logo du projet (remplacez "logo.png" par le chemin de votre logo)
-html_logo = "../static/assets/img/logo.png"
+html_logo = "source/_static/logo.png"
 
 # Personnalisez le pied de page (facultatif)
 html_footer = """

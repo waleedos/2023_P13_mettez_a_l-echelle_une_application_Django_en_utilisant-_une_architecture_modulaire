@@ -1,5 +1,7 @@
-Installation de Python 3.11.7 sur Linux
----------------------------------------
+.. _guide_installation_python_3_11_7:
+
+Installation de Python 3.11.7
+-----------------------------
 
 Cette documentation détaille le processus d'installation de notre projet sur un système d'exploitation Linux.
 
