@@ -48,7 +48,7 @@ Cette commande nous donne aussi sur la console, un pourcentage globale de la cou
    
    coverage html
 
-Cette commande va créer un dossier à la racine nommé "htmlcov", et dans lequel, nous trouverons un fichier "index.html", consultable par vos navigateurs, pour afficher le résultat final de ce test de coverage.
+Cette commande va créer un dossier à la racine nommé *htmlcov*, et dans lequel, nous trouverons un fichier *index.html*, consultable par vos navigateurs, pour afficher le résultat final de ce test de coverage.
 
 
 .. image:: source/_static/coverage.png
