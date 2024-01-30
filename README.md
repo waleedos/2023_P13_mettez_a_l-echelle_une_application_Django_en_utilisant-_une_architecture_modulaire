@@ -359,6 +359,8 @@ Pour envoyer cette nouvelle image construite sur docker hub :
 
 # Pour pousser cette image tagée vers Docker-Hub :
 
+avant tout
+
 ==>  docker login
 
 Puis
