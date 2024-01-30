@@ -258,6 +258,20 @@ Dans mons cas, voici la commande complete :
 docker push waleedos/orange_county_lettings:1.0
 ```
 
+
+------------------------------------------------
+docker tag orange_county_lettings waleedos/orange_county_lettings:1.2
+
+docker push waleedos/orange_county_lettings:1.2
+
+
+docker pull waleedos/orange_county_lettings
+
+docker run -d -p 8080:80 waleedos/orange_county_lettings
+
+
+
+
 #### Téléchargez l'image depuis Docker Hub :
 ```
 sudo docker pull waleedos/orange_county_lettings:1.0
@@ -316,3 +330,14 @@ docker push waleedos/orange_county_lettings:latest-2
 # liens du site déployé :
 
 https://oc-p13-a8c2.onrender.com/
+
+
+# Pour construire une nouvelle image docker : 
+Construisez l'image Docker avec une nouvelle version (tag). Remplacez [nom_de_l'image] par le nom souhaité pour l'image et [version] par la nouvelle version ou tag de l'image. Par exemple :
+
+==> docker build -t waleedos/orange_county_lettings:latest .
+
+Pour envoyer cette nouvelle image construite sur docker hub : 
+
+==> docker push waleedos/orange_county_lettings:
+

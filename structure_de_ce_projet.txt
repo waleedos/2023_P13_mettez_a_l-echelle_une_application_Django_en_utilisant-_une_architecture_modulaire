@@ -1,5 +1,33 @@
 .
 ├── Dockerfile
+├── htmlcov
+│   ├── coverage_html.js
+│   ├── d_a9b1b018a4ee155b_admin_py.html
+│   ├── d_a9b1b018a4ee155b_apps_py.html
+│   ├── d_a9b1b018a4ee155b___init___py.html
+│   ├── d_a9b1b018a4ee155b_models_py.html
+│   ├── d_a9b1b018a4ee155b_urls_py.html
+│   ├── d_a9b1b018a4ee155b_views_py.html
+│   ├── d_b4872cbce420d762_admin_py.html
+│   ├── d_b4872cbce420d762_apps_py.html
+│   ├── d_b4872cbce420d762___init___py.html
+│   ├── d_b4872cbce420d762_models_py.html
+│   ├── d_b4872cbce420d762_urls_py.html
+│   ├── d_b4872cbce420d762_views_py.html
+│   ├── d_d8907effad88fb1e_admin_py.html
+│   ├── d_d8907effad88fb1e_apps_py.html
+│   ├── d_d8907effad88fb1e___init___py.html
+│   ├── d_d8907effad88fb1e_models_py.html
+│   ├── d_d8907effad88fb1e_settings_py.html
+│   ├── d_d8907effad88fb1e_urls_py.html
+│   ├── d_d8907effad88fb1e_views_py.html
+│   ├── favicon_32.png
+│   ├── index.html
+│   ├── __init___py.html
+│   ├── keybd_closed.png
+│   ├── keybd_open.png
+│   ├── status.json
+│   └── style.css
 ├── lettings
 │   ├── admin.py
 │   ├── apps.py
@@ -23,7 +51,6 @@
 │   ├── urls.py
 │   ├── views.py
 │   └── wsgi.py
-├── oc-lettings-site_backup.sqlite3
 ├── oc-lettings-site.sqlite3
 ├── Procfile
 ├── profiles
@@ -58,4 +85,4 @@
     ├── base.html
     └── index.html
 
-14 directories, 44 files
+15 directories, 70 files
