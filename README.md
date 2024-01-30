@@ -245,6 +245,10 @@ depuis votre terminal en utilisant la commande (docker login).
 Taguez votre image Docker avec votre nom d'utilisateur Docker Hub et un tag approprié, par exemple en utilisant le hash de commit ou une version. Utilisez la commande suivante :
 ```
 docker tag orange_county_lettings [votre_nom_utilisateur_docker]/orange_county_lettings:tag
+
+Dans mon cas : 
+
+docker tag orange_county_lettings waleedos/orange_county_lettings:last-30
 ```
 
 Remplacez [votre_nom_utilisateur_docker] par votre nom d'utilisateur Docker Hub et tag par le tag que vous souhaitez utiliser.
@@ -341,3 +345,22 @@ Pour envoyer cette nouvelle image construite sur docker hub :
 
 ==> docker push waleedos/orange_county_lettings:
 
+-----------------------------------------------------------------------------------------
+
+# Pour créer l'image Docker : 
+
+==>  docker build -t orange_county_lettings .
+
+
+# Pour tager l'image : 
+
+==>  docker tag orange_county_lettings waleedos/orange_county_lettings:latest-1
+
+
+# Pour pousser cette image tagée vers Docker-Hub :
+
+==>  docker login
+
+Puis
+
+==>  docker push waleedos/orange_county_lettings:latest-1
