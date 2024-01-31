@@ -17,7 +17,7 @@ Orange County Lettings's documentation!
    tests_unitaires
    tests_coverage
    le_linting
-   surveillance_application
+   surveillance_avec_sentry
    deploiement_docker_et_render
 
 
@@ -47,7 +47,7 @@ Orange County Lettings's documentation!
 
 .. include:: le_linting.rst
 
-.. include:: surveillance_application.rst  
+.. include:: surveillance_avec_sentry.rst  
 
 .. include:: deploiement_docker_et_render.rst 
 

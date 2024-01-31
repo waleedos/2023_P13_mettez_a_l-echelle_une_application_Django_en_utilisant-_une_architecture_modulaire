@@ -18,8 +18,6 @@ Nous devrions en premier lieux s'assurer du Path de notre projet :
 .. code:: shell
    
    export PYTHONPATH=$PYTHONPATH:/xxxx/xxxxx/Bureau/oc_p13
-   Puis
-   pylint --load-plugins pylint_django .
 
 
 **1- 1ere méthode :** 

@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="surveillance_application.html">Surveillance de l’application avec Sentry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_avec_sentry.html">Surveillance de l’application avec Sentry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement_docker_et_render.html">Déploiement avec Docker et Render</a></li>
 </ul>
 
@@ -115,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="le_linting.html#flake8-la-qualite-du-code"><strong>Flake8 &amp; la qualité du code</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="surveillance_application.html">Surveillance de l’application avec Sentry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_avec_sentry.html">Surveillance de l’application avec Sentry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement_docker_et_render.html">Déploiement avec Docker et Render</a></li>
 </ul>
 </div>
@@ -283,7 +283,7 @@ Voir la rubrique (Installation de Python 3.11.7 sur votre machine)</p>
 <p><em>En outre, l’utilisation de Python 3.11.7 nous permet de tirer pleinement parti des améliorations en termes de performance et de fonctionnalités syntaxiques, optimisant ainsi le développement et l’exécution de l’application.</em></p>
 <p><em>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes existantes dans la rubrique suivante dans la documentation : « Installation de Python 3.11.7 ».</em></p>
 </div>
-<p>Pour plus d’informations, veuillez consulter la section <a class="reference internal" href="installation_python_3_11_7.html#guide-installation-version-python"><span class="std std-ref">Installation de Python 3.11.7</span></a>.</p>
+<p>Pour plus d’informations, veuillez consulter la section <a class="reference internal" href="#guide-installation-version-python"><span class="std std-ref">Installation de Python 3.11.7</span></a>.</p>
 <p><strong>Activez votre environnement virtuel (vide jusqu’à maintenant) :</strong></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </pre></div>
@@ -817,8 +817,6 @@ pytest
 <p>Nous pouvons executer ces tests de coverage via 3 commandes differentes</p>
 <p>Nous devrions en premier lieux s’assurer du Path de notre projet :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/xxxx/xxxxx/Bureau/oc_p13
-Puis
-pylint<span class="w"> </span>--load-plugins<span class="w"> </span>pylint_django<span class="w"> </span>.
 </pre></div>
 </div>
 <p><strong>1- 1ere méthode :</strong></p>
@@ -906,6 +904,104 @@ max-line-length<span class="w"> </span><span class="o">=</span><span class="w"> 
 </section>
 <section id="surveillance-de-l-application-avec-sentry">
 <h2>Surveillance de l’application avec Sentry<a class="headerlink" href="#surveillance-de-l-application-avec-sentry" title="Link to this heading"></a></h2>
+<p><strong>Sentry</strong> est une plateforme de gestion des erreurs en temps réel, conçue pour <strong>améliorer la qualité des applications</strong> en permettant aux développeurs de détecter, <strong>suivre et résoudre efficacement les problèmes qui surviennent dans les applications en production.</strong> Le principal atout de Sentry est sa capacité à fournir des informations détaillées sur les erreurs, y compris la pile des appels, l’environnement d’exécution et même l’état de l’application au moment où l’erreur s’est produite.</p>
+<p>Cette plateforme est polyvalente et peut être intégrée à une multitude de langages de programmation et de frameworks, ce qui la rend extrêmement adaptable à divers environnements de développement.</p>
+<p>Avec Sentry, les développeurs peuvent rapidement identifier non seulement où une erreur s’est produite, mais aussi pourquoi, ce qui facilite grandement le débogage et la résolution des problèmes.</p>
+<p>Le déploiement de Sentry dans notre projet « Orange County Letting’s » se fait en plusieurs étapes clés.</p>
+<p><strong>1. Création d’un compte Sentry:</strong></p>
+<p>Tout d’abord, il est nécessaire de créer un compte Sentry et de configurer un nouveau projet dans l’interface Sentry.</p>
+<p>Cette étape permet d’obtenir <strong>une clé DSN (Data Source Name) unique</strong>, qui sera utilisée pour connecter notre application à Sentry.</p>
+<p><strong>2. Intégration de Sentry dans notre projet:</strong></p>
+<p>Une fois que vous avez votre clé DSN, l’étape suivante consiste à intégrer Sentry dans votre projet. Cela implique généralement l’ajout de la bibliothèque Sentry correspondante à notre projet via un gestionnaire de paquets, puis la configuration de Sentry avec notre clé DSN. Dans le cas de projets Python, cela peut se faire en installant le SDK Sentry avec pip et en ajoutant quelques lignes de configuration dans votre code.</p>
+<p><strong>- Intégration de Sentry dans (settings.py)</strong></p>
+<p>Il faut commencer par éditer le fichier de configuration de notre projet (settings.py), existant dans l’application principale (oc_lettings_site).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise Sentry pour la surveillance des erreurs dans une application Django.</span>
+<span class="c1"># Cette fonction configure Sentry, un service de suivi des erreurs, pour qu&#39;il soit utilisé avec</span>
+<span class="c1"># une application Django. Elle doit être appelée lors de l&#39;initialisation de l&#39;application pour</span>
+<span class="c1"># assurer que les erreurs et les problèmes sont correctement enregistrés et envoyés à Sentry.</span>
+<span class="c1">#</span>
+<span class="c1"># Sentry aide à surveiller, à détecter et à réparer les erreurs en temps réel, en fournissant</span>
+<span class="c1"># des détails contextuels et des insights sur les défaillances de l&#39;application.</span>
+<span class="c1">#</span>
+<span class="c1"># Paramètres :</span>
+<span class="c1"># dsn (str): La clé DSN (Data Source Name) fournie par Sentry. Cette clé est unique à chaque</span>
+<span class="c1">#            projet Sentry et est utilisée pour authentifier et diriger les données d&#39;erreur</span>
+<span class="c1">#            vers le bon projet dans Sentry. La clé DSN doit être obtenue à partir du tableau de</span>
+<span class="c1">#            bord Sentry et doit être traitée comme une information sensible.</span>
+<span class="c1">#</span>
+<span class="c1"># Retourne :</span>
+<span class="c1"># None</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple :</span>
+<span class="c1"># Pour initialiser Sentry dans une application Django, appelez cette fonction dans votre fichier</span>
+<span class="c1"># settings.py :</span>
+<span class="c1">#</span>
+<span class="c1">#     initialize_sentry()</span>
+<span class="c1">#</span>
+<span class="c1"># Remarque :</span>
+<span class="c1"># - Il est important de garder la clé DSN confidentielle, car elle permet l&#39;envoi de données à</span>
+<span class="c1">#   votre projet Sentry.</span>
+<span class="c1"># - Vous pouvez ajuster la configuration supplémentaire pour contrôler ce qui est envoyé à</span>
+<span class="c1">#   Sentry, comme la capture des erreurs de niveau DEBUG ou INFO, selon les besoins de votre</span>
+<span class="c1">#   projet.</span>
+<span class="c1">#</span>
+<span class="c1"># Pour plus d&#39;informations, visitez la documentation officielle de Sentry :</span>
+<span class="c1"># https://docs.sentry.io/platforms/python/guides/django/</span>
+</pre></div>
+</div>
+<p><strong>Voici le code que nous avons ajouté à la fin du fichier settings.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span>
+        <span class="s2">&quot;SENTRY_DSN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">),</span>  <span class="c1"># Utilisez une valeur par défaut vide si la variable</span>
+        <span class="c1"># n&#39;est pas définie</span>
+    <span class="c1"># Set traces_sample_rate to 1.0 to capture 100%</span>
+    <span class="c1"># of transactions for performance monitoring.</span>
+    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="c1"># Set profiles_sample_rate to 1.0 to profile 100%</span>
+    <span class="c1"># of sampled transactions.</span>
+    <span class="c1"># We recommend adjusting this value in production.</span>
+    <span class="n">profiles_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quand nous commençons cette étape, nous devrions normalement insérer notre fameuse clé DSN dans ce fichier (settings.py), mais une fois l’intégration de Sentry marche bien, et pour des mesures de sécurité, et pour les bonnes pratiques du « coding : Ne jamais stocker les identifiants Sentry ou toute autre donnée sensible dans le code source (utilisez des
+variables d’environnement) », nous transférons donc cette clé depuis ce fichier pour la mettre dans un fichier de variables d’environnement : par exemple, le fichier (.env).</p>
+</div>
+<p>Voici un exemple fictif d’insertion de la clé DSN dans le fichier (.env) :</p>
+<img alt="_images/sentry-1.png" class="align-center" src="_images/sentry-1.png" />
+<p><strong>3. Provocation d’une erreur pour le test de Sentry:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Après l’intégration de Sentry, il est important de tester son fonctionnement en générant volontairement des erreurs pour s’assurer que celles-ci sont correctement capturées et envoyées à Sentry. Cela implique également de personnaliser les paramètres de Sentry pour s’adapter aux besoins spécifiques de votre projet, comme la configuration des niveaux de journalisation, la définition des environnements (par exemple, développement, test, production) et l’ajout de métadonnées supplémentaires aux rapports d’erreurs pour améliorer leur contexte.</p>
+</div>
+<p>Apres avoir intégré Sentry dans le fichier settings.py, et après avoir mis et changé sa clé DSN dans une variable d’environnement (.env), il faut provoquer une erreur pour tester si mon code renvoie bien ce que nous attendons vers Sentry :</p>
+<p>Dans notre cas pour ce projet, un de nos tests unitaires est le test_500_view: qui teste la réponse en cas d’erreur interne du serveur :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+<span class="k">class</span> <span class="nc">ViewsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_500_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Teste la gestion des erreurs 500.</span>
+
+<span class="sd">        Simule une requête provoquant une erreur interne du serveur pour vérifier si l&#39;application</span>
+<span class="sd">        retourne correctement un code de statut 500 (Internal Server Error).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/test-500/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donc en résumé, si nous exécutons simplement ce test, nous devrions avoir un déclenchement d’erreur sur Sentry :</p>
+<img alt="_images/sentry-2.png" class="align-center" src="_images/sentry-2.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/sentry-2.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>Enfin, il est crucial d’adopter de bonnes pratiques pour gérer et répondre aux erreurs signalées. Cela inclut la priorisation des erreurs, l’analyse des tendances sur les erreurs récurrentes, et la mise en place d’un workflow efficace pour la résolution des problèmes, en tirant parti des fonctionnalités de collaboration et d’intégration de Sentry avec d’autres outils de développement.</p>
+<p>En résumé, Sentry est un outil puissant qui, lorsqu’il est correctement déployé et utilisé, peut considérablement améliorer la stabilité et la fiabilité de nos applications. Son intégration dans notre projet nous permettra de gagner un temps précieux dans le processus de débogage et d’assurer une expérience utilisateur plus fluide et sans interruption.</p>
 </section>
 <section id="deploiement-avec-docker-et-render">
 <h2>Déploiement avec Docker et Render<a class="headerlink" href="#deploiement-avec-docker-et-render" title="Link to this heading"></a></h2>
