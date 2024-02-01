@@ -16,6 +16,10 @@ COPY . .
 # Exécution de collectstatic
 RUN python manage.py collectstatic --noinput
 
+# Copie des fichiers CSS de la documentation Sphinx
+COPY docs/build/html/_static/ /oc-p13/docs/build/html/_static/
+COPY docs/source/_static/ /oc-p13/docs/source/_static/
+
 # Rendre le script de démarrage exécutable et le copier dans le conteneur
 COPY start.sh /start.sh
 RUN chmod +x /start.sh

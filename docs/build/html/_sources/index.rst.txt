@@ -18,7 +18,9 @@ Orange County Lettings's documentation!
    tests_coverage
    le_linting
    surveillance_sentry_et_logging
-   deploiement_docker_et_render
+   deploiement_docker
+   deploiement_render   
+
 
 
 .. include:: a_propos.rst
@@ -49,5 +51,7 @@ Orange County Lettings's documentation!
 
 .. include:: surveillance_sentry_et_logging.rst  
 
-.. include:: deploiement_docker_et_render.rst 
+.. include:: deploiement_docker.rst
+
+.. include:: deploiement_render.rst
 
