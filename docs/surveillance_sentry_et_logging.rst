@@ -1,5 +1,8 @@
-Surveillance de l'application avec Sentry
------------------------------------------
+Surveillance Sentry et Logging
+------------------------------
+
+**1. Surveillance du projet avec Sentry :**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sentry** est une plateforme de gestion des erreurs en temps réel, conçue pour **améliorer la qualité des applications** en permettant aux développeurs de détecter, **suivre et résoudre efficacement les problèmes qui surviennent dans les applications en production.** Le principal atout de Sentry est sa capacité à fournir des informations détaillées sur les erreurs, y compris la pile des appels, l'environnement d'exécution et même l'état de l'application au moment où l'erreur s'est produite.
 
@@ -134,3 +137,75 @@ Donc en résumé, si nous exécutons simplement ce test, nous devrions avoir un 
 Enfin, il est crucial d'adopter de bonnes pratiques pour gérer et répondre aux erreurs signalées. Cela inclut la priorisation des erreurs, l'analyse des tendances sur les erreurs récurrentes, et la mise en place d'un workflow efficace pour la résolution des problèmes, en tirant parti des fonctionnalités de collaboration et d'intégration de Sentry avec d'autres outils de développement.
 
 En résumé, Sentry est un outil puissant qui, lorsqu'il est correctement déployé et utilisé, peut considérablement améliorer la stabilité et la fiabilité de nos applications. Son intégration dans notre projet nous permettra de gagner un temps précieux dans le processus de débogage et d'assurer une expérience utilisateur plus fluide et sans interruption.
+
+
+
+**2. Surveillance du projet avec Logging :**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Le système de logging dans ce projet Django est conçu pour fournir une vue détaillée et configurable des événements qui se produisent lors de l'exécution de l'application.* 
+
+*Il permet de suivre le comportement de l'application, de diagnostiquer les problèmes et de collecter des informations analytiques.*
+
+
+**Configuration de Base**
+
+La configuration du logging est définie dans le fichier **settings.py.**  Nous utilisons un dictionnaire nommé LOGGING pour configurer **les loggers**, **les handlers**, **les formatters** et **les niveaux de log.**
+
+
+**Composants Clés**
+
+- **Loggers**: Les loggers sont les points d'entrée du système de logging. Ils collectent les logs et les transmettent aux handlers. Dans notre configuration, nous avons des loggers pour Django lui-même, ainsi que pour les applications spécifiques du projet (lettings, profiles, et oc_lettings_site).
+
+- **Handlers**: Les handlers déterminent ce qu'il advient des logs une fois qu'ils sont collectés par un logger. Nous avons trois types de handlers :
+
+- **Console**: Envoie les logs à la sortie standard (utile pour le développement).
+
+- **Sentry**: Intégration avec Sentry pour la surveillance et la notification des erreurs en production.
+
+- **File**: Écrit les logs dans un fichier, ce qui est utile pour la conservation des données et les analyses ultérieures.
+
+- **Formatters**: Les formatters définissent le format d'affichage des logs. Notre formatter verbose inclut le niveau de log, l'horodatage, le module d'où provient le log, et le message.
+
+- **Niveaux de Log**: Chaque logger peut avoir son propre niveau de log (par exemple, INFO, WARNING, ERROR). Cela détermine la granularité des informations enregistrées.
+
+
+
+**Mise en Place du Fichier de Log**
+Pour stocker les logs dans un fichier, nous avons configuré un FileHandler. Le fichier de log est situé dans un dossier **logging** à la racine du projet. Le script vérifie si ce dossier existe et le crée s'il n'est pas présent. Les logs sont écrits dans un fichier nommé django.log dans ce dossier.
+
+
+**Utilisation en Pratique**
+Pour enregistrer un log, il suffit d'importer le module de logging de Python dans le fichier Python et de créer un logger au début de chaque fichier important :
+
+.. code:: shell
+
+    import logging
+
+    logger = logging.getLogger(__name__)
+
+    # Utilisation dans votre code
+    logger.info("Message informatif")
+    logger.warning("Avertissement")
+    logger.error("Message d'erreur")
+
+
+voici une capture d'ecran de notre fichier log existant dans le dossier (logger) à la racine du projet : 
+
+.. image:: source/_static/logger.png
+   :align: center
+
+--
+
+.. raw:: html
+
+    <a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/logger.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a>
+
+--    
+
+En utilisant différentes méthodes (info, warning, error, etc.), vous pouvez enregistrer des logs de différents niveaux, qui seront traités selon la configuration définie dans settings.py.
+
+**Conclusion**
+
+Le système de logging est un outil puissant pour le suivi et le diagnostic de votre application Django. Il offre une flexibilité pour s'adapter à différents environnements et besoins, allant du développement à la production.
+

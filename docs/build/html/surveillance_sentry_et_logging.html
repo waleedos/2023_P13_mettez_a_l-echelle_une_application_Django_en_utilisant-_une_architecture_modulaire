@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Surveillance de l’application avec Sentry &mdash; Documentation Orange County Lettings 1.1.0</title>
+  <title>Surveillance Sentry et Logging &mdash; Documentation Orange County Lettings 1.1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -61,7 +61,11 @@
 <li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Surveillance de l’application avec Sentry</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Surveillance Sentry et Logging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#surveillance-du-projet-avec-sentry"><strong>1. Surveillance du projet avec Sentry :</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#surveillance-du-projet-avec-logging"><strong>2. Surveillance du projet avec Logging :</strong></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement_docker_et_render.html">Déploiement avec Docker et Render</a></li>
 </ul>
 
@@ -79,9 +83,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Surveillance de l’application avec Sentry</li>
+      <li class="breadcrumb-item active">Surveillance Sentry et Logging</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/surveillance_avec_sentry.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/surveillance_sentry_et_logging.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -89,8 +93,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="surveillance-de-l-application-avec-sentry">
-<h1>Surveillance de l’application avec Sentry<a class="headerlink" href="#surveillance-de-l-application-avec-sentry" title="Link to this heading"></a></h1>
+  <section id="surveillance-sentry-et-logging">
+<h1>Surveillance Sentry et Logging<a class="headerlink" href="#surveillance-sentry-et-logging" title="Link to this heading"></a></h1>
+<section id="surveillance-du-projet-avec-sentry">
+<h2><strong>1. Surveillance du projet avec Sentry :</strong><a class="headerlink" href="#surveillance-du-projet-avec-sentry" title="Link to this heading"></a></h2>
 <p><strong>Sentry</strong> est une plateforme de gestion des erreurs en temps réel, conçue pour <strong>améliorer la qualité des applications</strong> en permettant aux développeurs de détecter, <strong>suivre et résoudre efficacement les problèmes qui surviennent dans les applications en production.</strong> Le principal atout de Sentry est sa capacité à fournir des informations détaillées sur les erreurs, y compris la pile des appels, l’environnement d’exécution et même l’état de l’application au moment où l’erreur s’est produite.</p>
 <p>Cette plateforme est polyvalente et peut être intégrée à une multitude de langages de programmation et de frameworks, ce qui la rend extrêmement adaptable à divers environnements de développement.</p>
 <p>Avec Sentry, les développeurs peuvent rapidement identifier non seulement où une erreur s’est produite, mais aussi pourquoi, ce qui facilite grandement le débogage et la résolution des problèmes.</p>
@@ -189,6 +195,45 @@ variables d’environnement) », nous transférons donc cette clé depuis ce fi
 <a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/sentry-2.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
 <p>Enfin, il est crucial d’adopter de bonnes pratiques pour gérer et répondre aux erreurs signalées. Cela inclut la priorisation des erreurs, l’analyse des tendances sur les erreurs récurrentes, et la mise en place d’un workflow efficace pour la résolution des problèmes, en tirant parti des fonctionnalités de collaboration et d’intégration de Sentry avec d’autres outils de développement.</p>
 <p>En résumé, Sentry est un outil puissant qui, lorsqu’il est correctement déployé et utilisé, peut considérablement améliorer la stabilité et la fiabilité de nos applications. Son intégration dans notre projet nous permettra de gagner un temps précieux dans le processus de débogage et d’assurer une expérience utilisateur plus fluide et sans interruption.</p>
+</section>
+<section id="surveillance-du-projet-avec-logging">
+<h2><strong>2. Surveillance du projet avec Logging :</strong><a class="headerlink" href="#surveillance-du-projet-avec-logging" title="Link to this heading"></a></h2>
+<p><em>Le système de logging dans ce projet Django est conçu pour fournir une vue détaillée et configurable des événements qui se produisent lors de l’exécution de l’application.</em></p>
+<p><em>Il permet de suivre le comportement de l’application, de diagnostiquer les problèmes et de collecter des informations analytiques.</em></p>
+<p><strong>Configuration de Base</strong></p>
+<p>La configuration du logging est définie dans le fichier <strong>settings.py.</strong>  Nous utilisons un dictionnaire nommé LOGGING pour configurer <strong>les loggers</strong>, <strong>les handlers</strong>, <strong>les formatters</strong> et <strong>les niveaux de log.</strong></p>
+<p><strong>Composants Clés</strong></p>
+<ul class="simple">
+<li><p><strong>Loggers</strong>: Les loggers sont les points d’entrée du système de logging. Ils collectent les logs et les transmettent aux handlers. Dans notre configuration, nous avons des loggers pour Django lui-même, ainsi que pour les applications spécifiques du projet (lettings, profiles, et oc_lettings_site).</p></li>
+<li><p><strong>Handlers</strong>: Les handlers déterminent ce qu’il advient des logs une fois qu’ils sont collectés par un logger. Nous avons trois types de handlers :</p></li>
+<li><p><strong>Console</strong>: Envoie les logs à la sortie standard (utile pour le développement).</p></li>
+<li><p><strong>Sentry</strong>: Intégration avec Sentry pour la surveillance et la notification des erreurs en production.</p></li>
+<li><p><strong>File</strong>: Écrit les logs dans un fichier, ce qui est utile pour la conservation des données et les analyses ultérieures.</p></li>
+<li><p><strong>Formatters</strong>: Les formatters définissent le format d’affichage des logs. Notre formatter verbose inclut le niveau de log, l’horodatage, le module d’où provient le log, et le message.</p></li>
+<li><p><strong>Niveaux de Log</strong>: Chaque logger peut avoir son propre niveau de log (par exemple, INFO, WARNING, ERROR). Cela détermine la granularité des informations enregistrées.</p></li>
+</ul>
+<p><strong>Mise en Place du Fichier de Log</strong>
+Pour stocker les logs dans un fichier, nous avons configuré un FileHandler. Le fichier de log est situé dans un dossier <strong>logging</strong> à la racine du projet. Le script vérifie si ce dossier existe et le crée s’il n’est pas présent. Les logs sont écrits dans un fichier nommé django.log dans ce dossier.</p>
+<p><strong>Utilisation en Pratique</strong>
+Pour enregistrer un log, il suffit d’importer le module de logging de Python dans le fichier Python et de créer un logger au début de chaque fichier important :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>logging
+
+<span class="nv">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.getLogger<span class="o">(</span>__name__<span class="o">)</span>
+
+<span class="c1"># Utilisation dans votre code</span>
+logger.info<span class="o">(</span><span class="s2">&quot;Message informatif&quot;</span><span class="o">)</span>
+logger.warning<span class="o">(</span><span class="s2">&quot;Avertissement&quot;</span><span class="o">)</span>
+logger.error<span class="o">(</span><span class="s2">&quot;Message d&#39;erreur&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>voici une capture d’ecran de notre fichier log existant dans le dossier (logger) à la racine du projet :</p>
+<img alt="_images/logger.png" class="align-center" src="_images/logger.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/logger.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>En utilisant différentes méthodes (info, warning, error, etc.), vous pouvez enregistrer des logs de différents niveaux, qui seront traités selon la configuration définie dans settings.py.</p>
+<p><strong>Conclusion</strong></p>
+<p>Le système de logging est un outil puissant pour le suivi et le diagnostic de votre application Django. Il offre une flexibilité pour s’adapter à différents environnements et besoins, allant du développement à la production.</p>
+</section>
 </section>
 
 
