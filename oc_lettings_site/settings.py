@@ -199,41 +199,65 @@ initialize_sentry()
 api = falcon.App()
 
 
+# Répertoire pour les fichiers de log
+LOGGING_DIR = os.path.join(BASE_DIR, "logging")
+
+# Création du répertoire s'il n'existe pas
+if not os.path.exists(LOGGING_DIR):
+    os.makedirs(LOGGING_DIR)
+
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
+    "version": 1,  # Version de la configuration du logging
+    "disable_existing_loggers": False,  # Ne désactive pas les loggers existants
+    # Formatters définissent le format des messages de log
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {message}",
+            "style": "{",
+        },
+    },
+    # Handlers gèrent la destination et le format des logs
     "handlers": {
         "sentry": {
-            "level": "WARNING",  # Capture à partir du niveau WARNING pour Sentry
+            "level": "WARNING",  # Niveau de log pour Sentry
             "class": "sentry_sdk.integrations.logging.EventHandler",
         },
         "console": {
-            "class": "logging.StreamHandler",
+            "class": "logging.StreamHandler",  # Sortie des logs dans la console
+        },
+        "file": {
+            "level": "INFO",  # Niveau de log pour le fichier
+            "class": "logging.FileHandler",  # Handler pour écrire dans un fichier
+            "filename": os.path.join(
+                LOGGING_DIR, "django.log"
+            ),  # Chemin du fichier de log
+            "formatter": "verbose",  # Utilisation du formatter 'verbose'
         },
     },
+    # Loggers spécifient les handlers et le niveau de log
     "loggers": {
-        # Logger pour l'application Django principale
         "django": {
-            "handlers": ["sentry", "console"],
-            "level": "WARNING",
-            "propagate": True,
+            "handlers": [
+                "sentry",
+                "console",
+                "file",
+            ],  # Handlers utilisés par ce logger
+            "level": "WARNING",  # Niveau de log pour Django
+            "propagate": True,  # Propage les logs aux loggers parents
         },
-        # Logger pour l'application 'lettings'
         "lettings": {
-            "handlers": ["sentry", "console"],
-            "level": "INFO",  # Capture un niveau de log détaillé pour 'lettings'
+            "handlers": ["sentry", "console", "file"],
+            "level": "INFO",
             "propagate": False,
         },
-        # Logger pour l'application 'profiles'
         "profiles": {
-            "handlers": ["sentry", "console"],
-            "level": "INFO",  # Capture un niveau de log détaillé pour 'profiles'
+            "handlers": ["sentry", "console", "file"],
+            "level": "INFO",
             "propagate": False,
         },
-        # Logger pour votre application principale 'oc_lettings_site'
         "oc_lettings_site": {
-            "handlers": ["sentry", "console"],
-            "level": "INFO",  # Capture un niveau de log détaillé pour 'oc_lettings_site'
+            "handlers": ["sentry", "console", "file"],
+            "level": "INFO",
             "propagate": False,
         },
     },
