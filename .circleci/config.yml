@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   build:
     docker:
@@ -6,7 +7,6 @@ jobs:
     working_directory: ~/oc_p13
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
-      # Mettre à jour le PYTHONPATH pour inclure le répertoire du projet
       PYTHONPATH: /home/circleci/oc_p13:/home/walid/Bureau/oc_p13
     steps:
       - checkout
@@ -22,3 +22,7 @@ jobs:
           name: Check Test Coverage
           command: coverage report --fail-under=80
 
+workflows:
+  build_and_test_workflow:
+    jobs:
+      - build
