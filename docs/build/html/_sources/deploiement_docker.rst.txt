@@ -291,6 +291,7 @@ Pour tester l'image localement, vous pouvez la télécharger depuis Docker Hub e
 
    <u>Téléchargement de l'image depuis Docker Hub :</u>
 
+--
 
 .. Note::
 
@@ -329,3 +330,4 @@ Cela lancera l'application dans un conteneur Docker sur votre machine locale, o�
     http://127.0.0.1:8000
     
      
+.. Fin du document

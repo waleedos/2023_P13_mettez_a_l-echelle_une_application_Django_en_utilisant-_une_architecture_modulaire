@@ -4,6 +4,7 @@ Ce module définit les configurations globales du projet Django,
 incluant les réglages de base de données, les configurations de sécurité,
 et d'autres paramètres importants.
 """
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv

@@ -19,6 +19,7 @@ Orange County Lettings's documentation!
    le_linting
    surveillance_sentry_et_logging
    deploiement_docker
+   deploiement_circleci
    deploiement_render   
 
 
@@ -53,5 +54,6 @@ Orange County Lettings's documentation!
 
 .. include:: deploiement_docker.rst
 
-.. include:: deploiement_render.rst
+.. include:: deploiement_circleci.rst   
 
+.. include:: deploiement_render.rst

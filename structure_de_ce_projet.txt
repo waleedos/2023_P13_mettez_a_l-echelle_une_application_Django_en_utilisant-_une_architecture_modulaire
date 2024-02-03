@@ -39,6 +39,8 @@
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
+├── logging
+│   └── django.log
 ├── manage.py
 ├── oc_lettings_site
 │   ├── admin.py
@@ -85,4 +87,4 @@
     ├── base.html
     └── index.html
 
-15 directories, 70 files
+16 directories, 71 files
