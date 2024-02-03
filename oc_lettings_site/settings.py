@@ -21,7 +21,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+# j
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
