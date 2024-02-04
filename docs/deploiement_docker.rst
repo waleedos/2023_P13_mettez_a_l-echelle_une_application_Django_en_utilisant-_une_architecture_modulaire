@@ -244,7 +244,7 @@ Voici comment cela pourrait ressembler :
 
 .. code:: shell
 
-    docker build -t waleedos/orange_county_lettings:latest --build-arg COMMIT_HASH=3b18e51 .
+   docker build -t waleedos/orange_county_lettings:latest --build-arg COMMIT_HASH=3b18e51 .
 
 
 .. Note::
