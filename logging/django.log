@@ -107,3 +107,46 @@ INFO 2024-02-03 23:37:04,469 views Quelque chose s'est produit avec l'utilisateu
 INFO 2024-02-03 23:37:06,001 views Quelque chose s'est produit avec l'utilisateur : testuser
 INFO 2024-02-03 23:37:06,056 views Quelque chose s'est produit avec l'utilisateur : testuser
 INFO 2024-02-03 23:37:06,109 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-04 14:12:00,472 views Affichage de la liste des lettings.
+WARNING 2024-02-04 14:12:00,543 log Not Found: /une_url_inexistante/
+ERROR 2024-02-04 14:12:00,568 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-04 14:12:00,626 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-04 14:12:00,653 views Affichage de la page d'accueil.
+INFO 2024-02-04 14:12:00,678 views Affichage de la page d'accueil.
+WARNING 2024-02-04 14:12:00,705 log Not Found: /chemin_inexistant/
+ERROR 2024-02-04 14:12:00,730 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-04 14:12:00,752 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-04 14:12:01,151 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-04 14:12:01,937 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-04 14:12:04,869 views Affichage de la liste des profils.
+INFO 2024-02-04 14:12:04,897 views Affichage de la liste des profils.
+INFO 2024-02-04 14:12:04,927 views Affichage de la liste des profils.
+INFO 2024-02-04 14:12:05,363 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-04 14:12:05,390 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-04 14:12:05,416 views Quelque chose s'est produit avec l'utilisateur : testuser
