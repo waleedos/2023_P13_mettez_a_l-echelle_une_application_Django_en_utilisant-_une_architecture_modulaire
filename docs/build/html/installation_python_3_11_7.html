@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation de Python 3.11.7 &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation de Python 3.11.7</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation_python_3_11_7.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-de-python-3-11-7">
+<span id="guide-installation-version-python"></span><h1>Installation de Python 3.11.7<a class="headerlink" href="#installation-de-python-3-11-7" title="Link to this heading"></a></h1>
+<p><em>Cette documentation détaille le processus d’installation de notre projet sur un système d’exploitation Linux.</em></p>
+<p><em>Il est essentiel de noter que le choix de Linux comme environnement de développement et de déploiement est motivé par sa stabilité, sa sécurité, et sa flexibilité, des qualités appréciées dans le développement de logiciels modernes.</em></p>
+<p><em>De plus, nous recommandons fortement l’utilisation de Python 3.11.7 pour ce projet. Cette version spécifique de Python offre non seulement les dernières fonctionnalités et optimisations du langage, mais elle est également en adéquation avec les dépendances et les exigences du projet.</em></p>
+<p><em>En alignant l’environnement de développement sur cette version précise, nous assurons la cohérence, la compatibilité des packages et la prévention des problèmes liés aux différences de version.</em></p>
+<p><em>En outre, l’utilisation de Python 3.11.7 nous permet de tirer pleinement parti des améliorations en termes de performance et de fonctionnalités syntaxiques, optimisant ainsi le développement et l’exécution de l’application.</em></p>
+<p><em>Suivre ces instructions garantit une installation fluide et un environnement de travail idéal pour contribuer efficacement au projet.</em></p>
+<p><em>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.</em></p>
+<p><strong>Étape 1: Télécharger la dernière version de Python</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>build-essential<span class="w"> </span>zlib1g-dev<span class="w"> </span>libncurses5-dev<span class="w"> </span>libgdbm-dev<span class="w"> </span>libnss3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>libffi-dev<span class="w"> </span>wget
+</pre></div>
+</div>
+<p>Allez sur le site officiel de <a class="reference external" href="https://www.python.org/">Python</a> et trouvez l’URL de la dernière version de Python 3 en format .tar.xz.</p>
+<p>Utilisez wget pour télécharger le fichier :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span><span class="o">[</span>URL_du_fichier_python.tar.xz<span class="o">]</span>
+</pre></div>
+</div>
+<p>Dézipper le fichier téléchargé pour accéder à son contenu :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xf<span class="w"> </span><span class="o">[</span>Nom_du_fichier_python.tar.xz<span class="o">]</span>
+</pre></div>
+</div>
+<p>Accédez au répertoire extrait :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Nom_du_répertoire_extrait<span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 2: Configurez les options de compilation</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./configure<span class="w"> </span>--enable-optimizations<span class="w"> </span>--prefix<span class="o">=</span>/opt/python3.11
+</pre></div>
+</div>
+<p>Compilez Python :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<p>Installez Python dans le répertoire /opt :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>altinstall
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 3: Créer un environnement virtuel</strong></p>
+<blockquote>
+<div><p>Installez le package virtualenv si ce n’est pas déjà fait :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-virtualenv
+</pre></div>
+</div>
+<p>Créez un répertoire pour votre environnement virtuel :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>venv
+</pre></div>
+</div>
+<p>Créez un environnement virtuel en utilisant la version de Python que vous venez d’installer :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>--python<span class="o">=</span>/opt/python3.11/bin/python3.11<span class="w"> </span>venv/
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 4: Activer l’environnement virtuel</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+<p>Vous devriez maintenant avoir un environnement virtuel fonctionnel qui utilise la version 3.11.7 de Python 3 que vous avez installée, sans affecter la version globale de Python sur votre machine Linux.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

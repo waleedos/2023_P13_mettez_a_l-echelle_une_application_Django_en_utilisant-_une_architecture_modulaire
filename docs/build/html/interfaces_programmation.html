@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les Interfaces de Programmation &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les Tests Unitaires" href="tests_unitaires.html" />
+    <link rel="prev" title="Structure de la base de données" href="structure_base_de_donnees.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les Interfaces de Programmation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interfaces-de-programmation-pour-l-application-oc-lettings-site"><strong>Interfaces de Programmation pour l’application (oc_lettings_site)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interfaces-de-programmation-pour-l-application-lettings"><strong>Interfaces de Programmation pour l’application (lettings)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interfaces-de-programmation-pour-l-application-profiles"><strong>Interfaces de Programmation pour l’application (profiles)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings"><strong>Conclusion sur les Interfaces de Programmation du Projet OC Lettings</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les Interfaces de Programmation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/interfaces_programmation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="les-interfaces-de-programmation">
+<h1>Les Interfaces de Programmation<a class="headerlink" href="#les-interfaces-de-programmation" title="Link to this heading"></a></h1>
+<section id="interfaces-de-programmation-pour-l-application-oc-lettings-site">
+<h2><strong>Interfaces de Programmation pour l’application (oc_lettings_site)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-oc-lettings-site" title="Link to this heading"></a></h2>
+<p><strong>1- Page d’Accueil :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Affiche la page d’accueil du site.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Page HTML de l’accueil</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page d&#39;Accueil<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Bienvenue sur le site OC Lettings<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>2- Test d’Erreur 404 :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Provoque intentionnellement une erreur 404 pour tester la
+gestion des erreurs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/test-404/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Statut: 404 Non Trouvé
+Contenu: Page d’erreur personnalisée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Erreur 404<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Page non trouvée<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>3- Test d’Erreur 500 :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Provoque intentionnellement une erreur 500 pour tester la
+gestion des erreurs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/test-500/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Statut: 500 Erreur Interne du Serveur
+Contenu: Page d’erreur personnalisée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Erreur 500<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Erreur interne du serveur<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="interfaces-de-programmation-pour-l-application-lettings">
+<h2><strong>Interfaces de Programmation pour l’application (lettings)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-lettings" title="Link to this heading"></a></h2>
+<p><strong>1- Endpoint /lettings/ (URL lettings_index):</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Cette vue affiche une liste de toutes les locations disponibles.
+Elle  récupère  toutes les instances  de Letting et les transmet
+au template pour affichage.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/lettings/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune donnée de requête nécessaire.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Structure: Une page HTML rendue affichant une liste des
+locations (lettings).</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lettings_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Letting.objects.all<span class="o">()</span>
+<span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;lettings_list&quot;</span>:<span class="w"> </span>lettings_list<span class="o">}</span>
+<span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;lettings/index.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>2- Endpoint /lettings/&lt;letting_id&gt;/ (URL letting):</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Cette vue affiche les détails d’une location spécifique. Elle récupère une instance
+de Letting basée sur l’id fourni et transmet les détails au template.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/lettings/&lt;letting_id&gt;/ (où letting_id est un entier représentant l’ID du letting).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>letting_id (ID de la location à afficher).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Structure: Une page HTML rendue affichant les détails de la location spécifiée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">specific_letting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>get_object_or_404<span class="o">(</span>Letting,<span class="w"> </span><span class="nv">id</span><span class="o">=</span>letting_id<span class="o">)</span>
+<span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;title&quot;</span>:<span class="w"> </span>specific_letting.title,<span class="w"> </span><span class="s2">&quot;address&quot;</span>:<span class="w"> </span>specific_letting.address<span class="o">}</span>
+<span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;lettings/letting.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p>Ces informations détaillées permettront une meilleure compréhension de l’interaction avec l’application lettings via ses interfaces. La gestion des erreurs, comme la gestion des cas où un letting spécifique n’est pas trouvé (get_object_or_404), est également intégrée dans les vues.</p>
+</section>
+<section id="interfaces-de-programmation-pour-l-application-profiles">
+<h2><strong>Interfaces de Programmation pour l’application (profiles)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-profiles" title="Link to this heading"></a></h2>
+<p><strong>1- Liste des Profils</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>URL et Méth.</strong>
+<strong>HTTP</strong></p></td>
+<td><p>URL : /profiles/
+Méthode : GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Description</strong></p></td>
+<td><p>Cette interface affiche une liste de tous les profils d’utilisateurs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rép. Att.</strong></p></td>
+<td><p>La réponse est une page HTML (profiles/index.html) affichant la liste des profils. Chaque
+profil est obtenu à partir du modèle Profile qui est lié au modèle utilisateur standard de
+Django.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Code pour la Vue index dans views.py :</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>def<span class="w"> </span>index<span class="o">(</span>request<span class="o">)</span>:
+<span class="w">    </span>logger.info<span class="o">(</span><span class="s2">&quot;Affichage de la liste des profils.&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">profiles_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Profile.objects.all<span class="o">()</span>
+<span class="w">    </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;profiles_list&quot;</span>:<span class="w"> </span>profiles_list<span class="o">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;profiles/index.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>2- Détails d’un Profil Spécifique</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>URL et Méth.</strong>
+<strong>HTTP</strong></p></td>
+<td><p>URL : /profiles/&lt;username&gt;/
+Méthode : GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Description</strong></p></td>
+<td><p>Cette interface affiche les détails d’un profil utilisateur spécifique. Le username
+est passé en tant que paramètre dans l’URL.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rép. Att.</strong></p></td>
+<td><p>La réponse est une page HTML (profiles/profile.html) affichant les détails du profil
+spécifié. Les détails incluent le nom d’utilisateur et la ville favorite.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Code pour la Vue profile dans views.py :</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>def<span class="w"> </span>profile<span class="o">(</span>request,<span class="w"> </span>username<span class="o">)</span>:
+<span class="w">    </span>logger.info<span class="o">(</span>f<span class="s2">&quot;Affichage du profil pour l&#39;utilisateur : {username}&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">profile_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>get_object_or_404<span class="o">(</span>Profile,<span class="w"> </span><span class="nv">user__username</span><span class="o">=</span>username<span class="o">)</span>
+<span class="w">    </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;profile&quot;</span>:<span class="w"> </span>profile_instance<span class="o">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;profiles/profile.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings">
+<h2><strong>Conclusion sur les Interfaces de Programmation du Projet OC Lettings</strong><a class="headerlink" href="#conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings" title="Link to this heading"></a></h2>
+<p>Le projet OC Lettings, structuré autour des applications Django oc_lettings_site, lettings, et profiles, présente une architecture claire et modulaire, facilitant la compréhension et l’interaction avec ses différentes composantes. Chaque application encapsule des fonctionnalités spécifiques, exposées via des interfaces de programmation bien définies.</p>
+<p>L’application oc_lettings_site sert de point d’entrée principal, orchestrant les interactions globales et dirigeant les utilisateurs vers les fonctionnalités pertinentes des applications lettings et profiles. L’application lettings gère efficacement les données relatives aux locations, offrant des interfaces pour afficher la liste des locations disponibles et les détails de chaque location. En parallèle, l’application profiles se concentre sur la gestion des profils utilisateurs, avec des interfaces pour visualiser la liste des profils et les détails spécifiques à chaque utilisateur.</p>
+<p>La documentation des interfaces de ces applications met en lumière la manière dont elles interagissent avec les utilisateurs et les données. Les exemples de code fournis pour chaque endpoint illustrent concrètement comment les requêtes sont traitées et comment les réponses sont structurées, offrant ainsi une compréhension approfondie du fonctionnement interne de l’application.</p>
+<p>En somme, ce projet démontre une application robuste et bien structurée de Django, où chaque composant joue un rôle clé dans la fourniture d’une expérience utilisateur fluide et cohérente. La clarté des interfaces de programmation et la modularité du code favorisent une maintenance aisée et une évolutivité efficace, éléments cruciaux pour le succès continu du projet OC Lettings.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="structure_base_de_donnees.html" class="btn btn-neutral float-left" title="Structure de la base de données" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="tests_unitaires.html" class="btn btn-neutral float-right" title="Les Tests Unitaires" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

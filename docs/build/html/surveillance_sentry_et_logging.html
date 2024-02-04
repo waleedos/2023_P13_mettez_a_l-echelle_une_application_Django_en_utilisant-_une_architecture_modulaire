@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surveillance Sentry et Logging &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Déploiement Docker" href="deploiement_docker.html" />
+    <link rel="prev" title="Le Linting" href="le_linting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Surveillance Sentry et Logging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#surveillance-du-projet-avec-sentry"><strong>1. Surveillance du projet avec Sentry :</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#surveillance-du-projet-avec-logging"><strong>2. Surveillance du projet avec Logging :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Surveillance Sentry et Logging</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/surveillance_sentry_et_logging.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="surveillance-sentry-et-logging">
+<h1>Surveillance Sentry et Logging<a class="headerlink" href="#surveillance-sentry-et-logging" title="Link to this heading"></a></h1>
+<section id="surveillance-du-projet-avec-sentry">
+<h2><strong>1. Surveillance du projet avec Sentry :</strong><a class="headerlink" href="#surveillance-du-projet-avec-sentry" title="Link to this heading"></a></h2>
+<p><strong>Sentry</strong> est une plateforme de gestion des erreurs en temps réel, conçue pour <strong>améliorer la qualité des applications</strong> en permettant aux développeurs de détecter, <strong>suivre et résoudre efficacement les problèmes qui surviennent dans les applications en production.</strong> Le principal atout de Sentry est sa capacité à fournir des informations détaillées sur les erreurs, y compris la pile des appels, l’environnement d’exécution et même l’état de l’application au moment où l’erreur s’est produite.</p>
+<p>Cette plateforme est polyvalente et peut être intégrée à une multitude de langages de programmation et de frameworks, ce qui la rend extrêmement adaptable à divers environnements de développement.</p>
+<p>Avec Sentry, les développeurs peuvent rapidement identifier non seulement où une erreur s’est produite, mais aussi pourquoi, ce qui facilite grandement le débogage et la résolution des problèmes.</p>
+<p>Le déploiement de Sentry dans notre projet « Orange County Letting’s » se fait en plusieurs étapes clés.</p>
+<p><strong>1. Création d’un compte Sentry:</strong></p>
+<p>Tout d’abord, il est nécessaire de créer un compte Sentry et de configurer un nouveau projet dans l’interface Sentry.</p>
+<p>Cette étape permet d’obtenir <strong>une clé DSN (Data Source Name) unique</strong>, qui sera utilisée pour connecter notre application à Sentry.</p>
+<p><strong>2. Intégration de Sentry dans notre projet:</strong></p>
+<p>Une fois que vous avez votre clé DSN, l’étape suivante consiste à intégrer Sentry dans votre projet. Cela implique généralement l’ajout de la bibliothèque Sentry correspondante à notre projet via un gestionnaire de paquets, puis la configuration de Sentry avec notre clé DSN. Dans le cas de projets Python, cela peut se faire en installant le SDK Sentry avec pip et en ajoutant quelques lignes de configuration dans votre code.</p>
+<p><strong>- Intégration de Sentry dans (settings.py)</strong></p>
+<p>Il faut commencer par éditer le fichier de configuration de notre projet (settings.py), existant dans l’application principale (oc_lettings_site).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise Sentry pour la surveillance des erreurs dans une application Django.</span>
+<span class="c1"># Cette fonction configure Sentry, un service de suivi des erreurs, pour qu&#39;il soit utilisé avec</span>
+<span class="c1"># une application Django. Elle doit être appelée lors de l&#39;initialisation de l&#39;application pour</span>
+<span class="c1"># assurer que les erreurs et les problèmes sont correctement enregistrés et envoyés à Sentry.</span>
+<span class="c1">#</span>
+<span class="c1"># Sentry aide à surveiller, à détecter et à réparer les erreurs en temps réel, en fournissant</span>
+<span class="c1"># des détails contextuels et des insights sur les défaillances de l&#39;application.</span>
+<span class="c1">#</span>
+<span class="c1"># Paramètres :</span>
+<span class="c1"># dsn (str): La clé DSN (Data Source Name) fournie par Sentry. Cette clé est unique à chaque</span>
+<span class="c1">#            projet Sentry et est utilisée pour authentifier et diriger les données d&#39;erreur</span>
+<span class="c1">#            vers le bon projet dans Sentry. La clé DSN doit être obtenue à partir du tableau de</span>
+<span class="c1">#            bord Sentry et doit être traitée comme une information sensible.</span>
+<span class="c1">#</span>
+<span class="c1"># Retourne :</span>
+<span class="c1"># None</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple :</span>
+<span class="c1"># Pour initialiser Sentry dans une application Django, appelez cette fonction dans votre fichier</span>
+<span class="c1"># settings.py :</span>
+<span class="c1">#</span>
+<span class="c1">#     initialize_sentry()</span>
+<span class="c1">#</span>
+<span class="c1"># Remarque :</span>
+<span class="c1"># - Il est important de garder la clé DSN confidentielle, car elle permet l&#39;envoi de données à</span>
+<span class="c1">#   votre projet Sentry.</span>
+<span class="c1"># - Vous pouvez ajuster la configuration supplémentaire pour contrôler ce qui est envoyé à</span>
+<span class="c1">#   Sentry, comme la capture des erreurs de niveau DEBUG ou INFO, selon les besoins de votre</span>
+<span class="c1">#   projet.</span>
+<span class="c1">#</span>
+<span class="c1"># Pour plus d&#39;informations, visitez la documentation officielle de Sentry :</span>
+<span class="c1"># https://docs.sentry.io/platforms/python/guides/django/</span>
+</pre></div>
+</div>
+<p><strong>Voici le code que nous avons ajouté à la fin du fichier settings.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span>
+        <span class="s2">&quot;SENTRY_DSN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">),</span>  <span class="c1"># Utilisez une valeur par défaut vide si la variable</span>
+        <span class="c1"># n&#39;est pas définie</span>
+    <span class="c1"># Set traces_sample_rate to 1.0 to capture 100%</span>
+    <span class="c1"># of transactions for performance monitoring.</span>
+    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="c1"># Set profiles_sample_rate to 1.0 to profile 100%</span>
+    <span class="c1"># of sampled transactions.</span>
+    <span class="c1"># We recommend adjusting this value in production.</span>
+    <span class="n">profiles_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quand nous commençons cette étape, nous devrions normalement insérer notre fameuse clé DSN dans ce fichier (settings.py), mais une fois l’intégration de Sentry marche bien, et pour des mesures de sécurité, et pour les bonnes pratiques du « coding : Ne jamais stocker les identifiants Sentry ou toute autre donnée sensible dans le code source (utilisez des
+variables d’environnement) », nous transférons donc cette clé depuis ce fichier pour la mettre dans un fichier de variables d’environnement : par exemple, le fichier (.env).</p>
+</div>
+<p>Voici un exemple fictif d’insertion de la clé DSN dans le fichier (.env) :</p>
+<img alt="_images/sentry-1.png" class="align-center" src="_images/sentry-1.png" />
+<p><strong>3. Provocation d’une erreur pour le test de Sentry:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Après l’intégration de Sentry, il est important de tester son fonctionnement en générant volontairement des erreurs pour s’assurer que celles-ci sont correctement capturées et envoyées à Sentry. Cela implique également de personnaliser les paramètres de Sentry pour s’adapter aux besoins spécifiques de votre projet, comme la configuration des niveaux de journalisation, la définition des environnements (par exemple, développement, test, production) et l’ajout de métadonnées supplémentaires aux rapports d’erreurs pour améliorer leur contexte.</p>
+</div>
+<p>Apres avoir intégré Sentry dans le fichier settings.py, et après avoir mis et changé sa clé DSN dans une variable d’environnement (.env), il faut provoquer une erreur pour tester si mon code renvoie bien ce que nous attendons vers Sentry :</p>
+<p>Dans notre cas pour ce projet, un de nos tests unitaires est le test_500_view: qui teste la réponse en cas d’erreur interne du serveur :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+<span class="k">class</span> <span class="nc">ViewsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_500_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Teste la gestion des erreurs 500.</span>
+
+<span class="sd">        Simule une requête provoquant une erreur interne du serveur pour vérifier si l&#39;application</span>
+<span class="sd">        retourne correctement un code de statut 500 (Internal Server Error).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/test-500/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donc en résumé, si nous exécutons simplement ce test, nous devrions avoir un déclenchement d’erreur sur Sentry :</p>
+<img alt="_images/sentry-2.png" class="align-center" src="_images/sentry-2.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/sentry-2.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>Enfin, il est crucial d’adopter de bonnes pratiques pour gérer et répondre aux erreurs signalées. Cela inclut la priorisation des erreurs, l’analyse des tendances sur les erreurs récurrentes, et la mise en place d’un workflow efficace pour la résolution des problèmes, en tirant parti des fonctionnalités de collaboration et d’intégration de Sentry avec d’autres outils de développement.</p>
+<p>En résumé, Sentry est un outil puissant qui, lorsqu’il est correctement déployé et utilisé, peut considérablement améliorer la stabilité et la fiabilité de nos applications. Son intégration dans notre projet nous permettra de gagner un temps précieux dans le processus de débogage et d’assurer une expérience utilisateur plus fluide et sans interruption.</p>
+</section>
+<section id="surveillance-du-projet-avec-logging">
+<h2><strong>2. Surveillance du projet avec Logging :</strong><a class="headerlink" href="#surveillance-du-projet-avec-logging" title="Link to this heading"></a></h2>
+<p><em>Le système de logging dans ce projet Django est conçu pour fournir une vue détaillée et configurable des événements qui se produisent lors de l’exécution de l’application.</em></p>
+<p><em>Il permet de suivre le comportement de l’application, de diagnostiquer les problèmes et de collecter des informations analytiques.</em></p>
+<p><strong>Configuration de Base</strong></p>
+<p>La configuration du logging est définie dans le fichier <strong>settings.py.</strong>  Nous utilisons un dictionnaire nommé LOGGING pour configurer <strong>les loggers</strong>, <strong>les handlers</strong>, <strong>les formatters</strong> et <strong>les niveaux de log.</strong></p>
+<p><strong>Composants Clés</strong></p>
+<ul class="simple">
+<li><p><strong>Loggers</strong>: Les loggers sont les points d’entrée du système de logging. Ils collectent les logs et les transmettent aux handlers. Dans notre configuration, nous avons des loggers pour Django lui-même, ainsi que pour les applications spécifiques du projet (lettings, profiles, et oc_lettings_site).</p></li>
+<li><p><strong>Handlers</strong>: Les handlers déterminent ce qu’il advient des logs une fois qu’ils sont collectés par un logger. Nous avons trois types de handlers :</p></li>
+<li><p><strong>Console</strong>: Envoie les logs à la sortie standard (utile pour le développement).</p></li>
+<li><p><strong>Sentry</strong>: Intégration avec Sentry pour la surveillance et la notification des erreurs en production.</p></li>
+<li><p><strong>File</strong>: Écrit les logs dans un fichier, ce qui est utile pour la conservation des données et les analyses ultérieures.</p></li>
+<li><p><strong>Formatters</strong>: Les formatters définissent le format d’affichage des logs. Notre formatter verbose inclut le niveau de log, l’horodatage, le module d’où provient le log, et le message.</p></li>
+<li><p><strong>Niveaux de Log</strong>: Chaque logger peut avoir son propre niveau de log (par exemple, INFO, WARNING, ERROR). Cela détermine la granularité des informations enregistrées.</p></li>
+</ul>
+<p><strong>Mise en Place du Fichier de Log</strong>
+Pour stocker les logs dans un fichier, nous avons configuré un FileHandler. Le fichier de log est situé dans un dossier <strong>logging</strong> à la racine du projet. Le script vérifie si ce dossier existe et le crée s’il n’est pas présent. Les logs sont écrits dans un fichier nommé django.log dans ce dossier.</p>
+<p><strong>Utilisation en Pratique</strong>
+Pour enregistrer un log, il suffit d’importer le module de logging de Python dans le fichier Python et de créer un logger au début de chaque fichier important :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>logging
+
+<span class="nv">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.getLogger<span class="o">(</span>__name__<span class="o">)</span>
+
+<span class="c1"># Utilisation dans votre code</span>
+logger.info<span class="o">(</span><span class="s2">&quot;Message informatif&quot;</span><span class="o">)</span>
+logger.warning<span class="o">(</span><span class="s2">&quot;Avertissement&quot;</span><span class="o">)</span>
+logger.error<span class="o">(</span><span class="s2">&quot;Message d&#39;erreur&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>voici une capture d’ecran de notre fichier log existant dans le dossier (logger) à la racine du projet :</p>
+<img alt="_images/logger.png" class="align-center" src="_images/logger.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/logger.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>En utilisant différentes méthodes (info, warning, error, etc.), vous pouvez enregistrer des logs de différents niveaux, qui seront traités selon la configuration définie dans settings.py.</p>
+<p><strong>Conclusion</strong></p>
+<p>Le système de logging est un outil puissant pour le suivi et le diagnostic de votre application Django. Il offre une flexibilité pour s’adapter à différents environnements et besoins, allant du développement à la production.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="le_linting.html" class="btn btn-neutral float-left" title="Le Linting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="deploiement_docker.html" class="btn btn-neutral float-right" title="Déploiement Docker" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

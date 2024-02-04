@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Déploiement Docker &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Déploiement CircleCI" href="deploiement_circleci.html" />
+    <link rel="prev" title="Surveillance Sentry et Logging" href="surveillance_sentry_et_logging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Déploiement Docker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/deploiement_docker.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deploiement-docker">
+<h1>Déploiement Docker<a class="headerlink" href="#deploiement-docker" title="Link to this heading"></a></h1>
+<p><strong>Installation de Docker dans notre projet :</strong></p>
+<p>Vous pouvez installer Docker en utilisant le package Python docker. Voici comment procéder :</p>
+<u>Installation de Docker via pip :</u><p>Pour installer Docker avec pip, ouvrez un terminal et exécutez les commandes suivantes :</p>
+<p>Assurez-vous que pip est à jour</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</pre></div>
+</div>
+<p># Installez le package Docker</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>docker
+</pre></div>
+</div>
+<u>Installation de Docker Compose (optionnel) :</u><p>Si vous prévoyez d’utiliser Docker Compose, vous pouvez l’installer également :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>docker-compose
+</pre></div>
+</div>
+<u>Vérification de l'installation :</u><p>Une fois l’installation terminée, vous pouvez vérifier si Docker est correctement installé en exécutant la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>--version
+</pre></div>
+</div>
+<p><strong>Création d’un compte gratuit sur la plateforme Docker_Hub</strong></p>
+<p>Docker Hub est une plateforme qui permet de stocker et partager des images Docker. La création d’un compte Docker Hub est essentielle si vous souhaitez publier vos propres images Docker ou accéder à celles partagées par d’autres.</p>
+<u>Accéder au site Docker Hub :</u><p>Ouvrez un navigateur web, et accédez au site officiel de Docker Hub à l’adresse <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a>.</p>
+<u>Créer un Compte :</u><p>Sur la page d’accueil de Docker Hub, recherchez le bouton « Sign Up » ou « Inscription » et cliquez dessus.</p>
+<u>Remplir les Informations :</u><p>Vous serez redirigé vers la page d’inscription, remplissez les informations requises, y compris notre nom, notre adresse e-mail et un mot de passe sécurisé. Assurez-vous de choisir un mot de passe fort pour protéger notre compte.</p>
+<u>Accepter les Conditions d'Utilisation :</u><p>Lisez les conditions d’utilisation de Docker Hub; Cochez la case indiquant que vous acceptez les conditions d’utilisation.</p>
+<u>Créer le Compte :</u><p>Cliquez sur le bouton « Create Account » ou « Créer le Compte » pour finaliser le processus de création de compte.</p>
+<u>Vérification de l'E-mail (le cas échéant) :</u><p>Docker Hub peut vous demander de vérifier notre adresse e-mail en vous envoyant un e-mail de confirmation. Dans ce cas, vérifiez notre boîte de réception et suivez les instructions pour confirmer notre compte.</p>
+<u>Connexion au Compte :</u><p>Une fois le compte créé et éventuellement vérifié, revenez sur la page d’accueil de Docker Hub.</p>
+<p>Cliquez sur « Log In » ou « Se Connecter » en haut à droite de la page.</p>
+<p>Vous avez maintenant un compte Docker Hub prêt à être utilisé pour stocker, partager et gérer des images Docker. Vous pourrez également publier vos propres images Docker sur Docker Hub pour les rendre accessibles à d’autres utilisateurs.</p>
+<p><strong>Liaison de notre compte Docker_Hub avec ce projet</strong></p>
+<p>Pour intégrer Docker à notre projet, vous devez créer un Dockerfile à la racine de notre projet. Ce fichier contiendra toutes les instructions nécessaires pour construire l’image Docker de notre application. De plus, vous aurez besoin d’un fichier de démarrage (start.sh dans ce cas) pour lancer notre application Django.</p>
+<u>Création du Dockerfile : </u><p>Tout d’abord, assurez-vous d’avoir un fichier Dockerfile à la racine de notre projet. Vous pouvez créer un nouveau fichier avec l’extension « .Dockerfile » ou simplement « Dockerfile ».</p>
+<u>Contenu du Dockerfile :</u><p>Le Dockerfile que vous avez fourni est un excellent exemple. Voici une explication détaillée des différentes parties de ce Dockerfile :</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># Utilisation de l&#39;image de base Python 3.11</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11</span>
+
+<span class="c"># Définition du répertoire de travail dans le conteneur</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/oc-p13</span>
+
+<span class="c"># Copie du fichier requirements.txt dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+
+<span class="c"># Installation des dépendances</span>
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Copie du reste du code source de l&#39;application dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># Exécution de collectstatic</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput
+
+<span class="c"># Rendre le script de démarrage exécutable et le copier dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>start.sh<span class="w"> </span>/start.sh
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/start.sh
+
+<span class="c"># Exposition du port 8000</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+
+<span class="c"># Commande pour démarrer l&#39;application</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/start.sh&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Ce Dockerfile commence par utiliser l’image de base Python 3.11. Il définit également le répertoire de travail dans le conteneur, copie le fichier requirements.txt (qui contient les dépendances de notre application) dans le conteneur, et installe ces dépendances avec la commande RUN pip install.</p></li>
+<li><p>Ensuite, il copie le reste du code source de notre application dans le conteneur, exécute collectstatic pour rassembler les fichiers statiques, rend le script start.sh exécutable, et expose le port 8000.</p></li>
+<li><p>Enfin, la commande CMD spécifie comment démarrer l’application en exécutant le script start.sh.</p></li>
+</ul>
+</div>
+<u>Création du Fichier start.sh : </u><p>Le fichier start.sh est utilisé pour démarrer notre application Django. Voici son contenu :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput
+python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</pre></div>
+</div>
+<p>Ce script effectue les étapes suivantes :</p>
+<p>Exécute collectstatic pour rassembler les fichiers statiques de notre application.</p>
+<p>Lance le serveur Django en écoutant sur l’adresse 0.0.0.0 et le port 8000.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Assurez-vous que ce fichier est également à la racine de notre projet.</p>
+</div>
+<p>En suivant ces étapes, vous avez correctement configuré Docker pour notre projet Django, créé un Dockerfile détaillé et un fichier de démarrage start.sh pour lancer notre application dans un conteneur Docker.</p>
+<p><strong>Construction de l’Image Docker</strong></p>
+<p>Cette étape consiste à créer une image Docker de notre application. Le Dockerfile à la racine de notre projet contient les instructions nécessaires pour assembler cette image. Cette image sera utilisée pour exécuter notre application dans n’importe quel environnement Docker.</p>
+<p>Pour créer l’image Docker, vous utiliserez la commande suivante dans notre terminal :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>waleedos/orange_county_lettings:latest<span class="w"> </span>.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>docker build : C’est la commande principale pour construire une image Docker.</p></li>
+<li><p>-t : Cette option permet de spécifier un nom et une étiquette (tag) pour l’image. Dans cet exemple, l’image est nommée « waleedos/orange_county_lettings » avec l’étiquette « latest ».</p></li>
+<li><p>. : Le point à la fin de la commande indique que le Dockerfile se trouve dans le répertoire actuel.</p></li>
+</ul>
+<p>Exécution du Dockerfile : Lorsque vous exécutez la commande de construction, Docker lit le Dockerfile et suit les instructions à l’intérieur pour construire l’image. Voici ce que fait chaque instruction dans le Dockerfile :</p>
+<ul class="simple">
+<li><p>FROM python:3.11 : Spécifie l’image de base à utiliser, dans ce cas, Python 3.11.</p></li>
+<li><p>WORKDIR /oc-p13 : Définit le répertoire de travail à « /oc-p13 » dans le conteneur.</p></li>
+<li><p>COPY requirements.txt . : Copie le fichier « requirements.txt » depuis le répertoire local dans le répertoire actuel du conteneur.</p></li>
+<li><p>RUN pip install –no-cache-dir -r requirements.txt : Installe les dépendances en utilisant pip.</p></li>
+<li><p>COPY . . : Copie tout le code source de l’application dans le conteneur.</p></li>
+<li><p>RUN python manage.py collectstatic –noinput : Exécute la commande « collectstatic » pour rassembler les fichiers statiques de l’application.</p></li>
+<li><p>COPY start.sh /start.sh : Copie le script de démarrage « start.sh » dans le conteneur.</p></li>
+<li><p>RUN chmod +x /start.sh : Rend le script de démarrage exécutable.</p></li>
+<li><p>EXPOSE 8000 : Indique que le conteneur écoutera sur le port 8000.</p></li>
+<li><p>CMD [« /start.sh »] : Spécifie la commande à exécuter lorsque le conteneur est démarré, ici, il exécute « start.sh ».</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Tager les images Docker avec un label distinct, tel que le « hash » de commit, est une bonne pratique pour identifier de manière unique chaque version de l’image.</em> <em>Cela permet de garder une trace de quelle version de votre code source a été utilisée pour construire une image spécifique.</em> <em>Voici comment vous pouvez ajouter un label lors de la création de l’image Docker :</em></p>
+</div>
+<p>Supposons que vous souhaitez utiliser le « hash » de commit Git comme label. Voici comment vous pouvez le faire :</p>
+<u>Obtenir le "hash" du dernier commit :</u><p>Avant de créer l’image Docker, obtenez le « hash » du dernier commit Git que vous souhaitez utiliser comme label. Vous pouvez le faire en utilisant la commande Git suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rev-parse<span class="w"> </span>HEAD
+</pre></div>
+</div>
+<p>Cette commande renverra le « hash » du dernier commit, par exemple : 3b18e51a4b5e80632e35a15a02e62a57f33a891d</p>
+<p>Modifier la commande de construction de l’image Docker : Lors de la construction de l’image Docker, ajoutez l’option –build-arg pour transmettre le « hash » de commit en tant qu’argument de construction. Vous pouvez également utiliser l’option -t pour spécifier le nom et l’étiquette de l’image comme vous l’avez fait précédemment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous n’êtes pas obligé de rentrer toute la longueur du « hash » de commit Git lorsque vous l’utilisez comme label pour votre image Docker. En fait, il est courant de ne saisir que les 7 premiers caractères du « hash » qui sont suffisamment uniques pour identifier de manière distincte un commit. La longueur du « hash » que vous devez spécifier dépend de la longueur du préfixe nécessaire pour qu’il soit unique dans votre référentiel Git.</p>
+<p>Par exemple, un « hash » de commit complet pourrait ressembler à ceci : 3b18e51a4b5e80632e35a15a02e62a57f33a891d.</p>
+<p>Cependant, pour l’utiliser comme label, vous pouvez simplement spécifier les 7 premiers caractères.</p>
+</div>
+<p>Voici comment cela pourrait ressembler :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>waleedos/orange_county_lettings:latest<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">COMMIT_HASH</span><span class="o">=</span>3b18e51<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez tagez la meme image docker existante avec une autre étiquette s’il le faut.</p>
+</div>
+<p><strong>Publication de l’image sur Docker Hub :</strong></p>
+<u>Connexion à Docker Hub :</u><p>Assurez-vous d’être connecté à votre compte Docker Hub en utilisant la commande docker login. Vous devrez saisir vos informations d’identification Docker Hub.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>login
+</pre></div>
+</div>
+<u>Publication de l'image sur Docker Hub :</u><p>Une fois connecté, vous pouvez publier votre image Docker sur Docker Hub avec la commande suivante, en remplaçant YOUR_COMMIT_HASH par le « hash » du commit correspondant :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>push<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<p>Cela enverra votre image sur Docker Hub, où d’autres utilisateurs pourront la télécharger.</p>
+<u>Vérification de l'image Docker :</u><p>Pour tester l’image localement, vous pouvez la télécharger depuis Docker Hub et l’exécuter sur votre machine. Cela vous permettra de vérifier le fonctionnement de l’application dans un environnement similaire à la production.</p>
+<u>Téléchargement de l'image depuis Docker Hub :</u><p>–</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez télécharger l’image Docker depuis Docker Hub en utilisant la commande docker pull. Assurez-vous de spécifier le bon « hash » du commit que vous avez publié précédemment.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<u>Exécution de l'image localement :</u><p>Une fois l’image téléchargée, vous pouvez l’exécuter sur votre machine avec la commande docker run. Assurez-vous de mapper les ports et les volumes appropriés si nécessaire.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span>/chemin/vers/vos/fichiers:/chemin/dans/le/conteneur<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<p>N’oubliez pas de remplacer YOUR_COMMIT_HASH par le « hash » du commit que vous avez réellement utilisé.</p>
+<p>Cela lancera l’application dans un conteneur Docker sur votre machine locale, où vous pourrez la tester.</p>
+<u>Démarrez le projet sur votre navigateur</u><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+
+oubien
+
+http://127.0.0.1:8000
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="surveillance_sentry_et_logging.html" class="btn btn-neutral float-left" title="Surveillance Sentry et Logging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="deploiement_circleci.html" class="btn btn-neutral float-right" title="Déploiement CircleCI" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

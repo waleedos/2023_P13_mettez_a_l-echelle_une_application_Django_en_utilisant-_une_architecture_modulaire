@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orange County Lettings’s documentation! &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="À propos" href="a_propos.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="#">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Orange County Lettings’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="orange-county-lettings-s-documentation">
+<h1>Orange County Lettings’s documentation!<a class="headerlink" href="#orange-county-lettings-s-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interfaces_programmation.html#interfaces-de-programmation-pour-l-application-oc-lettings-site"><strong>Interfaces de Programmation pour l’application (oc_lettings_site)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces_programmation.html#interfaces-de-programmation-pour-l-application-lettings"><strong>Interfaces de Programmation pour l’application (lettings)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces_programmation.html#interfaces-de-programmation-pour-l-application-profiles"><strong>Interfaces de Programmation pour l’application (profiles)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces_programmation.html#conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings"><strong>Conclusion sur les Interfaces de Programmation du Projet OC Lettings</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="le_linting.html#verification-du-code-avec-le-linting"><strong>Vérification du code avec le Linting</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="le_linting.html#flake8-la-qualite-du-code"><strong>Flake8 &amp; la qualité du code</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="surveillance_sentry_et_logging.html#surveillance-du-projet-avec-sentry"><strong>1. Surveillance du projet avec Sentry :</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveillance_sentry_et_logging.html#surveillance-du-projet-avec-logging"><strong>2. Surveillance du projet avec Logging :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+</div>
+</section>
+<section id="a-propos">
+<h1>À propos<a class="headerlink" href="#a-propos" title="Link to this heading"></a></h1>
+<p>Ceci est une application Web appelée <em>Orange County Lettings</em> qui affiche les
+disponibilités. locations, leurs adresses et profils des personnes utilisant
+cette plateforme.</p>
+<p>En utilisant la page d’administration web, il est possible de gérer toutes les
+données de l’application de manière sûre, sans compromettre l’intégrité de la
+base de données. Toutes ces données sont enregistré dans un fichier de base de
+données.</p>
+<p>En accédant à l’application via un navigateur web, il est possible de
+visualiser:</p>
+<ul class="simple">
+<li><p>une liste de profils</p></li>
+<li><p>un seul profil détaillé</p></li>
+<li><p>une liste des locations disponibles</p></li>
+<li><p>une location en détail</p></li>
+</ul>
+<p>La page d’accueil de cette application contient deux liens: un vers la liste
+des profils et l’autre vers la liste des locations.</p>
+</section>
+<section id="technologies-et-langages-utilises">
+<h1>Technologies et Langages utilisés<a class="headerlink" href="#technologies-et-langages-utilises" title="Link to this heading"></a></h1>
+<img alt="_images/orange_country_lettings.png" class="align-center" src="_images/orange_country_lettings.png" />
+<p><a class="reference external" href="https://www.python.org/">Python</a> est le langage de programmation de choix pour ce projet. Sa version utilisée dans ce projet est <strong>Python 3.11.7</strong></p>
+<p>Ceci est une application web <a class="reference external" href="https://www.djangoproject.com">Django</a>. Django est un framework Web écrit en Python qui vous permet de créer des applications sous le paradigme MVC (Model View Controller). Django propose une interface d’administration accessible via un navigateur web.</p>
+<p><a class="reference external" href="https://www.docker.com/">Docker</a> et <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a> sont utilisés pour rendre cette application portable. Avec <strong>Docker</strong>, vous pouvez créer des conteneurs pour isoler vos applications et disposer d’environnements reproductibles sur différentes plateformes. Docker Compose vous permet de créer des définitions d’environnement pour votre application : au lieu d’écrire manuellement des commandes Docker complètes ou de créer des scripts shell, avec Docker Compose, vous pouvez définir tous les détails dans un fichier YAML et lancer les applications avec une seule commande. Vous pouvez également combiner plusieurs applications dans un seul fichier et les gérer en tant que dépendances d’une application principale.</p>
+<p>Cette documentation a été rédigée via <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>. Sphinx vous permet de créer de belles pages de documentation et possède plusieurs fonctionnalités. L’une d’elles est la possibilité de lire des docstrings directement à partir du code Python, afin que vous puissiez documenter les API, les fonctions, les classes, etc…</p>
+<p><strong>Cadre du Projet</strong></p>
+<p>Le projet Orange County Lettings est un exemple de site web développé dans le cadre de la formation Développeur d’application Python chez OpenClassrooms. Cette application web, en phase d’expansion, utilise des technologies modernes et des pratiques de développement avancées.</p>
+<p><strong>Architecture et Conception</strong></p>
+<p>Le projet est structuré en plusieurs applications Django (lettings, profiles, oc_lettings_site), illustrant une architecture modulaire. Chaque application est conçue pour gérer des aspects spécifiques de la plateforme, comme la gestion des locations (lettings) et des profils utilisateurs (profiles), tout en partageant une base commune (oc_lettings_site).</p>
+<p><strong>Technologies Principales</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3.11.7 : Langage de programmation principal, réputé pour sa lisibilité et sa simplicité.</p></li>
+<li><p>Django 5.0.1 : Framework web Python, choisi pour sa robustesse et sa capacité à accélérer le développement grâce à ses nombreuses fonctionnalités intégrées.</p></li>
+<li><p>Docker : Utilisé pour la conteneurisation de l’application, garantissant la portabilité et la cohérence des environnements de développement, de test et de production.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Dépendances Clés</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Django : Comme mentionné, le cœur du projet.</p></li>
+<li><p>Sentry SDK : Intégré pour la surveillance et le suivi des erreurs, contribuant à la robustesse de l’application.</p></li>
+<li><p>Pytest, Coverage : Utilisés pour les tests unitaires et la mesure de la couverture des tests, assurant la qualité et la fiabilité du code.</p></li>
+<li><p>flake8, pylint : Outils de linting pour maintenir le code propre et conforme aux bonnes pratiques.</p></li>
+<li><p>Sphinx : Pour la génération de cette documentation, permettant d’extraire et de compiler les docstrings du code.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Optimisation et Maintenance</strong></p>
+<p>La réorganisation du code en applications distinctes et la mise en œuvre d’une architecture modulaire améliorent non seulement la maintenabilité mais aussi la flexibilité du projet. Les migrations Django sont utilisées pour gérer les modèles de données, tandis que les tests unitaires et d’intégration assurent une qualité constante.</p>
+<p><strong>Surveillance et Gestion des Erreurs</strong></p>
+<p>L’intégration de Sentry pour le suivi des erreurs et l’utilisation de logs stratégiques renforcent la surveillance et la fiabilité de l’application.</p>
+<p><strong>CI/CD et Déploiement</strong></p>
+<p>Un pipeline CI/CD complet est mis en place, incluant la compilation, les tests, la conteneurisation avec Docker, et le déploiement sur une plateforme choisie (comme Render). Cette approche garantit un processus de déploiement fluide et fiable.</p>
+<p><strong>Conclusion et Prérequis</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Compte GitHub avec accès en lecture à ce repository</p></li>
+<li><p>Git CLI</p></li>
+<li><p>SQLite3 CLI</p></li>
+<li><p>Interpréteur Python, version 3.6 ou supérieure</p></li>
+</ul>
+</div></blockquote>
+<p>Dans le reste de la documentation sur le développement local, il est supposé que la commande <strong>python</strong> de votre OS shell exécute l’interpréteur Python ci-dessus (à moins qu’un environnement virtuel ne soit activé). Cet ensemble de technologies et de pratiques illustre un engagement envers la qualité, l’efficacité et la scalabilité dans le développement de logiciels modernes. La documentation technique, créée avec Sphinx et hébergée sur Read The Docs, en est un témoignage supplémentaire, facilitant la compréhension et la collaboration future sur le projet.</p>
+<section id="structure-de-ce-projet">
+<h2>Structure de ce projet<a class="headerlink" href="#structure-de-ce-projet" title="Link to this heading"></a></h2>
+<p>Voici la structure de répertoire du projet :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.
+├── Dockerfile
+├── lettings
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── lettings
+│   │       ├── index.html
+│   │       └── letting.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── oc_lettings_site
+│   ├── admin.py
+│   ├── apps.py
+│   ├── asgi.py
+│   ├── models.py
+│   ├── settings.py
+│   ├── settings_test.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── oc-lettings-site_backup.sqlite3
+├── oc-lettings-site.sqlite3
+├── Procfile
+├── profiles
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── templates
+│   │   └── profiles
+│   │       ├── index.html
+│   │       └── profile.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── pylint_django_setup.py
+├── README.md
+├── requirements.txt
+├── setup.cfg
+├── start.sh
+├── static
+│   ├── assets
+│   │   ├── fonts
+│   │   └── img
+│   │       └── logo.png
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── structure_de_ce_projet.txt
+└── templates
+    ├── 404.html
+    ├── 500.html
+    ├── base.html
+    └── index.html
+
+14 directories, 44 files
+</pre></div>
+</div>
+</section>
+<section id="installation-du-projet-sur-votre-machine">
+<h2>Installation du projet sur votre machine<a class="headerlink" href="#installation-du-projet-sur-votre-machine" title="Link to this heading"></a></h2>
+<p>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.
+Voir la rubrique (Installation de Python 3.11.7 sur votre machine)</p>
+<p><strong>Cloner le Référentiel :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/put/project/in
+</pre></div>
+</div>
+<p><strong>Avec HTTPS</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
+</pre></div>
+</div>
+<p><strong>Avec SSH</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
+</pre></div>
+</div>
+<p><strong>Dézippé le fichier téléchargé par clone :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>nom_du_fichier.zip
+</pre></div>
+</div>
+<p><strong>Allez dans le dossier dézippé :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/nom_du_dossier_dézippé
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>Nous recommandons fortement l’utilisation de Python 3.11.7 pour ce projet. Cette version spécifique de Python offre non seulement les dernières fonctionnalités et optimisations du langage, mais elle est également en adéquation avec les dépendances et les exigences du projet.</em></p>
+<p><em>En alignant l’environnement de développement sur cette version précise, nous assurons la cohérence, la compatibilité des packages et la prévention des problèmes liés aux différences de version.</em></p>
+<p><em>En outre, l’utilisation de Python 3.11.7 nous permet de tirer pleinement parti des améliorations en termes de performance et de fonctionnalités syntaxiques, optimisant ainsi le développement et l’exécution de l’application.</em></p>
+<p><em>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes existantes dans la rubrique suivante dans la documentation : « Installation de Python 3.11.7 ».</em></p>
+</div>
+<p>Pour plus d’informations, veuillez consulter la section <a class="reference internal" href="installation_python_3_11_7.html#guide-installation-version-python"><span class="std std-ref">Installation de Python 3.11.7</span></a>.</p>
+<p><strong>Activez votre environnement virtuel (vide jusqu’à maintenant) :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+<p><strong>Installez tous les packets et dépendances de ce projet :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--requirement<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p><strong>Démarrez le serveur Django :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p><strong>Aller sur la page du projet dans un navigateur :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+</pre></div>
+</div>
+</section>
+<section id="installation-de-python-3-11-7">
+<span id="guide-installation-version-python"></span><h2>Installation de Python 3.11.7<a class="headerlink" href="#installation-de-python-3-11-7" title="Link to this heading"></a></h2>
+<p><em>Cette documentation détaille le processus d’installation de notre projet sur un système d’exploitation Linux.</em></p>
+<p><em>Il est essentiel de noter que le choix de Linux comme environnement de développement et de déploiement est motivé par sa stabilité, sa sécurité, et sa flexibilité, des qualités appréciées dans le développement de logiciels modernes.</em></p>
+<p><em>De plus, nous recommandons fortement l’utilisation de Python 3.11.7 pour ce projet. Cette version spécifique de Python offre non seulement les dernières fonctionnalités et optimisations du langage, mais elle est également en adéquation avec les dépendances et les exigences du projet.</em></p>
+<p><em>En alignant l’environnement de développement sur cette version précise, nous assurons la cohérence, la compatibilité des packages et la prévention des problèmes liés aux différences de version.</em></p>
+<p><em>En outre, l’utilisation de Python 3.11.7 nous permet de tirer pleinement parti des améliorations en termes de performance et de fonctionnalités syntaxiques, optimisant ainsi le développement et l’exécution de l’application.</em></p>
+<p><em>Suivre ces instructions garantit une installation fluide et un environnement de travail idéal pour contribuer efficacement au projet.</em></p>
+<p><em>Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.</em></p>
+<p><strong>Étape 1: Télécharger la dernière version de Python</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>build-essential<span class="w"> </span>zlib1g-dev<span class="w"> </span>libncurses5-dev<span class="w"> </span>libgdbm-dev<span class="w"> </span>libnss3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>libffi-dev<span class="w"> </span>wget
+</pre></div>
+</div>
+<p>Allez sur le site officiel de <a class="reference external" href="https://www.python.org/">Python</a> et trouvez l’URL de la dernière version de Python 3 en format .tar.xz.</p>
+<p>Utilisez wget pour télécharger le fichier :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span><span class="o">[</span>URL_du_fichier_python.tar.xz<span class="o">]</span>
+</pre></div>
+</div>
+<p>Dézipper le fichier téléchargé pour accéder à son contenu :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xf<span class="w"> </span><span class="o">[</span>Nom_du_fichier_python.tar.xz<span class="o">]</span>
+</pre></div>
+</div>
+<p>Accédez au répertoire extrait :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Nom_du_répertoire_extrait<span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 2: Configurez les options de compilation</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./configure<span class="w"> </span>--enable-optimizations<span class="w"> </span>--prefix<span class="o">=</span>/opt/python3.11
+</pre></div>
+</div>
+<p>Compilez Python :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<p>Installez Python dans le répertoire /opt :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make<span class="w"> </span>altinstall
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 3: Créer un environnement virtuel</strong></p>
+<blockquote>
+<div><p>Installez le package virtualenv si ce n’est pas déjà fait :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-virtualenv
+</pre></div>
+</div>
+<p>Créez un répertoire pour votre environnement virtuel :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>venv
+</pre></div>
+</div>
+<p>Créez un environnement virtuel en utilisant la version de Python que vous venez d’installer :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>--python<span class="o">=</span>/opt/python3.11/bin/python3.11<span class="w"> </span>venv/
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Étape 4: Activer l’environnement virtuel</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+<p>Vous devriez maintenant avoir un environnement virtuel fonctionnel qui utilise la version 3.11.7 de Python 3 que vous avez installée, sans affecter la version globale de Python sur votre machine Linux.</p>
+</section>
+<section id="demarrage-rapide">
+<h2>Demarrage rapide<a class="headerlink" href="#demarrage-rapide" title="Link to this heading"></a></h2>
+<p><strong>S’assurer que vous etes dans le repertoire du projet :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Nom_du_répertoire_du<span class="w"> </span>projet<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>S’assurer que votre environnement virtuel est activé :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+<p><strong>Démarrez le serveur Django :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p><strong>Aller sur la page du projet dans un navigateur:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+</pre></div>
+</div>
+</section>
+<section id="demarrage-avec-docker">
+<h2>Demarrage avec Docker<a class="headerlink" href="#demarrage-avec-docker" title="Link to this heading"></a></h2>
+<p>Vous pouvez démarrer l’application sur votre ordinateur directement et tres facilement avec docker, sans avoir à configurer un environnement virtuel ou quoi que ce soit :</p>
+<p><strong>Démarrez Docker (s’il ne fonctionne pas déjà en arrière-plan).</strong></p>
+<p><strong>1- Vérifiez le status de docker :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
+</pre></div>
+</div>
+<p><strong>2- Si docker ne fonctionne pas déjà en arrière-plan, démarrez le:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+</pre></div>
+</div>
+<p><strong>3- Télécharger le tout dernier (Tag) avec la commande suivante:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>waleedos/orange_county_lettings:latest
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Vous ne verrez PAS de nouveau fichier dans votre dossier, mais l’image est automatiquement téléchargée dans un conteneur correspondant à un Docker et apparaîtra directement dans le logiciel Docker-Desktop (si vous l’avez installer).</em></p>
+</div>
+<p><strong>4- Démarrer et executer cette dernière image téléchargée:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>waleedos/orange_county_lettings:latest
+</pre></div>
+</div>
+<p>L’image est en cours d’exécution. Vous devriez voir des lignes similaires à celles ci-dessous :</p>
+<p><strong>5- Ouvrez votre navigateur et connectez-vous à l’application via:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://127.0.0.1:8000/
+
+ou
+
+http://localhost:8000/
+</pre></div>
+</div>
+<p><em>Une fois que vous avez terminé, et si vous utilisez l’application Docker-desktop, vous pouvez soit appuyer sur le bouton d’arrêt (le carré), soit appuyer directement sur la poubelle, ce qui arrêtera la course et supprimera le conteneur actuel.</em></p>
+<p>–</p>
+</section>
+<section id="administration-pour-notre-projet-orange-county-lettings">
+<h2>Administration pour notre projet Orange County Lettings<a class="headerlink" href="#administration-pour-notre-projet-orange-county-lettings" title="Link to this heading"></a></h2>
+<p><strong>Panel d’administration</strong></p>
+<p>Aller sur l’url suivante (dans le cas d’un test en local):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000/admin
+</pre></div>
+</div>
+<p>Connectez-vous en tant qu’administrateur avec les identifiants suivants :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>user<span class="w">     </span>:<span class="w">  </span>admin
+password<span class="w"> </span>:<span class="w">  </span>Abc1234!
+</pre></div>
+</div>
+<p>L’administration Django est une interface puissante qui permet une gestion aisée des modèles et des données du site.</p>
+<p><strong>Accès à l’Administration :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>URL     : /admin/</p></li>
+<li><p>Méthode : GET pour l’accès, POST pour les interactions (ajout, modification, suppression des données).</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Modèle Letting :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fichier         : lettings/admin.py</p></li>
+<li><p>Classe          : LettingAdmin</p></li>
+<li><p>Configuration   : Les champs address et title du modèle Letting sont affichés dans l’interface d’administration.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Modèle Profile :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fichier         : profiles/admin.py</p></li>
+<li><p>Classe          : ProfileAdmin</p></li>
+<li><p>Configuration   : Les champs user et favorite_city du modèle Profile sont affichés dans l’interface d’administration.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Gestion des Données :</strong></p>
+<p>Les administrateurs peuvent effectuer les actions suivantes dans l’interface d’administration :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ajouter de nouvelles instances pour les modèles Letting et Profile.</p></li>
+<li><p>Modifier les données existantes des instances de ces modèles.</p></li>
+<li><p>Supprimer des instances si nécessaire.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Sécurité et Accès :</strong></p>
+<p>L’accès à l’interface d’administration est restreint aux utilisateurs ayant des droits d’administrateur. Il est recommandé de gérer attentivement les comptes administrateurs pour maintenir la sécurité du site.</p>
+<p>Personnalisation et Extensions :
+L’interface d’administration Django est hautement personnalisable. Si des fonctionnalités supplémentaires sont nécessaires (par exemple, des filtres avancés, des champs personnalisés, etc.), elles peuvent être ajoutées en étendant les classes ModelAdmin.</p>
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="structure-de-la-base-de-donnees">
+<h2>Structure de la base de données<a class="headerlink" href="#structure-de-la-base-de-donnees" title="Link to this heading"></a></h2>
+<p><strong>Base de données et structure des modèles</strong>
+- Base de données SQLite3</p>
+<p><em>SQLite est une bibliothèque C qui fournit une base de données légère basée sur le disque qui ne nécessite pas un processus de serveur séparé.</em></p>
+<p><em>Nous pouvons accéder à la base de données en utilisant une variante non standard du langage de requête SQL.</em> <em>Il s’agit d’une base de données SQL autonome, basée sur des fichiers.</em></p>
+<p><em>En tant que tel, nous n’avons pas besoin d’installer de modules ou de logiciels supplémentaires au fur et à mesure qu’il est fourni avec Python, et en plus, Django l’utilise nativement lors de la création d’un nouveau projet.</em></p>
+<p><strong>Contenu de la base de données</strong></p>
+<p>Il y a 3 objets principaux dans la base de données:</p>
+<p>1- Les Profils des utilisateurs/clients : Chaque profil a un id (non affiché), un favori-city et un id-utilisateur (non affiché). Un profil affiche certaines des informations de l’utilisateur stockées dans la table « utilisateur d’auth-utilisateur » : prénom, nom, adresse électronique et ville préférée.</p>
+<p>2- Letting : Propriétés Listed où leur titre correspondant est affiché, Chaque letting a un id (non affiché), un titre, et est lié à une adresse-id (non affichée, voir ci-dessous).</p>
+<p>3- Adresse : Adresses de chaque bien. Une adresse a un id (non affiché), un numéro, une rue, une ville, un état, un code postal et un code ISO de pays.</p>
+<p><strong>S’assurer que vous êtes dans le répertoire du projet :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Nom_du_répertoire_du_projet<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Ouvrez une session Shell pour sqlite :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sqlite3
+</pre></div>
+</div>
+<p><strong>Connectez-vous à la base de données :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.open<span class="w"> </span>oc-lettings-site.sqlite3
+</pre></div>
+</div>
+<p><strong>Afficher les tables dans la base de données :</strong></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.tables
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Afficher par exemple les colonnes dans le tableau des profils :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>PRAGMA<span class="w"> </span>table_info<span class="o">(</span><span class="s2">&quot;profiles_profile&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Lancer une requête sur la table des profils pour filtrer uniquement les enregistrements où la valeur de la colonne favorite_city commence par la lettre “B” :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span>user_id,<span class="w"> </span>favorite_city<span class="w"> </span>from<span class="w"> </span>profiles_profile<span class="w"> </span>where<span class="w"> </span>favorite_city<span class="w"> </span>like<span class="w"> </span><span class="s1">&#39;B%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Voici le diagramme de notre base de données</strong></p>
+<img alt="_images/diagramme.png" class="align-center" src="_images/diagramme.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/diagramme.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+<section id="les-interfaces-de-programmation">
+<h2>Les Interfaces de Programmation<a class="headerlink" href="#les-interfaces-de-programmation" title="Link to this heading"></a></h2>
+<section id="interfaces-de-programmation-pour-l-application-oc-lettings-site">
+<h3><strong>Interfaces de Programmation pour l’application (oc_lettings_site)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-oc-lettings-site" title="Link to this heading"></a></h3>
+<p><strong>1- Page d’Accueil :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Affiche la page d’accueil du site.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Page HTML de l’accueil</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page d&#39;Accueil<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Bienvenue sur le site OC Lettings<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>2- Test d’Erreur 404 :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Provoque intentionnellement une erreur 404 pour tester la
+gestion des erreurs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/test-404/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Statut: 404 Non Trouvé
+Contenu: Page d’erreur personnalisée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Erreur 404<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Page non trouvée<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>3- Test d’Erreur 500 :</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Provoque intentionnellement une erreur 500 pour tester la
+gestion des erreurs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/test-500/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Statut: 500 Erreur Interne du Serveur
+Contenu: Page d’erreur personnalisée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Erreur 500<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Erreur interne du serveur<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="interfaces-de-programmation-pour-l-application-lettings">
+<h3><strong>Interfaces de Programmation pour l’application (lettings)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-lettings" title="Link to this heading"></a></h3>
+<p><strong>1- Endpoint /lettings/ (URL lettings_index):</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Cette vue affiche une liste de toutes les locations disponibles.
+Elle  récupère  toutes les instances  de Letting et les transmet
+au template pour affichage.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/lettings/</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>Aucune donnée de requête nécessaire.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Structure: Une page HTML rendue affichant une liste des
+locations (lettings).</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lettings_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Letting.objects.all<span class="o">()</span>
+<span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;lettings_list&quot;</span>:<span class="w"> </span>lettings_list<span class="o">}</span>
+<span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;lettings/index.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>2- Endpoint /lettings/&lt;letting_id&gt;/ (URL letting):</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Cette vue affiche les détails d’une location spécifique. Elle récupère une instance
+de Letting basée sur l’id fourni et transmet les détails au template.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>URL et Params</strong></p></td>
+<td><p>/lettings/&lt;letting_id&gt;/ (où letting_id est un entier représentant l’ID du letting).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Méthode HTTP</strong></p></td>
+<td><p>GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Données Req.</strong></p></td>
+<td><p>letting_id (ID de la location à afficher).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Réponse Att.</strong></p></td>
+<td><p>Structure: Une page HTML rendue affichant les détails de la location spécifiée.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Réponse:</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">specific_letting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>get_object_or_404<span class="o">(</span>Letting,<span class="w"> </span><span class="nv">id</span><span class="o">=</span>letting_id<span class="o">)</span>
+<span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;title&quot;</span>:<span class="w"> </span>specific_letting.title,<span class="w"> </span><span class="s2">&quot;address&quot;</span>:<span class="w"> </span>specific_letting.address<span class="o">}</span>
+<span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;lettings/letting.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p>Ces informations détaillées permettront une meilleure compréhension de l’interaction avec l’application lettings via ses interfaces. La gestion des erreurs, comme la gestion des cas où un letting spécifique n’est pas trouvé (get_object_or_404), est également intégrée dans les vues.</p>
+</section>
+<section id="interfaces-de-programmation-pour-l-application-profiles">
+<h3><strong>Interfaces de Programmation pour l’application (profiles)</strong><a class="headerlink" href="#interfaces-de-programmation-pour-l-application-profiles" title="Link to this heading"></a></h3>
+<p><strong>1- Liste des Profils</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>URL et Méth.</strong>
+<strong>HTTP</strong></p></td>
+<td><p>URL : /profiles/
+Méthode : GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Description</strong></p></td>
+<td><p>Cette interface affiche une liste de tous les profils d’utilisateurs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rép. Att.</strong></p></td>
+<td><p>La réponse est une page HTML (profiles/index.html) affichant la liste des profils. Chaque
+profil est obtenu à partir du modèle Profile qui est lié au modèle utilisateur standard de
+Django.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Code pour la Vue index dans views.py :</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>def<span class="w"> </span>index<span class="o">(</span>request<span class="o">)</span>:
+<span class="w">    </span>logger.info<span class="o">(</span><span class="s2">&quot;Affichage de la liste des profils.&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">profiles_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Profile.objects.all<span class="o">()</span>
+<span class="w">    </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;profiles_list&quot;</span>:<span class="w"> </span>profiles_list<span class="o">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;profiles/index.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>2- Détails d’un Profil Spécifique</strong></p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>URL et Méth.</strong>
+<strong>HTTP</strong></p></td>
+<td><p>URL : /profiles/&lt;username&gt;/
+Méthode : GET</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Description</strong></p></td>
+<td><p>Cette interface affiche les détails d’un profil utilisateur spécifique. Le username
+est passé en tant que paramètre dans l’URL.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rép. Att.</strong></p></td>
+<td><p>La réponse est une page HTML (profiles/profile.html) affichant les détails du profil
+spécifié. Les détails incluent le nom d’utilisateur et la ville favorite.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple de Code pour la Vue profile dans views.py :</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>def<span class="w"> </span>profile<span class="o">(</span>request,<span class="w"> </span>username<span class="o">)</span>:
+<span class="w">    </span>logger.info<span class="o">(</span>f<span class="s2">&quot;Affichage du profil pour l&#39;utilisateur : {username}&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">profile_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>get_object_or_404<span class="o">(</span>Profile,<span class="w"> </span><span class="nv">user__username</span><span class="o">=</span>username<span class="o">)</span>
+<span class="w">    </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;profile&quot;</span>:<span class="w"> </span>profile_instance<span class="o">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>render<span class="o">(</span>request,<span class="w"> </span><span class="s2">&quot;profiles/profile.html&quot;</span>,<span class="w"> </span>context<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings">
+<h3><strong>Conclusion sur les Interfaces de Programmation du Projet OC Lettings</strong><a class="headerlink" href="#conclusion-sur-les-interfaces-de-programmation-du-projet-oc-lettings" title="Link to this heading"></a></h3>
+<p>Le projet OC Lettings, structuré autour des applications Django oc_lettings_site, lettings, et profiles, présente une architecture claire et modulaire, facilitant la compréhension et l’interaction avec ses différentes composantes. Chaque application encapsule des fonctionnalités spécifiques, exposées via des interfaces de programmation bien définies.</p>
+<p>L’application oc_lettings_site sert de point d’entrée principal, orchestrant les interactions globales et dirigeant les utilisateurs vers les fonctionnalités pertinentes des applications lettings et profiles. L’application lettings gère efficacement les données relatives aux locations, offrant des interfaces pour afficher la liste des locations disponibles et les détails de chaque location. En parallèle, l’application profiles se concentre sur la gestion des profils utilisateurs, avec des interfaces pour visualiser la liste des profils et les détails spécifiques à chaque utilisateur.</p>
+<p>La documentation des interfaces de ces applications met en lumière la manière dont elles interagissent avec les utilisateurs et les données. Les exemples de code fournis pour chaque endpoint illustrent concrètement comment les requêtes sont traitées et comment les réponses sont structurées, offrant ainsi une compréhension approfondie du fonctionnement interne de l’application.</p>
+<p>En somme, ce projet démontre une application robuste et bien structurée de Django, où chaque composant joue un rôle clé dans la fourniture d’une expérience utilisateur fluide et cohérente. La clarté des interfaces de programmation et la modularité du code favorisent une maintenance aisée et une évolutivité efficace, éléments cruciaux pour le succès continu du projet OC Lettings.</p>
+</section>
+</section>
+<section id="les-tests-unitaires">
+<h2>Les Tests Unitaires<a class="headerlink" href="#les-tests-unitaires" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>cd /path/to/Python-OC-Lettings-FR</cite></p></li>
+<li><p><cite>source venv/bin/activate</cite></p></li>
+<li><p><cite>pytest</cite></p></li>
+</ul>
+<p><strong>Dans ce projet, nous comptons 3 applications Django :</strong></p>
+<ul class="simple">
+<li><p>L’application lettings</p></li>
+<li><p>L’application oc_lettings_site</p></li>
+<li><p>L’application profiles</p></li>
+</ul>
+<p>Dans chaque dossier de ces 3 applications, existe un fichier nommé (test.py) dans lequel nous avons élaborer les tests necessaires pour cette application :</p>
+<ul class="simple">
+<li><p>Pour l’application lettings         : Nous avons 9 tests.</p></li>
+<li><p>Pour l’application oc_lettings_site : Nous avons 7 tests.</p></li>
+<li><p>Pour l’application profiles         : Nous avons 13 tests.</p></li>
+</ul>
+<p><strong>Execution des tests séparement:</strong></p>
+<p>Pour executer les tests d’une application précise, nous pouvons utiliser trois méthodes :</p>
+<p><strong>1- Lancer la commande “pytest” dans le repertoire de l’application en question :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>profiles
+
+Puis
+
+pytest
+</pre></div>
+</div>
+<p>Cela execute tous les tests existants dans le fichier « tests.py » de l’application « profiles »</p>
+<p><strong>2- Lancer la commande pytest depuis le dossier racine du projet :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>profiles/tests
+</pre></div>
+</div>
+<p>Cela execute aussi tous les tests existants dans le fichier « tests.py » de l’application « profiles »</p>
+<p><strong>3- Execution d’un seul test existant dans le fichier « test.py »</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>profiles/tests.py::NomDeLaClasseDeTest::NomDuTestEnQuestion
+</pre></div>
+</div>
+<p>Par exemple dans notre cas, nous voudrions executer le test test_profile_access_redirection</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>profiles/tests.py::ProfileAccessTestCase::test_profile_access_redirection
+</pre></div>
+</div>
+<p><strong>Execution de tous les tests globalement depuis la racine du projet:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pytest
+</pre></div>
+</div>
+<img alt="_images/pytest.png" class="align-center" src="_images/pytest.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/pytest.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+<section id="les-tests-de-coverage">
+<h2>Les Tests de coverage<a class="headerlink" href="#les-tests-de-coverage" title="Link to this heading"></a></h2>
+<p><em>Les tests de coverage dans ce projet servent à évaluer la proportion du code source qui est testée par les tests unitaires et d’intégration.</em></p>
+<p><em>Ils permettent d’identifier les parties du code qui ne sont pas couvertes par les tests, aidant ainsi à améliorer la qualité et la fiabilité du logiciel.</em></p>
+<p><em>Les rapports de coverage offrent une vue d’ensemble de la couverture de tests, indiquant où des efforts supplémentaires sont nécessaires pour garantir une couverture de test complète et efficace de votre application.</em></p>
+<p>Il est impératif de vérifier que la couverture de test est supérieure à 80 %.</p>
+<p>Nous pouvons executer ces tests de coverage via 3 commandes differentes</p>
+<p>Nous devrions en premier lieux s’assurer du Path de notre projet :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/xxxx/xxxxx/Bureau/oc_p13
+</pre></div>
+</div>
+<p><strong>1- 1ere méthode :</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>coverage<span class="w"> </span>report
+</pre></div>
+</div>
+<p>Cela nous donne sur la console, un pourcentage globale de la couverture de nos tests pour le projet.</p>
+<p><strong>2- 2eme Méthode</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>coverage<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>Cette commande nous donne aussi sur la console, un pourcentage globale de la couverture de nos tests pour le projet, mais avec beaucoup plus de details.</p>
+<p><strong>3- 3eme Méthode</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>coverage<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Cette commande va créer un dossier à la racine nommé <em>htmlcov</em>, et dans lequel, nous trouverons un fichier <em>index.html</em>, consultable par vos navigateurs, pour afficher le résultat final de ce test de coverage.</p>
+<img alt="_images/coverage.png" class="align-center" src="_images/coverage.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/coverage.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+<section id="le-linting">
+<h2>Le Linting<a class="headerlink" href="#le-linting" title="Link to this heading"></a></h2>
+<section id="verification-du-code-avec-le-linting">
+<h3><strong>Vérification du code avec le Linting</strong><a class="headerlink" href="#verification-du-code-avec-le-linting" title="Link to this heading"></a></h3>
+<p>Le linting est une étape essentielle dans le maintien et le développement moderne de la qualité du code dans tout projet de développement logiciel garantissant la cohérence du code et le respect des bonnes pratiques.</p>
+<p>Dans le cadre du projet Orange County Lettings, nous utilisons pylint avec des plugins spécifiques à Django et flake8, un outil de linting pour Python qui combine les fonctionnalités de pyflakes, mccabe, et pep8 pour assurer la conformité de notre code aux standards de codage.</p>
+<p><strong>Configuration de l’Environnement Python :</strong></p>
+<p>La commande</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="o">[</span>chemin_exact_du_projet_/oc_p13
+</pre></div>
+</div>
+<p>est utilisée pour ajouter le répertoire de notre projet au PYTHONPATH. Cela permet aux outils comme pylint de reconnaître correctement les modules de notre projet lors de l’exécution de l’analyse.</p>
+<p><strong>Exécution de Pylint avec des Plugins Django :</strong></p>
+<p>La commande</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pylint<span class="w"> </span>--load-plugins<span class="w"> </span>pylint_django<span class="w"> </span>.
+</pre></div>
+</div>
+<p>est la commande pour exécuter pylint tout en chargeant les plugins spécifiques à Django. Cela permet à pylint d’analyser plus efficacement le code Django en tenant compte de ses particularités.</p>
+<ul class="simple">
+<li><p>L’option –load-plugins pylint_django active des fonctionnalités spécifiques à Django, comme la reconnaissance des modèles Django et des configurations spéciales.</p></li>
+<li><p>Le (.) à la fin de la commande indique à pylint de vérifier tous les fichiers Python dans le répertoire actuel (et ses sous-répertoires).</p></li>
+</ul>
+<p>Cela nous permet une meilleure reconnaissance des modèles Django, des champs de base de données, et des spécificités de Django qui ne sont pas présents dans les projets Python standards.</p>
+<p>L’exécution de cette commande dans le répertoire racine du projet (indiqué par .) permet à pylint de parcourir l’ensemble du projet, y compris les applications Django, et d’identifier les problèmes potentiels tels que les erreurs de syntaxe, les problèmes de style, les erreurs de codage, et autres non-conformités aux bonnes pratiques.</p>
+<p>En intégrant ces étapes de linting dans notre flux de travail, nous nous assurons que le code de notre projet est non seulement fonctionnel mais aussi propre, bien organisé et conforme aux standards de codage Python et Django. Cela facilite la maintenance du code, améliore sa lisibilité et contribue à une base de code de haute qualité.</p>
+<p>Voici l’assurance que nous donne l’éxecution de cette commande :</p>
+<p>–</p>
+<img alt="_images/linting.png" class="align-center" src="_images/linting.png" />
+<p>–</p>
+</section>
+<section id="flake8-la-qualite-du-code">
+<h3><strong>Flake8 &amp; la qualité du code</strong><a class="headerlink" href="#flake8-la-qualite-du-code" title="Link to this heading"></a></h3>
+<p><em>Flake8, en 2024, demeure un outil essentiel pour la programmation Python, combinant les fonctionnalités de pyflakes, mccabe, et pep8.</em></p>
+<p><em>Il est utilisé pour vérifier le style de codage et la qualité logique du code Python.</em></p>
+<p><em>Flake8 aide les développeurs à identifier les erreurs potentielles, les styles de codage non conformes aux normes PEP 8, et les problèmes de complexité.</em></p>
+<p><em>Il facilite la maintenance du code en assurant une cohérence stylistique et en améliorant sa lisibilité.</em></p>
+<p><em>Il est largement intégré dans les environnements de développement intégrés (IDE) et les pipelines CI/CD, renforçant les pratiques de codage propre et efficace.</em></p>
+<p><strong>Configuration de flake8</strong></p>
+<p><em>Avant de penser à la configuration de flake8, il faut d’abord l’installer dans l’environnement virtuel du projet ainsi que ses composantes.</em>
+<em>Pour cela utilisez les commandes suivantes :</em></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>flake8
+
+et
+
+pip<span class="w"> </span>install<span class="w"> </span>flake8-html
+</pre></div>
+</div>
+<p>Afin d’élaborer un rapport de toutes les erreurs exisatntes et pouvoir les corriger, il faut d’abord configurer flake8.</p>
+<p>Pour cela, il faut créer un fichier nommé « .flake8 » à la racine du projet, et dans l’exemple de ce projet, voici le contenu de ce fichier :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>flake8<span class="o">]</span>
+max-line-length<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">99</span>
+<span class="nv">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>venv,<span class="w"> </span>.git,<span class="w"> </span>.gitignore,<span class="w"> </span>__pycache__,<span class="w"> </span>env,<span class="w"> </span>vmigrations,<span class="w"> </span>migrations
+</pre></div>
+</div>
+<p>Maintenant que tout les reglages sont faits, nous pouvons utiliser la commande suivante, qui garce à la quelle, un dossier nommé <em>flake-report</em> va etre créé à la racine du projet, et nous trouverons dedans un fichier <em>index.html</em> consultable dans un navigateur, pour voir toutes les erreurs détéctées en détails :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flake8<span class="w"> </span>--format<span class="o">=</span>html<span class="w"> </span>--htmldir<span class="o">=</span>flake-report
+</pre></div>
+</div>
+<p>–</p>
+<img alt="_images/flake8.png" class="align-center" src="_images/flake8.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/flake8.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+</section>
+<section id="surveillance-sentry-et-logging">
+<h2>Surveillance Sentry et Logging<a class="headerlink" href="#surveillance-sentry-et-logging" title="Link to this heading"></a></h2>
+<section id="surveillance-du-projet-avec-sentry">
+<h3><strong>1. Surveillance du projet avec Sentry :</strong><a class="headerlink" href="#surveillance-du-projet-avec-sentry" title="Link to this heading"></a></h3>
+<p><strong>Sentry</strong> est une plateforme de gestion des erreurs en temps réel, conçue pour <strong>améliorer la qualité des applications</strong> en permettant aux développeurs de détecter, <strong>suivre et résoudre efficacement les problèmes qui surviennent dans les applications en production.</strong> Le principal atout de Sentry est sa capacité à fournir des informations détaillées sur les erreurs, y compris la pile des appels, l’environnement d’exécution et même l’état de l’application au moment où l’erreur s’est produite.</p>
+<p>Cette plateforme est polyvalente et peut être intégrée à une multitude de langages de programmation et de frameworks, ce qui la rend extrêmement adaptable à divers environnements de développement.</p>
+<p>Avec Sentry, les développeurs peuvent rapidement identifier non seulement où une erreur s’est produite, mais aussi pourquoi, ce qui facilite grandement le débogage et la résolution des problèmes.</p>
+<p>Le déploiement de Sentry dans notre projet « Orange County Letting’s » se fait en plusieurs étapes clés.</p>
+<p><strong>1. Création d’un compte Sentry:</strong></p>
+<p>Tout d’abord, il est nécessaire de créer un compte Sentry et de configurer un nouveau projet dans l’interface Sentry.</p>
+<p>Cette étape permet d’obtenir <strong>une clé DSN (Data Source Name) unique</strong>, qui sera utilisée pour connecter notre application à Sentry.</p>
+<p><strong>2. Intégration de Sentry dans notre projet:</strong></p>
+<p>Une fois que vous avez votre clé DSN, l’étape suivante consiste à intégrer Sentry dans votre projet. Cela implique généralement l’ajout de la bibliothèque Sentry correspondante à notre projet via un gestionnaire de paquets, puis la configuration de Sentry avec notre clé DSN. Dans le cas de projets Python, cela peut se faire en installant le SDK Sentry avec pip et en ajoutant quelques lignes de configuration dans votre code.</p>
+<p><strong>- Intégration de Sentry dans (settings.py)</strong></p>
+<p>Il faut commencer par éditer le fichier de configuration de notre projet (settings.py), existant dans l’application principale (oc_lettings_site).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise Sentry pour la surveillance des erreurs dans une application Django.</span>
+<span class="c1"># Cette fonction configure Sentry, un service de suivi des erreurs, pour qu&#39;il soit utilisé avec</span>
+<span class="c1"># une application Django. Elle doit être appelée lors de l&#39;initialisation de l&#39;application pour</span>
+<span class="c1"># assurer que les erreurs et les problèmes sont correctement enregistrés et envoyés à Sentry.</span>
+<span class="c1">#</span>
+<span class="c1"># Sentry aide à surveiller, à détecter et à réparer les erreurs en temps réel, en fournissant</span>
+<span class="c1"># des détails contextuels et des insights sur les défaillances de l&#39;application.</span>
+<span class="c1">#</span>
+<span class="c1"># Paramètres :</span>
+<span class="c1"># dsn (str): La clé DSN (Data Source Name) fournie par Sentry. Cette clé est unique à chaque</span>
+<span class="c1">#            projet Sentry et est utilisée pour authentifier et diriger les données d&#39;erreur</span>
+<span class="c1">#            vers le bon projet dans Sentry. La clé DSN doit être obtenue à partir du tableau de</span>
+<span class="c1">#            bord Sentry et doit être traitée comme une information sensible.</span>
+<span class="c1">#</span>
+<span class="c1"># Retourne :</span>
+<span class="c1"># None</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple :</span>
+<span class="c1"># Pour initialiser Sentry dans une application Django, appelez cette fonction dans votre fichier</span>
+<span class="c1"># settings.py :</span>
+<span class="c1">#</span>
+<span class="c1">#     initialize_sentry()</span>
+<span class="c1">#</span>
+<span class="c1"># Remarque :</span>
+<span class="c1"># - Il est important de garder la clé DSN confidentielle, car elle permet l&#39;envoi de données à</span>
+<span class="c1">#   votre projet Sentry.</span>
+<span class="c1"># - Vous pouvez ajuster la configuration supplémentaire pour contrôler ce qui est envoyé à</span>
+<span class="c1">#   Sentry, comme la capture des erreurs de niveau DEBUG ou INFO, selon les besoins de votre</span>
+<span class="c1">#   projet.</span>
+<span class="c1">#</span>
+<span class="c1"># Pour plus d&#39;informations, visitez la documentation officielle de Sentry :</span>
+<span class="c1"># https://docs.sentry.io/platforms/python/guides/django/</span>
+</pre></div>
+</div>
+<p><strong>Voici le code que nous avons ajouté à la fin du fichier settings.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span>
+        <span class="s2">&quot;SENTRY_DSN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">),</span>  <span class="c1"># Utilisez une valeur par défaut vide si la variable</span>
+        <span class="c1"># n&#39;est pas définie</span>
+    <span class="c1"># Set traces_sample_rate to 1.0 to capture 100%</span>
+    <span class="c1"># of transactions for performance monitoring.</span>
+    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="c1"># Set profiles_sample_rate to 1.0 to profile 100%</span>
+    <span class="c1"># of sampled transactions.</span>
+    <span class="c1"># We recommend adjusting this value in production.</span>
+    <span class="n">profiles_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quand nous commençons cette étape, nous devrions normalement insérer notre fameuse clé DSN dans ce fichier (settings.py), mais une fois l’intégration de Sentry marche bien, et pour des mesures de sécurité, et pour les bonnes pratiques du « coding : Ne jamais stocker les identifiants Sentry ou toute autre donnée sensible dans le code source (utilisez des
+variables d’environnement) », nous transférons donc cette clé depuis ce fichier pour la mettre dans un fichier de variables d’environnement : par exemple, le fichier (.env).</p>
+</div>
+<p>Voici un exemple fictif d’insertion de la clé DSN dans le fichier (.env) :</p>
+<img alt="_images/sentry-1.png" class="align-center" src="_images/sentry-1.png" />
+<p><strong>3. Provocation d’une erreur pour le test de Sentry:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Après l’intégration de Sentry, il est important de tester son fonctionnement en générant volontairement des erreurs pour s’assurer que celles-ci sont correctement capturées et envoyées à Sentry. Cela implique également de personnaliser les paramètres de Sentry pour s’adapter aux besoins spécifiques de votre projet, comme la configuration des niveaux de journalisation, la définition des environnements (par exemple, développement, test, production) et l’ajout de métadonnées supplémentaires aux rapports d’erreurs pour améliorer leur contexte.</p>
+</div>
+<p>Apres avoir intégré Sentry dans le fichier settings.py, et après avoir mis et changé sa clé DSN dans une variable d’environnement (.env), il faut provoquer une erreur pour tester si mon code renvoie bien ce que nous attendons vers Sentry :</p>
+<p>Dans notre cas pour ce projet, un de nos tests unitaires est le test_500_view: qui teste la réponse en cas d’erreur interne du serveur :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+<span class="k">class</span> <span class="nc">ViewsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_500_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Teste la gestion des erreurs 500.</span>
+
+<span class="sd">        Simule une requête provoquant une erreur interne du serveur pour vérifier si l&#39;application</span>
+<span class="sd">        retourne correctement un code de statut 500 (Internal Server Error).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/test-500/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Donc en résumé, si nous exécutons simplement ce test, nous devrions avoir un déclenchement d’erreur sur Sentry :</p>
+<img alt="_images/sentry-2.png" class="align-center" src="_images/sentry-2.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/sentry-2.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>Enfin, il est crucial d’adopter de bonnes pratiques pour gérer et répondre aux erreurs signalées. Cela inclut la priorisation des erreurs, l’analyse des tendances sur les erreurs récurrentes, et la mise en place d’un workflow efficace pour la résolution des problèmes, en tirant parti des fonctionnalités de collaboration et d’intégration de Sentry avec d’autres outils de développement.</p>
+<p>En résumé, Sentry est un outil puissant qui, lorsqu’il est correctement déployé et utilisé, peut considérablement améliorer la stabilité et la fiabilité de nos applications. Son intégration dans notre projet nous permettra de gagner un temps précieux dans le processus de débogage et d’assurer une expérience utilisateur plus fluide et sans interruption.</p>
+</section>
+<section id="surveillance-du-projet-avec-logging">
+<h3><strong>2. Surveillance du projet avec Logging :</strong><a class="headerlink" href="#surveillance-du-projet-avec-logging" title="Link to this heading"></a></h3>
+<p><em>Le système de logging dans ce projet Django est conçu pour fournir une vue détaillée et configurable des événements qui se produisent lors de l’exécution de l’application.</em></p>
+<p><em>Il permet de suivre le comportement de l’application, de diagnostiquer les problèmes et de collecter des informations analytiques.</em></p>
+<p><strong>Configuration de Base</strong></p>
+<p>La configuration du logging est définie dans le fichier <strong>settings.py.</strong>  Nous utilisons un dictionnaire nommé LOGGING pour configurer <strong>les loggers</strong>, <strong>les handlers</strong>, <strong>les formatters</strong> et <strong>les niveaux de log.</strong></p>
+<p><strong>Composants Clés</strong></p>
+<ul class="simple">
+<li><p><strong>Loggers</strong>: Les loggers sont les points d’entrée du système de logging. Ils collectent les logs et les transmettent aux handlers. Dans notre configuration, nous avons des loggers pour Django lui-même, ainsi que pour les applications spécifiques du projet (lettings, profiles, et oc_lettings_site).</p></li>
+<li><p><strong>Handlers</strong>: Les handlers déterminent ce qu’il advient des logs une fois qu’ils sont collectés par un logger. Nous avons trois types de handlers :</p></li>
+<li><p><strong>Console</strong>: Envoie les logs à la sortie standard (utile pour le développement).</p></li>
+<li><p><strong>Sentry</strong>: Intégration avec Sentry pour la surveillance et la notification des erreurs en production.</p></li>
+<li><p><strong>File</strong>: Écrit les logs dans un fichier, ce qui est utile pour la conservation des données et les analyses ultérieures.</p></li>
+<li><p><strong>Formatters</strong>: Les formatters définissent le format d’affichage des logs. Notre formatter verbose inclut le niveau de log, l’horodatage, le module d’où provient le log, et le message.</p></li>
+<li><p><strong>Niveaux de Log</strong>: Chaque logger peut avoir son propre niveau de log (par exemple, INFO, WARNING, ERROR). Cela détermine la granularité des informations enregistrées.</p></li>
+</ul>
+<p><strong>Mise en Place du Fichier de Log</strong>
+Pour stocker les logs dans un fichier, nous avons configuré un FileHandler. Le fichier de log est situé dans un dossier <strong>logging</strong> à la racine du projet. Le script vérifie si ce dossier existe et le crée s’il n’est pas présent. Les logs sont écrits dans un fichier nommé django.log dans ce dossier.</p>
+<p><strong>Utilisation en Pratique</strong>
+Pour enregistrer un log, il suffit d’importer le module de logging de Python dans le fichier Python et de créer un logger au début de chaque fichier important :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>logging
+
+<span class="nv">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.getLogger<span class="o">(</span>__name__<span class="o">)</span>
+
+<span class="c1"># Utilisation dans votre code</span>
+logger.info<span class="o">(</span><span class="s2">&quot;Message informatif&quot;</span><span class="o">)</span>
+logger.warning<span class="o">(</span><span class="s2">&quot;Avertissement&quot;</span><span class="o">)</span>
+logger.error<span class="o">(</span><span class="s2">&quot;Message d&#39;erreur&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>voici une capture d’ecran de notre fichier log existant dans le dossier (logger) à la racine du projet :</p>
+<img alt="_images/logger.png" class="align-center" src="_images/logger.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/logger.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<p>En utilisant différentes méthodes (info, warning, error, etc.), vous pouvez enregistrer des logs de différents niveaux, qui seront traités selon la configuration définie dans settings.py.</p>
+<p><strong>Conclusion</strong></p>
+<p>Le système de logging est un outil puissant pour le suivi et le diagnostic de votre application Django. Il offre une flexibilité pour s’adapter à différents environnements et besoins, allant du développement à la production.</p>
+</section>
+</section>
+<section id="deploiement-docker">
+<h2>Déploiement Docker<a class="headerlink" href="#deploiement-docker" title="Link to this heading"></a></h2>
+<p><strong>Installation de Docker dans notre projet :</strong></p>
+<p>Vous pouvez installer Docker en utilisant le package Python docker. Voici comment procéder :</p>
+<u>Installation de Docker via pip :</u><p>Pour installer Docker avec pip, ouvrez un terminal et exécutez les commandes suivantes :</p>
+<p>Assurez-vous que pip est à jour</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</pre></div>
+</div>
+<p># Installez le package Docker</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>docker
+</pre></div>
+</div>
+<u>Installation de Docker Compose (optionnel) :</u><p>Si vous prévoyez d’utiliser Docker Compose, vous pouvez l’installer également :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>docker-compose
+</pre></div>
+</div>
+<u>Vérification de l'installation :</u><p>Une fois l’installation terminée, vous pouvez vérifier si Docker est correctement installé en exécutant la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>--version
+</pre></div>
+</div>
+<p><strong>Création d’un compte gratuit sur la plateforme Docker_Hub</strong></p>
+<p>Docker Hub est une plateforme qui permet de stocker et partager des images Docker. La création d’un compte Docker Hub est essentielle si vous souhaitez publier vos propres images Docker ou accéder à celles partagées par d’autres.</p>
+<u>Accéder au site Docker Hub :</u><p>Ouvrez un navigateur web, et accédez au site officiel de Docker Hub à l’adresse <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a>.</p>
+<u>Créer un Compte :</u><p>Sur la page d’accueil de Docker Hub, recherchez le bouton « Sign Up » ou « Inscription » et cliquez dessus.</p>
+<u>Remplir les Informations :</u><p>Vous serez redirigé vers la page d’inscription, remplissez les informations requises, y compris notre nom, notre adresse e-mail et un mot de passe sécurisé. Assurez-vous de choisir un mot de passe fort pour protéger notre compte.</p>
+<u>Accepter les Conditions d'Utilisation :</u><p>Lisez les conditions d’utilisation de Docker Hub; Cochez la case indiquant que vous acceptez les conditions d’utilisation.</p>
+<u>Créer le Compte :</u><p>Cliquez sur le bouton « Create Account » ou « Créer le Compte » pour finaliser le processus de création de compte.</p>
+<u>Vérification de l'E-mail (le cas échéant) :</u><p>Docker Hub peut vous demander de vérifier notre adresse e-mail en vous envoyant un e-mail de confirmation. Dans ce cas, vérifiez notre boîte de réception et suivez les instructions pour confirmer notre compte.</p>
+<u>Connexion au Compte :</u><p>Une fois le compte créé et éventuellement vérifié, revenez sur la page d’accueil de Docker Hub.</p>
+<p>Cliquez sur « Log In » ou « Se Connecter » en haut à droite de la page.</p>
+<p>Vous avez maintenant un compte Docker Hub prêt à être utilisé pour stocker, partager et gérer des images Docker. Vous pourrez également publier vos propres images Docker sur Docker Hub pour les rendre accessibles à d’autres utilisateurs.</p>
+<p><strong>Liaison de notre compte Docker_Hub avec ce projet</strong></p>
+<p>Pour intégrer Docker à notre projet, vous devez créer un Dockerfile à la racine de notre projet. Ce fichier contiendra toutes les instructions nécessaires pour construire l’image Docker de notre application. De plus, vous aurez besoin d’un fichier de démarrage (start.sh dans ce cas) pour lancer notre application Django.</p>
+<u>Création du Dockerfile : </u><p>Tout d’abord, assurez-vous d’avoir un fichier Dockerfile à la racine de notre projet. Vous pouvez créer un nouveau fichier avec l’extension « .Dockerfile » ou simplement « Dockerfile ».</p>
+<u>Contenu du Dockerfile :</u><p>Le Dockerfile que vous avez fourni est un excellent exemple. Voici une explication détaillée des différentes parties de ce Dockerfile :</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># Utilisation de l&#39;image de base Python 3.11</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11</span>
+
+<span class="c"># Définition du répertoire de travail dans le conteneur</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/oc-p13</span>
+
+<span class="c"># Copie du fichier requirements.txt dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+
+<span class="c"># Installation des dépendances</span>
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Copie du reste du code source de l&#39;application dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># Exécution de collectstatic</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput
+
+<span class="c"># Rendre le script de démarrage exécutable et le copier dans le conteneur</span>
+<span class="k">COPY</span><span class="w"> </span>start.sh<span class="w"> </span>/start.sh
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/start.sh
+
+<span class="c"># Exposition du port 8000</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+
+<span class="c"># Commande pour démarrer l&#39;application</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/start.sh&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Ce Dockerfile commence par utiliser l’image de base Python 3.11. Il définit également le répertoire de travail dans le conteneur, copie le fichier requirements.txt (qui contient les dépendances de notre application) dans le conteneur, et installe ces dépendances avec la commande RUN pip install.</p></li>
+<li><p>Ensuite, il copie le reste du code source de notre application dans le conteneur, exécute collectstatic pour rassembler les fichiers statiques, rend le script start.sh exécutable, et expose le port 8000.</p></li>
+<li><p>Enfin, la commande CMD spécifie comment démarrer l’application en exécutant le script start.sh.</p></li>
+</ul>
+</div>
+<u>Création du Fichier start.sh : </u><p>Le fichier start.sh est utilisé pour démarrer notre application Django. Voici son contenu :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic<span class="w"> </span>--noinput
+python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</pre></div>
+</div>
+<p>Ce script effectue les étapes suivantes :</p>
+<p>Exécute collectstatic pour rassembler les fichiers statiques de notre application.</p>
+<p>Lance le serveur Django en écoutant sur l’adresse 0.0.0.0 et le port 8000.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Assurez-vous que ce fichier est également à la racine de notre projet.</p>
+</div>
+<p>En suivant ces étapes, vous avez correctement configuré Docker pour notre projet Django, créé un Dockerfile détaillé et un fichier de démarrage start.sh pour lancer notre application dans un conteneur Docker.</p>
+<p><strong>Construction de l’Image Docker</strong></p>
+<p>Cette étape consiste à créer une image Docker de notre application. Le Dockerfile à la racine de notre projet contient les instructions nécessaires pour assembler cette image. Cette image sera utilisée pour exécuter notre application dans n’importe quel environnement Docker.</p>
+<p>Pour créer l’image Docker, vous utiliserez la commande suivante dans notre terminal :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>waleedos/orange_county_lettings:latest<span class="w"> </span>.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>docker build : C’est la commande principale pour construire une image Docker.</p></li>
+<li><p>-t : Cette option permet de spécifier un nom et une étiquette (tag) pour l’image. Dans cet exemple, l’image est nommée « waleedos/orange_county_lettings » avec l’étiquette « latest ».</p></li>
+<li><p>. : Le point à la fin de la commande indique que le Dockerfile se trouve dans le répertoire actuel.</p></li>
+</ul>
+<p>Exécution du Dockerfile : Lorsque vous exécutez la commande de construction, Docker lit le Dockerfile et suit les instructions à l’intérieur pour construire l’image. Voici ce que fait chaque instruction dans le Dockerfile :</p>
+<ul class="simple">
+<li><p>FROM python:3.11 : Spécifie l’image de base à utiliser, dans ce cas, Python 3.11.</p></li>
+<li><p>WORKDIR /oc-p13 : Définit le répertoire de travail à « /oc-p13 » dans le conteneur.</p></li>
+<li><p>COPY requirements.txt . : Copie le fichier « requirements.txt » depuis le répertoire local dans le répertoire actuel du conteneur.</p></li>
+<li><p>RUN pip install –no-cache-dir -r requirements.txt : Installe les dépendances en utilisant pip.</p></li>
+<li><p>COPY . . : Copie tout le code source de l’application dans le conteneur.</p></li>
+<li><p>RUN python manage.py collectstatic –noinput : Exécute la commande « collectstatic » pour rassembler les fichiers statiques de l’application.</p></li>
+<li><p>COPY start.sh /start.sh : Copie le script de démarrage « start.sh » dans le conteneur.</p></li>
+<li><p>RUN chmod +x /start.sh : Rend le script de démarrage exécutable.</p></li>
+<li><p>EXPOSE 8000 : Indique que le conteneur écoutera sur le port 8000.</p></li>
+<li><p>CMD [« /start.sh »] : Spécifie la commande à exécuter lorsque le conteneur est démarré, ici, il exécute « start.sh ».</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Tager les images Docker avec un label distinct, tel que le « hash » de commit, est une bonne pratique pour identifier de manière unique chaque version de l’image.</em> <em>Cela permet de garder une trace de quelle version de votre code source a été utilisée pour construire une image spécifique.</em> <em>Voici comment vous pouvez ajouter un label lors de la création de l’image Docker :</em></p>
+</div>
+<p>Supposons que vous souhaitez utiliser le « hash » de commit Git comme label. Voici comment vous pouvez le faire :</p>
+<u>Obtenir le "hash" du dernier commit :</u><p>Avant de créer l’image Docker, obtenez le « hash » du dernier commit Git que vous souhaitez utiliser comme label. Vous pouvez le faire en utilisant la commande Git suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rev-parse<span class="w"> </span>HEAD
+</pre></div>
+</div>
+<p>Cette commande renverra le « hash » du dernier commit, par exemple : 3b18e51a4b5e80632e35a15a02e62a57f33a891d</p>
+<p>Modifier la commande de construction de l’image Docker : Lors de la construction de l’image Docker, ajoutez l’option –build-arg pour transmettre le « hash » de commit en tant qu’argument de construction. Vous pouvez également utiliser l’option -t pour spécifier le nom et l’étiquette de l’image comme vous l’avez fait précédemment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous n’êtes pas obligé de rentrer toute la longueur du « hash » de commit Git lorsque vous l’utilisez comme label pour votre image Docker. En fait, il est courant de ne saisir que les 7 premiers caractères du « hash » qui sont suffisamment uniques pour identifier de manière distincte un commit. La longueur du « hash » que vous devez spécifier dépend de la longueur du préfixe nécessaire pour qu’il soit unique dans votre référentiel Git.</p>
+<p>Par exemple, un « hash » de commit complet pourrait ressembler à ceci : 3b18e51a4b5e80632e35a15a02e62a57f33a891d.</p>
+<p>Cependant, pour l’utiliser comme label, vous pouvez simplement spécifier les 7 premiers caractères.</p>
+</div>
+<p>Voici comment cela pourrait ressembler :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>waleedos/orange_county_lettings:latest<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">COMMIT_HASH</span><span class="o">=</span>3b18e51<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez tagez la meme image docker existante avec une autre étiquette s’il le faut.</p>
+</div>
+<p><strong>Publication de l’image sur Docker Hub :</strong></p>
+<u>Connexion à Docker Hub :</u><p>Assurez-vous d’être connecté à votre compte Docker Hub en utilisant la commande docker login. Vous devrez saisir vos informations d’identification Docker Hub.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>login
+</pre></div>
+</div>
+<u>Publication de l'image sur Docker Hub :</u><p>Une fois connecté, vous pouvez publier votre image Docker sur Docker Hub avec la commande suivante, en remplaçant YOUR_COMMIT_HASH par le « hash » du commit correspondant :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>push<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<p>Cela enverra votre image sur Docker Hub, où d’autres utilisateurs pourront la télécharger.</p>
+<u>Vérification de l'image Docker :</u><p>Pour tester l’image localement, vous pouvez la télécharger depuis Docker Hub et l’exécuter sur votre machine. Cela vous permettra de vérifier le fonctionnement de l’application dans un environnement similaire à la production.</p>
+<u>Téléchargement de l'image depuis Docker Hub :</u><p>–</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez télécharger l’image Docker depuis Docker Hub en utilisant la commande docker pull. Assurez-vous de spécifier le bon « hash » du commit que vous avez publié précédemment.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<u>Exécution de l'image localement :</u><p>Une fois l’image téléchargée, vous pouvez l’exécuter sur votre machine avec la commande docker run. Assurez-vous de mapper les ports et les volumes appropriés si nécessaire.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span>/chemin/vers/vos/fichiers:/chemin/dans/le/conteneur<span class="w"> </span>waleedos/orange_county_lettings:YOUR_COMMIT_HASH
+</pre></div>
+</div>
+<p>N’oubliez pas de remplacer YOUR_COMMIT_HASH par le « hash » du commit que vous avez réellement utilisé.</p>
+<p>Cela lancera l’application dans un conteneur Docker sur votre machine locale, où vous pourrez la tester.</p>
+<u>Démarrez le projet sur votre navigateur</u><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+
+oubien
+
+http://127.0.0.1:8000
+</pre></div>
+</div>
+</section>
+<section id="deploiement-circleci">
+<h2>Déploiement CircleCI<a class="headerlink" href="#deploiement-circleci" title="Link to this heading"></a></h2>
+<p>Commencez par créer un compte gratuit sur la plateforme <strong>`CircleCI&lt;https://circleci.com/&gt;`_</strong></p>
+<p>Lors de la création de ce compte, vous serez amenés à répondre à quelque question comme suit :</p>
+<ul class="simple">
+<li><p>Are you joining a team on CircleCI?    Répondez par - non</p></li>
+<li><p>Mettez ensuite votre adresse e-mail et un bon password.</p></li>
+<li><p>Une fois vous confirmez votre e-mail, commencez par créer un nouveau projet.</p></li>
+<li><p>Informez <strong>`CircleCI&lt;https://circleci.com/&gt;`_</strong> que vous souhaiteriez importer votre projet depuis <strong>`GitHub&lt;https://github.com/&gt;`_</strong>.</p></li>
+<li><p>Renseignez les identifiants de votre compte GitHub avec le « répos » de votre projet.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>La communication entre CircleCI et GitHub se fait par via une authentification avec une clé SSH</em></p>
+<p><em>Prenez soin avec tout votre temps pour générer et implémenter une seule et nouvelle Clé SSH dans CircleCI et GitHub « la même »</em></p>
+</div>
+<p>Une fois ces étapes précedentes sont achevées, vérifiez bien du coté de « GitHub », et plus specifiquement dans la rubrique <strong>Applications</strong> que vos deux compte GitHub et CircleCI sont reliés.</p>
+<p><strong>Implémentation de CircleCI dans notre code</strong></p>
+<u>Créez un dossier à la racine du projet</u><p>En ligne de commande, rendez vous à la racine du projet, et créez un dossier nommé « .circleci » avec la commande suivante:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>.circleci
+</pre></div>
+</div>
+<u>Créez dans ce dossier un fichier nommé "</u><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>config.yml
+</pre></div>
+</div>
+<p>C’est le fichier unique de la configuration de CircleCI pour notre projet.</p>
+<p><em>Normalement, et lors de la crétion du projet sur CircleCI, ce dernier nous propose un type de ce fichier pour la configuration initiale</em></p>
+<p>Voici un exemple de ce fichier :</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">docker</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cimg/python:3.8</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">setup_remote_docker</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">pip install docker-compose</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and run tests</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">docker-compose up --build -d</span>
+<span class="w">            </span><span class="no">docker-compose exec web python manage.py test</span>
+<span class="nt">workflows</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">build_and_test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</pre></div>
+</div>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> est un élément central des projets qui utilisent CircleCI pour l’intégration et le déploiement continu (CI/CD). Ce fichier YAML définit la configuration de votre pipeline CI/CD, en spécifiant les actions que CircleCI doit exécuter à chaque fois que des modifications sont apportées à votre code source. Voici une explication détaillée des composants clés de la configuration que vous avez fournie :</p>
+<p><strong>Explications</strong></p>
+<ul>
+<li><p><strong>version</strong> : Indique la version de la configuration CircleCI utilisée. <code class="docutils literal notranslate"><span class="pre">2.1</span></code> est actuellement la version la plus couramment utilisée, permettant d’utiliser toutes les fonctionnalités avancées de CircleCI, comme les orbs, les paramètres réutilisables, et les pipelines conditionnels.</p></li>
+<li><p><strong>jobs</strong> : Définit un ensemble de tâches (ou « jobs ») que le pipeline doit exécuter. Les jobs sont les unités de travail les plus fondamentales dans un pipeline CircleCI. Chaque job peut s’exécuter indépendamment dans un environnement isolé.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>build</strong> : Nom du job. Ici, <code class="docutils literal notranslate"><span class="pre">build</span></code> est un job personnalisé qui, dans cet exemple, est conçu pour construire votre projet, installer les dépendances et exécuter les tests.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>docker</strong> : Spécifie que ce job doit s’exécuter dans un conteneur Docker. <code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">cimg/python:3.8</span></code> indique l’image Docker à utiliser pour l’environnement d’exécution, ici une image CircleCI officielle pour Python 3.8.</p></li>
+<li><p><strong>steps</strong> : Séquence d’étapes à exécuter dans ce job. Chaque étape peut exécuter une commande, utiliser un orb, restaurer des caches, etc.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>checkout</strong> : Une étape spéciale qui extrait le code source du projet dans l’environnement d’exécution du job.</p></li>
+<li><p><strong>setup_remote_docker</strong> : Permet l’utilisation de Docker au sein du job, essentiel pour les tâches qui nécessitent la construction ou le déploiement de conteneurs Docker.</p></li>
+<li><p><strong>run</strong> : Exécute des commandes shell. Ici, il y a deux blocs <code class="docutils literal notranslate"><span class="pre">run</span></code> :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Le premier installe <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code>.</p></li>
+<li><p>Le second construit l’environnement avec <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code> et exécute les tests avec <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">test</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Workflows</strong></p>
+<ul class="simple">
+<li><p><strong>workflows</strong> : Définit comment les jobs sont organisés et dans quel ordre ils doivent être exécutés. Les workflows permettent d’orchestrer l’exécution des jobs, y compris leur exécution en parallèle, en séquence, ou sous certaines conditions.</p>
+<ul>
+<li><p><strong>version</strong> : Similaire à la version de configuration CircleCI, spécifie la version des workflows utilisés.</p></li>
+<li><p><strong>build_and_test</strong> : Nom du workflow. Ici, cela suggère que le workflow est destiné à construire le projet et à exécuter les tests.</p>
+<ul>
+<li><p><strong>jobs</strong> : Liste des jobs à exécuter dans ce workflow. Dans cet exemple, seul le job <code class="docutils literal notranslate"><span class="pre">build</span></code> est exécuté.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Cette configuration crée un pipeline CI/CD simple mais efficace, où chaque push au dépôt déclenche l’exécution du job ``build``, qui construit le projet dans un conteneur Docker et exécute les tests.</em> <em>C’est une base solide pour tout projet Django souhaitant implémenter l’intégration continue avec CircleCI, et elle peut être étendue avec des jobs supplémentaires pour le déploiement, la vérification de la qualité du code, etc.</em></p>
+<p>voici une capture d’ecran de notre Pipeline de notre compte sur CircleCI.com :</p>
+<img alt="_images/circleci.png" class="align-center" src="_images/circleci.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/circleci.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+<section id="deploiement-render">
+<h2>Déploiement Render<a class="headerlink" href="#deploiement-render" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="a_propos.html" class="btn btn-neutral float-right" title="À propos" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

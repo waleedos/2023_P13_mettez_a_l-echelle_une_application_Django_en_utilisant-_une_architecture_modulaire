@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Déploiement CircleCI &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Déploiement Render" href="deploiement_render.html" />
+    <link rel="prev" title="Déploiement Docker" href="deploiement_docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="le_linting.html">Le Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Déploiement CircleCI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/deploiement_circleci.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deploiement-circleci">
+<h1>Déploiement CircleCI<a class="headerlink" href="#deploiement-circleci" title="Link to this heading"></a></h1>
+<p>Commencez par créer un compte gratuit sur la plateforme <strong>`CircleCI&lt;https://circleci.com/&gt;`_</strong></p>
+<p>Lors de la création de ce compte, vous serez amenés à répondre à quelque question comme suit :</p>
+<ul class="simple">
+<li><p>Are you joining a team on CircleCI?    Répondez par - non</p></li>
+<li><p>Mettez ensuite votre adresse e-mail et un bon password.</p></li>
+<li><p>Une fois vous confirmez votre e-mail, commencez par créer un nouveau projet.</p></li>
+<li><p>Informez <strong>`CircleCI&lt;https://circleci.com/&gt;`_</strong> que vous souhaiteriez importer votre projet depuis <strong>`GitHub&lt;https://github.com/&gt;`_</strong>.</p></li>
+<li><p>Renseignez les identifiants de votre compte GitHub avec le « répos » de votre projet.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>La communication entre CircleCI et GitHub se fait par via une authentification avec une clé SSH</em></p>
+<p><em>Prenez soin avec tout votre temps pour générer et implémenter une seule et nouvelle Clé SSH dans CircleCI et GitHub « la même »</em></p>
+</div>
+<p>Une fois ces étapes précedentes sont achevées, vérifiez bien du coté de « GitHub », et plus specifiquement dans la rubrique <strong>Applications</strong> que vos deux compte GitHub et CircleCI sont reliés.</p>
+<p><strong>Implémentation de CircleCI dans notre code</strong></p>
+<u>Créez un dossier à la racine du projet</u><p>En ligne de commande, rendez vous à la racine du projet, et créez un dossier nommé « .circleci » avec la commande suivante:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>.circleci
+</pre></div>
+</div>
+<u>Créez dans ce dossier un fichier nommé "</u><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>config.yml
+</pre></div>
+</div>
+<p>C’est le fichier unique de la configuration de CircleCI pour notre projet.</p>
+<p><em>Normalement, et lors de la crétion du projet sur CircleCI, ce dernier nous propose un type de ce fichier pour la configuration initiale</em></p>
+<p>Voici un exemple de ce fichier :</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">docker</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cimg/python:3.8</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">setup_remote_docker</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">pip install docker-compose</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and run tests</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">docker-compose up --build -d</span>
+<span class="w">            </span><span class="no">docker-compose exec web python manage.py test</span>
+<span class="nt">workflows</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">build_and_test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</pre></div>
+</div>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> est un élément central des projets qui utilisent CircleCI pour l’intégration et le déploiement continu (CI/CD). Ce fichier YAML définit la configuration de votre pipeline CI/CD, en spécifiant les actions que CircleCI doit exécuter à chaque fois que des modifications sont apportées à votre code source. Voici une explication détaillée des composants clés de la configuration que vous avez fournie :</p>
+<p><strong>Explications</strong></p>
+<ul>
+<li><p><strong>version</strong> : Indique la version de la configuration CircleCI utilisée. <code class="docutils literal notranslate"><span class="pre">2.1</span></code> est actuellement la version la plus couramment utilisée, permettant d’utiliser toutes les fonctionnalités avancées de CircleCI, comme les orbs, les paramètres réutilisables, et les pipelines conditionnels.</p></li>
+<li><p><strong>jobs</strong> : Définit un ensemble de tâches (ou « jobs ») que le pipeline doit exécuter. Les jobs sont les unités de travail les plus fondamentales dans un pipeline CircleCI. Chaque job peut s’exécuter indépendamment dans un environnement isolé.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>build</strong> : Nom du job. Ici, <code class="docutils literal notranslate"><span class="pre">build</span></code> est un job personnalisé qui, dans cet exemple, est conçu pour construire votre projet, installer les dépendances et exécuter les tests.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>docker</strong> : Spécifie que ce job doit s’exécuter dans un conteneur Docker. <code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">cimg/python:3.8</span></code> indique l’image Docker à utiliser pour l’environnement d’exécution, ici une image CircleCI officielle pour Python 3.8.</p></li>
+<li><p><strong>steps</strong> : Séquence d’étapes à exécuter dans ce job. Chaque étape peut exécuter une commande, utiliser un orb, restaurer des caches, etc.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>checkout</strong> : Une étape spéciale qui extrait le code source du projet dans l’environnement d’exécution du job.</p></li>
+<li><p><strong>setup_remote_docker</strong> : Permet l’utilisation de Docker au sein du job, essentiel pour les tâches qui nécessitent la construction ou le déploiement de conteneurs Docker.</p></li>
+<li><p><strong>run</strong> : Exécute des commandes shell. Ici, il y a deux blocs <code class="docutils literal notranslate"><span class="pre">run</span></code> :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Le premier installe <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code>.</p></li>
+<li><p>Le second construit l’environnement avec <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code> et exécute les tests avec <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">test</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Workflows</strong></p>
+<ul class="simple">
+<li><p><strong>workflows</strong> : Définit comment les jobs sont organisés et dans quel ordre ils doivent être exécutés. Les workflows permettent d’orchestrer l’exécution des jobs, y compris leur exécution en parallèle, en séquence, ou sous certaines conditions.</p>
+<ul>
+<li><p><strong>version</strong> : Similaire à la version de configuration CircleCI, spécifie la version des workflows utilisés.</p></li>
+<li><p><strong>build_and_test</strong> : Nom du workflow. Ici, cela suggère que le workflow est destiné à construire le projet et à exécuter les tests.</p>
+<ul>
+<li><p><strong>jobs</strong> : Liste des jobs à exécuter dans ce workflow. Dans cet exemple, seul le job <code class="docutils literal notranslate"><span class="pre">build</span></code> est exécuté.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Cette configuration crée un pipeline CI/CD simple mais efficace, où chaque push au dépôt déclenche l’exécution du job ``build``, qui construit le projet dans un conteneur Docker et exécute les tests.</em> <em>C’est une base solide pour tout projet Django souhaitant implémenter l’intégration continue avec CircleCI, et elle peut être étendue avec des jobs supplémentaires pour le déploiement, la vérification de la qualité du code, etc.</em></p>
+<p>voici une capture d’ecran de notre Pipeline de notre compte sur CircleCI.com :</p>
+<img alt="_images/circleci.png" class="align-center" src="_images/circleci.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/circleci.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="deploiement_docker.html" class="btn btn-neutral float-left" title="Déploiement Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="deploiement_render.html" class="btn btn-neutral float-right" title="Déploiement Render" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

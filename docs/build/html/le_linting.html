@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Linting &mdash; Documentation Orange County Lettings 1.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=740f9163"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Surveillance Sentry et Logging" href="surveillance_sentry_et_logging.html" />
+    <link rel="prev" title="Les Tests de coverage" href="tests_coverage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="a_propos.html">À propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_utilisees.html">Technologies et Langages utilisés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_de_ce_projet.html">Structure de ce projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet sur votre machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_rapide.html">Demarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demarrage_avec_docker.html">Demarrage avec Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administration.html">Administration pour notre projet Orange County Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_base_de_donnees.html">Structure de la base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interfaces_programmation.html">Les Interfaces de Programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_unitaires.html">Les Tests Unitaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests_coverage.html">Les Tests de coverage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Le Linting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#verification-du-code-avec-le-linting"><strong>Vérification du code avec le Linting</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flake8-la-qualite-du-code"><strong>Flake8 &amp; la qualité du code</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="surveillance_sentry_et_logging.html">Surveillance Sentry et Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_docker.html">Déploiement Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_circleci.html">Déploiement CircleCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement_render.html">Déploiement Render</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orange County Lettings</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Le Linting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/le_linting.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="le-linting">
+<h1>Le Linting<a class="headerlink" href="#le-linting" title="Link to this heading"></a></h1>
+<section id="verification-du-code-avec-le-linting">
+<h2><strong>Vérification du code avec le Linting</strong><a class="headerlink" href="#verification-du-code-avec-le-linting" title="Link to this heading"></a></h2>
+<p>Le linting est une étape essentielle dans le maintien et le développement moderne de la qualité du code dans tout projet de développement logiciel garantissant la cohérence du code et le respect des bonnes pratiques.</p>
+<p>Dans le cadre du projet Orange County Lettings, nous utilisons pylint avec des plugins spécifiques à Django et flake8, un outil de linting pour Python qui combine les fonctionnalités de pyflakes, mccabe, et pep8 pour assurer la conformité de notre code aux standards de codage.</p>
+<p><strong>Configuration de l’Environnement Python :</strong></p>
+<p>La commande</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="o">[</span>chemin_exact_du_projet_/oc_p13
+</pre></div>
+</div>
+<p>est utilisée pour ajouter le répertoire de notre projet au PYTHONPATH. Cela permet aux outils comme pylint de reconnaître correctement les modules de notre projet lors de l’exécution de l’analyse.</p>
+<p><strong>Exécution de Pylint avec des Plugins Django :</strong></p>
+<p>La commande</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pylint<span class="w"> </span>--load-plugins<span class="w"> </span>pylint_django<span class="w"> </span>.
+</pre></div>
+</div>
+<p>est la commande pour exécuter pylint tout en chargeant les plugins spécifiques à Django. Cela permet à pylint d’analyser plus efficacement le code Django en tenant compte de ses particularités.</p>
+<ul class="simple">
+<li><p>L’option –load-plugins pylint_django active des fonctionnalités spécifiques à Django, comme la reconnaissance des modèles Django et des configurations spéciales.</p></li>
+<li><p>Le (.) à la fin de la commande indique à pylint de vérifier tous les fichiers Python dans le répertoire actuel (et ses sous-répertoires).</p></li>
+</ul>
+<p>Cela nous permet une meilleure reconnaissance des modèles Django, des champs de base de données, et des spécificités de Django qui ne sont pas présents dans les projets Python standards.</p>
+<p>L’exécution de cette commande dans le répertoire racine du projet (indiqué par .) permet à pylint de parcourir l’ensemble du projet, y compris les applications Django, et d’identifier les problèmes potentiels tels que les erreurs de syntaxe, les problèmes de style, les erreurs de codage, et autres non-conformités aux bonnes pratiques.</p>
+<p>En intégrant ces étapes de linting dans notre flux de travail, nous nous assurons que le code de notre projet est non seulement fonctionnel mais aussi propre, bien organisé et conforme aux standards de codage Python et Django. Cela facilite la maintenance du code, améliore sa lisibilité et contribue à une base de code de haute qualité.</p>
+<p>Voici l’assurance que nous donne l’éxecution de cette commande :</p>
+<p>–</p>
+<img alt="_images/linting.png" class="align-center" src="_images/linting.png" />
+<p>–</p>
+</section>
+<section id="flake8-la-qualite-du-code">
+<h2><strong>Flake8 &amp; la qualité du code</strong><a class="headerlink" href="#flake8-la-qualite-du-code" title="Link to this heading"></a></h2>
+<p><em>Flake8, en 2024, demeure un outil essentiel pour la programmation Python, combinant les fonctionnalités de pyflakes, mccabe, et pep8.</em></p>
+<p><em>Il est utilisé pour vérifier le style de codage et la qualité logique du code Python.</em></p>
+<p><em>Flake8 aide les développeurs à identifier les erreurs potentielles, les styles de codage non conformes aux normes PEP 8, et les problèmes de complexité.</em></p>
+<p><em>Il facilite la maintenance du code en assurant une cohérence stylistique et en améliorant sa lisibilité.</em></p>
+<p><em>Il est largement intégré dans les environnements de développement intégrés (IDE) et les pipelines CI/CD, renforçant les pratiques de codage propre et efficace.</em></p>
+<p><strong>Configuration de flake8</strong></p>
+<p><em>Avant de penser à la configuration de flake8, il faut d’abord l’installer dans l’environnement virtuel du projet ainsi que ses composantes.</em>
+<em>Pour cela utilisez les commandes suivantes :</em></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>flake8
+
+et
+
+pip<span class="w"> </span>install<span class="w"> </span>flake8-html
+</pre></div>
+</div>
+<p>Afin d’élaborer un rapport de toutes les erreurs exisatntes et pouvoir les corriger, il faut d’abord configurer flake8.</p>
+<p>Pour cela, il faut créer un fichier nommé « .flake8 » à la racine du projet, et dans l’exemple de ce projet, voici le contenu de ce fichier :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>flake8<span class="o">]</span>
+max-line-length<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">99</span>
+<span class="nv">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>venv,<span class="w"> </span>.git,<span class="w"> </span>.gitignore,<span class="w"> </span>__pycache__,<span class="w"> </span>env,<span class="w"> </span>vmigrations,<span class="w"> </span>migrations
+</pre></div>
+</div>
+<p>Maintenant que tout les reglages sont faits, nous pouvons utiliser la commande suivante, qui garce à la quelle, un dossier nommé <em>flake-report</em> va etre créé à la racine du projet, et nous trouverons dedans un fichier <em>index.html</em> consultable dans un navigateur, pour voir toutes les erreurs détéctées en détails :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flake8<span class="w"> </span>--format<span class="o">=</span>html<span class="w"> </span>--htmldir<span class="o">=</span>flake-report
+</pre></div>
+</div>
+<p>–</p>
+<img alt="_images/flake8.png" class="align-center" src="_images/flake8.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/flake8.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="tests_coverage.html" class="btn btn-neutral float-left" title="Les Tests de coverage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="surveillance_sentry_et_logging.html" class="btn btn-neutral float-right" title="Surveillance Sentry et Logging" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, EL-WALID EL-KHABOU.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
