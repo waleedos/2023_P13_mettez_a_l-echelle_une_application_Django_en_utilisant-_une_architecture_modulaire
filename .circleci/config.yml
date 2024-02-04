@@ -7,7 +7,7 @@ jobs:
     working_directory: ~/oc_p13
     environment:
       DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
-      PYTHONPATH: /home/circleci/oc_p13:/home/walid/Bureau/oc_p13
+      PYTHONPATH: /home/circleci/oc_p13
     steps:
       - checkout
       - run: pip install -r requirements.txt
