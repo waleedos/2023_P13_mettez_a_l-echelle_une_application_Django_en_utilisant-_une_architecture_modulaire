@@ -63,3 +63,4 @@ Personnalisation et Extensions :
 L'interface d'administration Django est hautement personnalisable. Si des fonctionnalités supplémentaires sont nécessaires (par exemple, des filtres avancés, des champs personnalisés, etc.), elles peuvent être ajoutées en étendant les classes ModelAdmin.
 
 -
+.. Fin du document

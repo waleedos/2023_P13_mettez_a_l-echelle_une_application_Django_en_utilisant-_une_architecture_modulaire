@@ -1,3 +1,9 @@
+.. image:: source/_static/formation.png
+   :align: center
+
+
+--
+
 À propos
 ========
 
@@ -20,3 +26,5 @@ visualiser:
 
 La page d'accueil de cette application contient deux liens: un vers la liste
 des profils et l'autre vers la liste des locations.
+
+.. Fin du document

@@ -56,3 +56,4 @@ L’image est en cours d’exécution. Vous devriez voir des lignes similaires �
 *Une fois que vous avez terminé, et si vous utilisez l'application Docker-desktop, vous pouvez soit appuyer sur le bouton d’arrêt (le carré), soit appuyer directement sur la poubelle, ce qui arrêtera la course et supprimera le conteneur actuel.*
 
 --    
+.. Fin du document

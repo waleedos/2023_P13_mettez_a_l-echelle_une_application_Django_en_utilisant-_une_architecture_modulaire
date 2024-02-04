@@ -209,3 +209,4 @@ En utilisant différentes méthodes (info, warning, error, etc.), vous pouvez en
 
 Le système de logging est un outil puissant pour le suivi et le diagnostic de votre application Django. Il offre une flexibilité pour s'adapter à différents environnements et besoins, allant du développement à la production.
 
+.. Fin du document

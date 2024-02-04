@@ -92,6 +92,47 @@
              
   <section id="deploiement-render">
 <h1>Déploiement Render<a class="headerlink" href="#deploiement-render" title="Link to this heading"></a></h1>
+<p>Dans la mission de ce projet, l’auteur nous a donné la possibilité de déployer ce dernier sur des plateforme gratuite comme Render, AWS webapp, Azure, etc…</p>
+<p>Nous avons fait le choix de la plateforme <a class="reference external" href="https://dashboard.render.com//">Render</a></p>
+<p>Le déploiement d’un projet Django sur Render, après avoir configuré l’intégration continue (CI) et la conteneurisation avec Docker via CircleCI, implique plusieurs étapes et concepts clés. Voici un guide détaillé pour comprendre et exécuter ce processus.</p>
+<p><strong>Prérequis</strong></p>
+<ul class="simple">
+<li><p>Projet Django : Un projet Django fonctionnel, de préférence versionné avec Git.</p></li>
+<li><p>Docker : Une Dockerfile configurée pour conteneuriser votre application Django.</p></li>
+<li><p>CircleCI : Un fichier .circleci/config.yml configuré pour automatiser les tests et les builds de votre image Docker.</p></li>
+<li><p>Render : Un compte Render pour déployer et héberger votre application.</p></li>
+</ul>
+<u>1. Préparation du projet Django</u><ul class="simple">
+<li><p><strong>Variables d’environnement</strong> : Assurez-vous que toutes les configurations sensibles sont extraites du code et gérées via des variables d’environnement <code class="docutils literal notranslate"><span class="pre">SECRET_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">SENTRY_DSN</span></code>, etc.</p></li>
+<li><p><strong>Fichiers statiques et médias</strong> : Configurez correctement la gestion des fichiers statiques et médias. Pour les fichiers statiques, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">collectstatic</span></code> doit être exécuté lors du déploiement.</p></li>
+</ul>
+<u>2. Conteneurisation avec Docker</u><ul class="simple">
+<li><p><strong>Dockerfile</strong> : Créez un <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> à la racine de votre projet pour définir l’environnement de votre application. Ce fichier doit inclure l’installation des dépendances, la collecte des fichiers statiques, et la commande pour lancer votre application.</p></li>
+<li><p><strong>Build et Test</strong> : Utilisez CircleCI pour automatiser le build de votre image Docker et exécuter les tests. Ceci est configuré dans <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code>.</p></li>
+</ul>
+<u>3. Configuration de CircleCI</u><ul class="simple">
+<li><p><strong>.circleci/config.yml</strong> : Configurez ce fichier pour automatiser les tests de votre application à chaque push sur votre dépôt Git et pour construire une image Docker si les tests passent.</p></li>
+<li><p><strong>Intégration avec Docker Hub</strong> : Configurez CircleCI pour pousser l’image Docker construite vers Docker Hub ou un autre registre d’images Docker.</p></li>
+</ul>
+<u>4. Déploiement sur Render</u><ul class="simple">
+<li><p><strong>Service Web</strong> : Créez un service Web sur Render et choisissez Docker comme environnement (déja existant sur le depot GitHub avec le fichier Dockerfile).</p></li>
+<li><p><strong>Configurez les variables d’environnement</strong> nécessaires pour votre application Django dans Render. Cela inclut <code class="docutils literal notranslate"><span class="pre">SECRET_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">SENTRY_DSN</span></code>, et toute autre variable d’environnement que votre application utilise. Ceci est crucial pour la sécurité et le bon fonctionnement de votre application.</p></li>
+</ul>
+<img alt="_images/environnement.png" class="align-center" src="_images/environnement.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/environnement.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
+<u>5. Définissez le port</u><ul class="simple">
+<li><p><strong>Définissez le port sur lequel votre application sera accessible</strong>. Par défaut, Django utilise le port 8000, que vous avez probablement exposé dans votre Dockerfile.</p></li>
+</ul>
+<u>6. Automatisation du déploiement</u><ul class="simple">
+<li><p><strong>Déclenchez le déploiement de votre service</strong>. Render construira votre image Docker à partir de la Dockerfile et déploiera votre application.</p></li>
+<li><p><strong>Render supporte le déploiement automatique</strong> à chaque push sur une branche spécifique de votre dépôt GitHub. Assurez-vous d’avoir activé cette option pour automatiser le processus de déploiement de votre application.</p></li>
+</ul>
+<u>7. Mettez à jour les URL's dans settings.py</u><p>Il est Impératif que vous mettez à jour la ligne suivante pour le cas de ce projet dans le fichier <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> comme suit :</p>
+<p><code class="docutils literal notranslate"><span class="pre">ALLOWED_HOSTS</span> <span class="pre">=</span> <span class="pre">[&quot;127.0.0.1&quot;,</span> <span class="pre">&quot;localhost&quot;,</span> <span class="pre">&quot;oc-p13-a8c2.onrender.com&quot;]</span></code></p>
+<img alt="_images/render.png" class="align-center" src="_images/render.png" />
+<p>–</p>
+<a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/render.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a><p>–</p>
 </section>
 
 

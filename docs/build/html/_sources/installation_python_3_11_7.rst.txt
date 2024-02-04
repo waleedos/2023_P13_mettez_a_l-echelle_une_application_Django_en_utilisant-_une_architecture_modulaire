@@ -110,3 +110,4 @@ Installation de Python 3.11.7
 
 Vous devriez maintenant avoir un environnement virtuel fonctionnel qui utilise la version 3.11.7 de Python 3 que vous avez installée, sans affecter la version globale de Python sur votre machine Linux.
 
+.. Fin du document

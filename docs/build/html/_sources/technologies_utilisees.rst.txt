@@ -4,6 +4,7 @@ Technologies et Langages utilisés
 .. image:: source/_static/orange_country_lettings.png
    :align: center
 
+--
 `Python <https://www.python.org/>`_ est le langage de programmation de choix pour ce projet. Sa version utilisée dans ce projet est **Python 3.11.7**
 
 Ceci est une application web `Django <https://www.djangoproject.com>`_. Django est un framework Web écrit en Python qui vous permet de créer des applications sous le paradigme MVC (Model View Controller). Django propose une interface d'administration accessible via un navigateur web.
@@ -63,3 +64,4 @@ Un pipeline CI/CD complet est mis en place, incluant la compilation, les tests, 
    
 Dans le reste de la documentation sur le développement local, il est supposé que la commande **python** de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé). Cet ensemble de technologies et de pratiques illustre un engagement envers la qualité, l'efficacité et la scalabilité dans le développement de logiciels modernes. La documentation technique, créée avec Sphinx et hébergée sur Read The Docs, en est un témoignage supplémentaire, facilitant la compréhension et la collaboration future sur le projet.
 
+.. Fin du document

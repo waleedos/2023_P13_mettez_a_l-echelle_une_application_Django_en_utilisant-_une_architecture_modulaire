@@ -78,3 +78,4 @@ Par exemple dans notre cas, nous voudrions executer le test test_profile_access_
     <a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/pytest.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a>
 
 --    
+.. Fin du document

@@ -110,3 +110,4 @@ Maintenant que tout les reglages sont faits, nous pouvons utiliser la commande s
     <a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/flake8.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a>
 
 --    
+.. Fin du document

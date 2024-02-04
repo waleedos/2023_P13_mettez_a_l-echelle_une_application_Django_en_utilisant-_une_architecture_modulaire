@@ -85,4 +85,4 @@ Pour plus d'informations, veuillez consulter la section :ref:`guide_installation
 
     http://localhost:8000
 
-
+.. Fin du document
