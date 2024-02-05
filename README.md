@@ -1,377 +1,184 @@
-## Résumé
+<h1 align="center">OC Project N°13 - Orange County Letting's</h1>
+<h2 align="center">Mettez à l'échelle une application Django en utilisant une architecture modulaire</h1>
 
-Site web d'Orange County Lettings
+![Logo LITReview](https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/orange_country_lettings.png)
 
-## Développement local
+## Compétences aquises et évaluées de ce projet : 
+* Documenter une application
+* Refactoriser une application pour réduire la dette technique
+* Mettre en place un système de contrôle des codes en utilisant Sentry
+* Déployer une application
+* Gérer la production de code en utilisant la méthodologie CI/CD
+* Appliquer une architecture modulaire dans une application Python
 
-### Prérequis
+## Technologies Utilisées
 
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- **Langage Principal** : Python (Version 3.11.7)
+- **Framework Web** : Django (version 5.0)
+- **Base de Données** : sqlite3 (version 3.37.2)
+- **Sécurité** : SECRET_KEY chargée depuis un fichier .env + les validateurs de mot de passe de Django.
+- **Gestion de Configuration** : python-dotenv pour charger les configurations depuis un fichier .env.
+- **Monitoring** : Sentry SDK et Flake8
+- **Tests et Assurance Qualité** : Pytest avec pytest-django, Flake8, pylint, Coverage...
+- **Conteneurisation** : Docker.
+- **Pipeline CI/CD et déploiement** : CircleCI et Render
+- **Documentation** : Sphinx, ReadTheDocs.
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+Pour plus de détails sur les Technologies Utilisées dans ce projet, suivez ce [lien](https://walid-orange-county-lettings.readthedocs.io/fr/latest/technologies_utilisees.html).
 
-### macOS / Linux
+## Introduction :
+Orange County Lettings est une start-up dans le secteur de la location de biens immobiliers. La start-up est en pleine phase d’expansion aux États-Unis. L'évaluation des technologies utilisées dans le code de l'ancienne application de la société a identifié différents problèmes que nous devons résoudre. 
 
-#### Cloner le repository
+## Auteurs
+L'équipe est composée de EL-WALID EL-KHABOU et de son mentor OpenClassRooms.
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+## Licence
+Logiciel gratuit.
 
-#### Créer l'environnement virtuel
+## Mission
+- 1. Refonte de l'architecture modulaire de l'application existante;
+- 2. Réduction de diverses dettes techniques sur le projet;
+- 3. Ajout d'un pipeline CI/CD ainsi que son déploiement; 
+- 4. Surveillance de l’application et suivi des erreurs via Sentry; 
+- 5. Création de la documentation technique de l’application avec Read The Docs et Sphinx.
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+L'équipe a dressé une liste de document pour cette mission : 
 
-#### Exécuter le site
+- **La Mission** : [Mission](https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/blob/main/oc_lettings_site/Mission/mission-p13.pdf).
+- **Le guide** : [Guide d'étapes clés pour l'avancement du projet](https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/blob/main/oc_lettings_site/Mission/guide-etapes.pdf) 
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+### Voici La stucture actuelle et finale de ce projet :
 
-#### Linting
+- **La structure du projet** : [La structure du projet](https://walid-orange-county-lettings.readthedocs.io/fr/latest/structure_de_ce_projet.html).
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
-
-#### Tests unitaires
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
-
-
-Dans ce projet, nous comptons 3 applications Django :
-
-- L'application lettings
-- L'application oc_lettings_site
-- L'application profiles
-
-Dans chaque dossier de ces 3 applications, existe un fichier nommé (test.py) dans lequel nous avons élaborer les tests necessaires pour cette application : 
-
-- Pour l'application lettings         : Nous avons 9 tests.
-- Pour l'application oc_lettings_site : Nous avons 7 tests.
-- Pour l'application profiles         : Nous avons 13 tests.
+### Apres sa refonte, ce projet est composé de 3 applications : 
+- oc_lettings_site : Application initiale pour voir la page d'accueil.
+- Lettings         : Application pour voir la liste des locations disponibles et adresses.
+- Profiles         : Application pour gérer les profils.
 
 
-**Execution des tests séparement:**
+## Vous pouvez voir directement la page d'accueil du projet déployé sur Render en suivant ce [lien](https://oc-p13-a8c2.onrender.com).
 
-Pour executer les tests d'une application précise, nous pouvons utiliser trois méthodes : 
-
-1- Lancer la commande 'pytest' dans le repertoire de l'application en question :
-
-.. code:: shell
-   
-   cd profiles
-
-   Puis
-
-   pytest
-
-Cela execute tous les tests existants dans le fichier "tests.py" de l'application "profiles"
-
-
-2- Lancer la commande pytest depuis le dossier racine du projet :
-
-.. code:: shell
-   
-   pytest profiles/tests
-
-Cela execute aussi tous les tests existants dans le fichier "tests.py" de l'application "profiles"
-
-
-3- Execution d'un seul test existant dans le fichier "test.py"
-
-.. code:: shell
-   
-   pytest profiles/tests.py::NomDeLaClasseDeTest::NomDuTestEnQuestion
-
-
-Par exemple dans notre cas, nous voudrions executer le test test_profile_access_redirection
-
-.. code:: shell
-   
-   pytest profiles/tests.py::ProfileAccessTestCase::test_profile_access_redirection
-
-
-
-**Execution de tous les tests globalement depuis la racine du projet:**
-
-.. code:: shell
-
-   pytest
-
-
-
-#### Base de données
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
-
-#### Panel d'administration
-
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
-
-### Windows
-
-Utilisation de PowerShell, comme ci-dessus sauf :
-
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
-
--------------------------------------------------------------------------------------------------------------------------------
-### pylint
-
-export PYTHONPATH=$PYTHONPATH:/home/walid/Bureau/oc_p13
-
-pylint --load-plugins pylint_django .
-
--------------------------------------------------------------------------------------------------------------------------------
-### Couverture des tests
-
-coverage run manage.py test
-
-###  Générer le Rapport de Couverture
-```
-coverage report
+### Comment cloner ce référentiel GitHub: 
+Vous pouvez cloner et forker le repo en totalité via HTTPS:
+``` 
+git clone https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
 ```
 
-Ou pour un rapport en HTML :
-```
-coverage html
-```
--------------------------------------------------------------------------------------------------------------------------------
-### Integration de Sentry:
-Apres avoir integrer Sentry dans le fichier settins.py, et apres avoir mis et changer sa clé SDN
-dans une variable d'environnement (.env), il faut provoquer une erreur pour tester si mon code renvoi bien 
-ce que nous attendons vers Sentry : 
-
-#### Étape 1 : Créer une Vue de Test
-Créez une vue dans l'un de vos fichiers de vues, par exemple dans views.py de votre application oc_lettings_site :
-
-```
-from django.http import HttpResponse
-
-def error_test(request):
-    raise Exception("Ceci est une erreur de test pour Sentry.")
-    return HttpResponse("Cette réponse ne sera jamais atteinte.")
+Vous pouvez aussi cloner et forker le repo en totalité via SSH:
+``` 
+git@github.com:waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire.git
 ```
 
-#### Étape 2 : Ajouter l'URL de la Vue de Test
-Ajoutez une URL pour cette vue dans votre fichier urls.py. Si vous l'ajoutez dans oc_lettings_site/urls.py, cela ressemblerait à ceci :
-```
-from django.urls import path
-from .views import error_test  # Assurez-vous d'importer la vue
+Ou encore, vous pouvez télécharger le dossier entier compressé (.zip) :
+- [Téléchargez le dossier complet de ce projet](https://github.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/archive/refs/heads/main.zip).
 
-urlpatterns = [
-    # Vos autres URL ici...
-    path('sentry-test/', error_test, name='sentry-test'),  # Ajoutez cette ligne
-]
+### Accédez à la racine du projet:
+```
+cd [Nom de votre dossier décompressé ou cloné]
 ```
 
-#### Étape 3 : Testez la Vue
-Lancez votre serveur de développement Django avec python manage.py runserver.
-Ouvrez un navigateur web et accédez à l'URL de la vue de test (par exemple, http://localhost:8000/sentry-test/).
-Cette action déclenchera l'exception définie dans votre vue error_test, que Sentry devrait capturer.
-
--------------------------------------------------------------------------------------------------------------------------------
-
-### CERCLECI
-version: 2.1
-jobs:
-  build:
-    docker:
-      - image: cimg/python:3.11.7
-    working_directory: ~/oc_p13
-    environment:
-      DJANGO_SETTINGS_MODULE: oc_lettings_site.settings
-      # Mettre à jour le PYTHONPATH pour inclure le répertoire du projet
-      PYTHONPATH: /home/circleci/oc_p13:/home/walid/Bureau/oc_p13
-    steps:
-      - checkout
-      - run: pip install -r requirements.txt
-      - run:
-          name: Initialize Django for Pylint
-          command: python -c "import os; os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site.settings'; import django; django.setup()"
-      - run: pylint --load-plugins pylint_django .
-      - run:
-          name: Run Tests
-          command: coverage run --source='.' manage.py test
-      - run:
-          name: Check Test Coverage
-          command: coverage report --fail-under=80
-
-------------------------------------------------------------------------------------------------------------
-
-### Docker : 
-
-#### Installez Docker avant tout:
-Cela depend de votre systeme d'exploitation, mais cela est facile que ce soit sur windows, mac ou linux.
-
-#### Créer votre image du projet docker :
-docker build -t orange_county_lettings .
-
-#### (pour la reconstruction de l'image sans utiliser le cache peut résoudre des problèmes inattendus.)
-docker build --no-cache -t orange_county_lettings .
-
-#### Créez un compte sur Docker Hub 
-oui, sur https://hub.docker.com/
-
-#### Connectez-vous à Docker Hub
-depuis votre terminal en utilisant la commande (docker login).
-
-#### Poussez votre image ver le repository Docker : 
-
-Taguez votre image Docker avec votre nom d'utilisateur Docker Hub et un tag approprié, par exemple en utilisant le hash de commit ou une version. Utilisez la commande suivante :
+### Vérification si vous etes au bon dossier : 
 ```
-docker tag orange_county_lettings [votre_nom_utilisateur_docker]/orange_county_lettings:tag
-
-Dans mon cas : 
-
-docker tag orange_county_lettings waleedos/orange_county_lettings:last-30
+ls
 ```
+La sortie de cette commande devra vous afficher les dossiers et fichiers suivant : 
 
-Remplacez [votre_nom_utilisateur_docker] par votre nom d'utilisateur Docker Hub et tag par le tag que vous souhaitez utiliser.
-Poussez l'image sur Docker Hub en utilisant la commande :
+| Nom                       | Type     |
+|---------------------------|----------|
+| docs/                     | dossier  |
+| flake-report/             | dossier  |
+| htmlcov/                  | dossier  |
+| lettings/                 | dossier  |
+| logging/                  | dossier  |
+| oc_lettings_site/         | dossier  |
+| profiles/                 | dossier  |
+| static/                   | dossier  |
+| staticfiles/              | dossier  |
+| templates/                | dossier  |
+| __init__.py               | fichier  |
+| Dockerfile                | fichier  |
+| manage.py                 | fichier  |
+| oc-lettings-site.sqlite3  | fichier  |
+| pylint_django_setup.py    | fichier  |
+| README.md                 | fichier  |
+| requirements.txt          | fichier  |
+| setup.cfg                 | fichier  |
+| start.sh                  | fichier  |
+
+
+### Créer un environnement virtuel Python (sur une machine linux):
 ```
-docker push [votre_nom_utilisateur_docker]/orange_county_lettings:1.0
+python -m venv venv
+```
+### Activer l'environnement virtuel Python:
+```
+source env/bin/activate # Sur Linux/Mac
+env\Scripts\activate # Sur Windows
+```
+### Importez et installez tous les modules:
+```
+pip install -r requirements.txt
+```
+### Créer un Fichier .env à la racine du projet (dans le dossier crm_events): 
+```
+mkdir .env
+```
+### Générer une nouvelle clé secrète, vous pouvez utiliser la console Python:
+- Démarrez la console python 
+```
+python
+# ou
+python3
+```
+- Copier/coller le code suivant et validez :
+```
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+```
+Vous allez voir que python a généréré une SECRET_KEY du style :
+```
+j^$-6tjo-s45j(6)-_=fmb%p4+2enehxlmsuzy8szmozlhc5^6
 ```
 
-Dans mons cas, voici la commande complete : 
 ```
-docker push waleedos/orange_county_lettings:1.0
+### Remplissez le fichier .env créé avec les informations créés suivantes (à titre d'exemple):
 ```
+SECRET_KEY="votre clé que python viens de générer"
+
+et enregistrer le fichier
 
 
-------------------------------------------------
-docker tag orange_county_lettings waleedos/orange_county_lettings:1.2
+### Démarrage du serveur :
 
-docker push waleedos/orange_county_lettings:1.2
-
-
-docker pull waleedos/orange_county_lettings
-
-docker run -d -p 8080:80 waleedos/orange_county_lettings
-
-
-
-
-#### Téléchargez l'image depuis Docker Hub :
+Assurez vous que vous etes toujours dans le dossier racine du projet
+puis
 ```
-sudo docker pull waleedos/orange_county_lettings:1.0
-
-```
-#### Pour démarrer le projet sur votre machine : 
-```
-sudo docker run -p 8000:8000 waleedos/orange_county_lettings:1.0
-
-et
-
-ouvrez votre navigateur, et allez sur la page : 127.0.0.1:8000
-
+python manage.py runserver
 ```
 
-###############################################################################################
-pytest
-
-pylint --load-plugins pylint_django .
-
-coverage report
-
-# Nous allons maintenant 
-
-
-clé pour deployer automatiquement le projet :
-
-https://api.render.com/deploy/srv-cmjpp36n7f5s73cdqm1g?key=Ql4DtbgsdBs
-
-
-
-# Les commande necessaire pour docker et Render :
-
-Pour collecter tous les (statics) et les mettre dans un seul endroit : 
+### Il est temps maintenant de démarrer l'application sur votre navigateur :
+Ouvrez votre navigateur et naviguez vers une des deux adresse suivantes :
 ```
-python manage.py collectstatic
+http://127.0.0.1:8000
+```
+Pour un access Administrateur
+
+```
+http://127.0.0.1:8000/admin
+# ou bien
+http://localhost:8000/admin
 ```
 
+### Connectez vous en tant que SuperUtilisateur : 
+Remplissez les identifiants (E-mail et Password) (admin, mot de passe Abc1234!) et validez.
 
-Pour construire une nouvelle image Docker
+
+## Voir toute la documentation de ce projet :
+
+Suivre ce [lien](https://walid-orange-county-lettings.readthedocs.io/fr/latest/index.html).
+
+#### Powered by EL-WALID EL-KHABOU
 ```
-docker build -t orange_county_lettings:latest-2 .
+E-mail : ewek.dev@gmail.com
 ```
-
-Pour tager la nouvelle image sur Docker : 
-```
-docker tag orange_county_lettings:latest-2 waleedos/orange_county_lettings:latest-2
-```
-
-Pour envoyer la nouvelle image tagée sur Docker : 
-```
-docker push waleedos/orange_county_lettings:latest-2
-```
-
-
-# liens du site déployé :
-
-https://oc-p13-a8c2.onrender.com/
-
-
-# Pour construire une nouvelle image docker : 
-Construisez l'image Docker avec une nouvelle version (tag). Remplacez [nom_de_l'image] par le nom souhaité pour l'image et [version] par la nouvelle version ou tag de l'image. Par exemple :
-
-==> docker build -t waleedos/orange_county_lettings:latest .
-
-Pour envoyer cette nouvelle image construite sur docker hub : 
-
-==> docker push waleedos/orange_county_lettings:
-
------------------------------------------------------------------------------------------
-
-# Pour créer l'image Docker : 
-
-==>  docker build -t orange_county_lettings .
-
-
-# Pour tager l'image : 
-
-==>  docker tag orange_county_lettings waleedos/orange_county_lettings:latest-1
-
-
-# Pour pousser cette image tagée vers Docker-Hub :
-
-avant tout
-
-==>  docker login
-
-Puis
-
-==>  docker push waleedos/orange_county_lettings:latest-1
-
-Le dernier
-
-------------------------------------------------------------------------------------
-
-alexandre.gazagnes@gmail.com
-alexandre.gazagnes@hotmail.com
-
-

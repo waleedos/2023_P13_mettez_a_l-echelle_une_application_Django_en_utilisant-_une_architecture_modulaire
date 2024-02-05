@@ -279,6 +279,20 @@ Une fois connecté, vous pouvez publier votre image Docker sur Docker Hub avec l
 
 Cela enverra votre image sur Docker Hub, où d'autres utilisateurs pourront la télécharger.
 
+Une fois cela est fait, votre compte sur ``hub.docker.com`` devrais ressembler à ceci : 
+
+.. image:: source/_static/docker.png
+    :align: center
+
+
+--
+
+.. raw:: html
+
+    <a href="https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/docker.png" target="_blank">Agrandir et voir cette Image sur une autre plateforme</a>
+
+--    
+
 
 .. raw:: html
 

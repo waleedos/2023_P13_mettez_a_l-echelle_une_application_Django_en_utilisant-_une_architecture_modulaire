@@ -1,7 +1,7 @@
 Installation du projet sur votre machine
 ----------------------------------------
 
-Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Je vais détailler chaque étape pour vous aider à comprendre le processus.
+Pour créer un environnement virtuel tout en installant la version de Python 3.11.7 sans affecter la version globale de Python sur votre machine Linux, vous pouvez suivre les étapes ci-dessous. Nous allons détailler chaque étape pour vous aider à comprendre le processus.
 Voir la rubrique (Installation de Python 3.11.7 sur votre machine)
 
 
