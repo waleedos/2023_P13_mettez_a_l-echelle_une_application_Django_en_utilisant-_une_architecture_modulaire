@@ -139,5 +139,7 @@ voici une capture d'ecran de notre Pipeline de notre compte sur CircleCI.com :
 
 --    
 
+.. image:: https://dl.circleci.com/status-badge/img/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main.svg?style=svg&circle-token=2bdb6c762403bb676618fc41911c652359f9c01b
+        :target: https://dl.circleci.com/status-badge/redirect/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main
 
 .. Fin du document

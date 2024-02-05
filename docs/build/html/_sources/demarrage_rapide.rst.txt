@@ -1,7 +1,7 @@
 Demarrage rapide
 ----------------
 
-**S'assurer que vous etes dans le repertoire du projet :**
+**S’assurer que vous êtes dans le répertoire du projet :**
 
 .. code:: shell
 

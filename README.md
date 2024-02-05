@@ -3,16 +3,15 @@
 
 ![Logo LITReview](https://raw.githubusercontent.com/waleedos/2023_P13_mettez_a_l-echelle_une_application_Django_en_utilisant-_une_architecture_modulaire/main/docs/source/_static/orange_country_lettings.png)
 
-## Compétences aquises et évaluées de ce projet : 
+## Compétences acquises et évaluées de ce projet : 
 * Documenter une application
-* Refactoriser une application pour réduire la dette technique
+* Re-factoriser une application pour réduire la dette technique
 * Mettre en place un système de contrôle des codes en utilisant Sentry
 * Déployer une application
 * Gérer la production de code en utilisant la méthodologie CI/CD
 * Appliquer une architecture modulaire dans une application Python
 
 ## Technologies Utilisées
-
 - **Langage Principal** : Python (Version 3.11.7)
 - **Framework Web** : Django (version 5.0)
 - **Base de Données** : sqlite3 (version 3.37.2)
@@ -36,11 +35,11 @@ L'équipe est composée de EL-WALID EL-KHABOU et de son mentor OpenClassRooms.
 Logiciel gratuit.
 
 ## Mission
-- 1. Refonte de l'architecture modulaire de l'application existante;
-- 2. Réduction de diverses dettes techniques sur le projet;
-- 3. Ajout d'un pipeline CI/CD ainsi que son déploiement; 
-- 4. Surveillance de l’application et suivi des erreurs via Sentry; 
-- 5. Création de la documentation technique de l’application avec Read The Docs et Sphinx.
+- Refonte de l'architecture modulaire de l'application existante;
+- Réduction de diverses dettes techniques sur le projet;
+- Ajout d'un pipeline CI/CD ainsi que son déploiement; 
+- Surveillance de l’application et suivi des erreurs via Sentry; 
+- Création de la documentation technique de l’application avec Read The Docs et Sphinx.
 
 L'équipe a dressé une liste de document pour cette mission : 
 
@@ -182,3 +181,6 @@ Suivre ce [lien](https://walid-orange-county-lettings.readthedocs.io/fr/latest/i
 ```
 E-mail : ewek.dev@gmail.com
 ```
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main.svg?style=svg&circle-token=2bdb6c762403bb676618fc41911c652359f9c01b)](https://dl.circleci.com/status-badge/redirect/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main)
+
+
