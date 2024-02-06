@@ -181,7 +181,5 @@ Suivre ce [lien](https://walid-orange-county-lettings.readthedocs.io/fr/latest/i
 ```
 E-mail : ewek.dev@gmail.com
 ```
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main.svg?style=svg&circle-token=2bdb6c762403bb676618fc41911c652359f9c01b)](https://dl.circleci.com/status-badge/redirect/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/tree/main)
 
 
-[![CircleCI](https://dl.circleci.com/insights-snapshot/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/main/build_and_test_workflow/badge.svg?window=30d&circle-token=34c520fcdef8fdf857bb895e1dbfe05df93ada07)](https://app.circleci.com/insights/circleci/KAm3csFwG5HBdy4u7bCNVZ/oZnMfYKgjjwBGnytLcqNa/workflows/build_and_test_workflow/overview?branch=main&reporting-window=last-30-days&insights-snapshot=true)
