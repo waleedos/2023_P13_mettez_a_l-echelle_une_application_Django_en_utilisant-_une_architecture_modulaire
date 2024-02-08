@@ -25,6 +25,10 @@ Vous pouvez démarrer l'application sur votre ordinateur directement et tres fac
     
     docker pull waleedos/orange_county_lettings:latest
 
+    Ou bien
+
+    docker pull waleedos/orange_county_lettings:99231ef5
+
 
 .. Note::
 
