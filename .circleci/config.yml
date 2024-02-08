@@ -26,7 +26,6 @@ jobs:
           name: Deploy to Render
           command: |
             if [ "$?" -eq 0 ]; then
-              # Remplacez l'URL avec l'URL réelle de déploiement vers Render
               wget -O- https://api.render.com/deploy/srv-cmjpp36n7f5s73cdqm1g?key=Ql4DtbgsdBs
             fi
           when: on_success
