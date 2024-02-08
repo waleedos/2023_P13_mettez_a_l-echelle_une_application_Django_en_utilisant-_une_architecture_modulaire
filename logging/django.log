@@ -1,1 +1,90 @@
 INFO 2024-02-08 12:52:10,958 views Affichage de la page d'accueil.
+INFO 2024-02-08 20:12:51,449 views Affichage de la page d'accueil.
+INFO 2024-02-08 20:12:53,004 views Affichage de la liste des profils.
+INFO 2024-02-08 20:12:54,011 views Affichage de la liste des lettings.
+INFO 2024-02-08 20:21:53,755 views Affichage de la liste des lettings.
+WARNING 2024-02-08 20:21:53,830 log Not Found: /une_url_inexistante/
+ERROR 2024-02-08 20:21:53,856 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-08 20:21:53,913 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-08 20:21:53,940 views Affichage de la page d'accueil.
+INFO 2024-02-08 20:21:53,968 views Affichage de la page d'accueil.
+WARNING 2024-02-08 20:21:53,999 log Not Found: /chemin_inexistant/
+ERROR 2024-02-08 20:21:54,026 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-08 20:21:54,043 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-08 20:21:54,440 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 20:21:55,220 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 20:21:58,341 views Affichage de la liste des profils.
+INFO 2024-02-08 20:21:58,371 views Affichage de la liste des profils.
+INFO 2024-02-08 20:21:58,401 views Affichage de la liste des profils.
+INFO 2024-02-08 20:21:58,860 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 20:21:58,887 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 20:21:58,915 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 23:06:04,524 views Affichage de la liste des lettings.
+WARNING 2024-02-08 23:06:04,592 log Not Found: /une_url_inexistante/
+ERROR 2024-02-08 23:06:04,616 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-08 23:06:04,665 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-08 23:06:04,691 views Affichage de la page d'accueil.
+INFO 2024-02-08 23:06:04,717 views Affichage de la page d'accueil.
+WARNING 2024-02-08 23:06:04,742 log Not Found: /chemin_inexistant/
+ERROR 2024-02-08 23:06:04,767 views Erreur interne du serveur déclenchée.
+ERROR 2024-02-08 23:06:04,782 log Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/venv/lib/python3.11/site-packages/sentry_sdk/integrations/django/views.py", line 84, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/walid/Bureau/oc_p13/oc_lettings_site/views.py", line 57, in test_500
+    raise ValueError("Test d'erreur 500")
+ValueError: Test d'erreur 500
+INFO 2024-02-08 23:06:05,160 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 23:06:05,877 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 23:06:08,745 views Affichage de la liste des profils.
+INFO 2024-02-08 23:06:08,773 views Affichage de la liste des profils.
+INFO 2024-02-08 23:06:08,801 views Affichage de la liste des profils.
+INFO 2024-02-08 23:06:09,211 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 23:06:09,239 views Quelque chose s'est produit avec l'utilisateur : testuser
+INFO 2024-02-08 23:06:09,267 views Quelque chose s'est produit avec l'utilisateur : testuser

@@ -21,8 +21,20 @@ jobs:
       - run:
           name: Check Test Coverage
           command: coverage report --fail-under=80
+      # Ajoutez un nouveau job pour le déploiement conditionnel à la fin des tests
+      - deploy:
+          name: Deploy to Render
+          command: |
+            if [ "$?" -eq 0 ]; then
+              # Remplacez l'URL avec l'URL réelle de déploiement vers Render
+              wget -O- https://api.render.com/deploy/srv-cmjpp36n7f5s73cdqm1g?key=Ql4DtbgsdBs
+            fi
+          when: on_success
+          requires:
+            - build
 
 workflows:
   build_and_test_workflow:
     jobs:
       - build
+      
